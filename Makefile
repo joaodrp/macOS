@@ -15,7 +15,7 @@ sync:
 	[ -f ~/.tmux/statusbar-light.conf ] || ln -s $(PWD)/tmux/statusbar-light.conf ~/.tmux/statusbar-light.conf
 	[ -f ~/.tigrc ] || ln -s $(PWD)/.tigrc ~/.tigrc
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/.gitconfig ~/.gitconfig
-	[ -f ~/.gitignore ] || ln -s $(PWD)/.gitignore ~/.gitignore
+	[ -f ~/.gitignore ] || ln -s $(PWD)/gitignore ~/.gitignore
 	[ -f ~/.dockerignore ] || ln -s $(PWD)/.dockerignore ~/.dockerignore
 	[ -f ~/.ignore ] || ln -s $(PWD)/.ignore ~/.ignore
 	[ -f ~/Library/LaunchAgents/dark-mode-notify.plist ] || ln -s $(PWD)/dark-mode-notify.plist ~/Library/LaunchAgents/dark-mode-notify.plist

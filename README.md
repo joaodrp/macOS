@@ -37,5 +37,6 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 fisher install \
     jorgebucaran/autopair.fish \
-    gazorby/fish-abbreviation-tips
+    gazorby/fish-abbreviation-tips \
+    jethrokuan/z
 ```
