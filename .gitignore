@@ -1,1 +1,2 @@
-_local/*
+fish/functions/fisher.fish
+fish/functions/_*
