@@ -1,11 +1,4 @@
-all: build sync setup
-
-build:
-	$(eval TMPDIR := $(shell mktemp -d))
-	git clone https://github.com/bouk/dark-mode-notify.git $(TMPDIR)
-	cd $(TMPDIR); git reset --hard 87b71ab45f14ca978d3e47efac54c86ec32ae140
-	swiftc $(TMPDIR)/dark-mode-notify.swift -o /usr/local/bin/dark-mode-notify
-	rm -rf $(TMPDIR)
+all: sync
 
 sync:
 	mkdir -p ~/.config/alacritty
@@ -33,12 +26,6 @@ sync:
 	# don't show last login message
 	touch ~/.hushlogin
 
-setup:
-	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-	fisher install \
-		jorgebucaran/autopair.fish \
-		gazorby/fish-abbreviation-tips
-
 clean:
 	rm -f ~/.vimrc
 	rm -f ~/.config/alacritty/alacritty.yml
@@ -53,4 +40,4 @@ clean:
 	rm -f ~/.ignore
 	rm -f ~/Library/LaunchAgents/dark-mode-notify.plist
 
-.PHONY: all build clean sync
+.PHONY: all sync clean
