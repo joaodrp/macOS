@@ -421,17 +421,16 @@ selection:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /usr/local/bin/fish
-  args:
-    - --login
-  # TODO: change:
-  # program: /usr/local/bin/tmux
+  # program: /usr/local/bin/fish
   # args:
-  #   - new-session
-  #   - -A
-  #   - -D
-  #   - -s
-  #   - main
+  #   - --login
+  program: /usr/local/bin/tmux
+  args:
+    - new-session
+    - -A
+    - -D
+    - -s
+    - main
 
 # Startup directory
 #
