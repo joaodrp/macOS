@@ -1,4 +1,4 @@
-all: build sync
+all: build sync setup
 
 build:
 	$(eval TMPDIR := $(shell mktemp -d))
@@ -27,13 +27,22 @@ sync:
 	[ -f ~/.ignore ] || ln -s $(PWD)/.ignore ~/.ignore
 	[ -f ~/Library/LaunchAgents/dark-mode-notify.plist ] || ln -s $(PWD)/dark-mode-notify.plist ~/Library/LaunchAgents/dark-mode-notify.plist
 
+	[ -f ~/.gitconfig.local ] || touch ~/.gitconfig.local
+	[ -f ~/.config/fish/local.fish ] || touch ~/.config/fish/local.fish
+
 	# don't show last login message
 	touch ~/.hushlogin
+
+setup:
+	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+	fisher install \
+		jorgebucaran/autopair.fish \
+		gazorby/fish-abbreviation-tips
 
 clean:
 	rm -f ~/.vimrc
 	rm -f ~/.config/alacritty/alacritty.yml
-	rm -f ~/.config/alacritty/color.yml
+	rm -f ~/.config/alacritty/colors.yml
 	rm -f ~/.config/fish/config.fish
 	rm -f ~/.config/fish/functions/
 	rm -f ~/.tmux.conf
