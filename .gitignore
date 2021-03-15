@@ -1,2 +1,3 @@
 fish/functions/fisher.fish
+fish/functions/fish_prompt.fish
 fish/functions/_*
