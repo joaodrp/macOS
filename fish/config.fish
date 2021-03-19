@@ -56,3 +56,7 @@ gpgconf --launch gpg-agent
 # jethrokuan/z
 # franciscolourenco/done
 # PatrickF1/fzf.fish
+
+direnv hook fish | source
+
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
