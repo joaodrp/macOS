@@ -1,4 +1,4 @@
-all: sync
+all: sync config
 
 sync:
 	mkdir -p ~/.config/alacritty
@@ -23,6 +23,8 @@ sync:
 	[ -f ~/.gitconfig.local ] || touch ~/.gitconfig.local
 	[ -f ~/.config/fish/local.fish ] || touch ~/.config/fish/local.fish
 
+config:
+	./macos
 	# don't show last login message
 	touch ~/.hushlogin
 
@@ -40,4 +42,4 @@ clean:
 	rm -f ~/.ignore
 	rm -f ~/Library/LaunchAgents/dark-mode-notify.plist
 
-.PHONY: all sync clean
+.PHONY: all sync config clean
