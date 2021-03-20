@@ -19,14 +19,12 @@ sync:
 	[ -f ~/.dockerignore ] || ln -s $(PWD)/.dockerignore ~/.dockerignore
 	[ -f ~/.ignore ] || ln -s $(PWD)/.ignore ~/.ignore
 	[ -f ~/Library/LaunchAgents/dark-mode-notify.plist ] || ln -s $(PWD)/dark-mode-notify.plist ~/Library/LaunchAgents/dark-mode-notify.plist
-
 	[ -f ~/.gitconfig.local ] || touch ~/.gitconfig.local
 	[ -f ~/.config/fish/local.fish ] || touch ~/.config/fish/local.fish
+	[ -f ~/.hushlogin ] || ln -s $(PWD)/.hushlogin ~/.hushlogin
 
 config:
 	./macos
-	# don't show last login message
-	touch ~/.hushlogin
 
 clean:
 	rm -f ~/.vimrc
@@ -41,5 +39,6 @@ clean:
 	rm -f ~/.dockerignore
 	rm -f ~/.ignore
 	rm -f ~/Library/LaunchAgents/dark-mode-notify.plist
+	rm -f ~/.hushlogin
 
 .PHONY: all sync config clean
