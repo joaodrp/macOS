@@ -206,8 +206,11 @@ cask "docker"
 cask "duet"
 # Screen color temperature controller
 cask "flux"
+cask "font-inconsolata"
+cask "font-inconsolata-for-powerline"
 # Typeface made for developers
 cask "font-jetbrains-mono"
+cask "font-source-code-pro"
 # Solution that turns X Series and GFX System digital cameras into webcams
 cask "fujifilm-x-webcam"
 # Go (golang) IDE
@@ -235,6 +238,16 @@ cask "ngrok"
 cask "numi"
 # Desktop virtualization software
 cask "parallels"
+# QuickLook plug-in that renders source code with syntax highlighting
+cask "qlcolorcode"
+# Display image info and preview unsupported formats in QuickLook
+cask "qlimagesize"
+# QuickLook generator for Markdown files
+cask "qlmarkdown"
+cask "qlprettypatch"
+cask "qlstephen"
+cask "quicklook-csv"
+cask "quicklook-json"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Team communication and collaboration software
@@ -247,6 +260,8 @@ cask "typora"
 cask "visual-studio-code"
 # Video communication and virtual meeting platform
 cask "zoom"
+mas "1Password 7", id: 1333542190
+mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
 mas "CopyClip", id: 595191960
 mas "Flow", id: 1423210932
