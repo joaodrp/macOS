@@ -18,10 +18,11 @@ sync:
 	[ -f ~/.gitignore ] || ln -s $(PWD)/gitignore ~/.gitignore
 	[ -f ~/.dockerignore ] || ln -s $(PWD)/.dockerignore ~/.dockerignore
 	[ -f ~/.ignore ] || ln -s $(PWD)/.ignore ~/.ignore
-	[ -f ~/Library/LaunchAgents/dark-mode-notify.plist ] || ln -s $(PWD)/dark-mode-notify.plist ~/Library/LaunchAgents/dark-mode-notify.plist
 	[ -f ~/.gitconfig.local ] || touch ~/.gitconfig.local
 	[ -f ~/.config/fish/local.fish ] || touch ~/.config/fish/local.fish
 	[ -f ~/.hushlogin ] || ln -s $(PWD)/.hushlogin ~/.hushlogin
+	[ -f ~/.psqlrc ] || ln -s $(PWD)/.psqlrc ~/.psqlrc
+	[ -f ~/Library/LaunchAgents/dark-mode-notify.plist ] || ln -s $(PWD)/dark-mode-notify.plist ~/Library/LaunchAgents/dark-mode-notify.plist
 
 config:
 	./macos
@@ -38,7 +39,8 @@ clean:
 	rm -f ~/.gitignore
 	rm -f ~/.dockerignore
 	rm -f ~/.ignore
-	rm -f ~/Library/LaunchAgents/dark-mode-notify.plist
 	rm -f ~/.hushlogin
+	rm -f ~/.psqlrc
+	rm -f ~/Library/LaunchAgents/dark-mode-notify.plist
 
 .PHONY: all sync config clean
