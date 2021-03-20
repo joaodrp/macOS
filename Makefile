@@ -22,6 +22,7 @@ sync:
 	[ -f ~/.config/fish/local.fish ] || touch ~/.config/fish/local.fish
 	[ -f ~/.hushlogin ] || ln -s $(PWD)/.hushlogin ~/.hushlogin
 	[ -f ~/.psqlrc ] || ln -s $(PWD)/.psqlrc ~/.psqlrc
+	[ -f ~/.psqlrc.local ] || touch ~/.psqlrc.local
 	[ -f ~/Library/LaunchAgents/dark-mode-notify.plist ] || ln -s $(PWD)/dark-mode-notify.plist ~/Library/LaunchAgents/dark-mode-notify.plist
 
 config:
