@@ -4,6 +4,9 @@
 # install all brew dependencies
 brew bundle
 
+# install Apple SF Mono fonts
+cp /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SF-Mono*.otf ~/Library/Fonts/
+
 # copy dotfiles to the appropriate places
 make
 
@@ -38,5 +41,7 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install \
     jorgebucaran/autopair.fish \
     gazorby/fish-abbreviation-tips \
-    jethrokuan/z
+    jethrokuan/z \
+    mattgreen/lucid.fish \
+    lgathy/google-cloud-sdk-fish-completion
 ```
