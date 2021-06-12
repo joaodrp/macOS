@@ -45,3 +45,10 @@ fisher install \
     mattgreen/lucid.fish \
     lgathy/google-cloud-sdk-fish-completion
 ```
+
+## Voxengo Marvel GEQ for OBS
+set tmpdir (mktemp -d)
+wget -P $tmpdir https://www.voxengo.com/files/VoxengoMarvelGEQ_110_Mac_VST_VST3_setup.dmg
+hdiutil attach $tmpdir/VoxengoMarvelGEQ_110_Mac_VST_VST3_setup.dmg
+cp -r /Volumes/Voxengo\ Marvel\ GEQ\ 1.10\ VST2_VST3/Marvel\ GEQ.vst /Library/Audio/Plug-Ins/VST
+rm -rf $tmpdir
