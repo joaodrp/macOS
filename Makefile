@@ -33,6 +33,10 @@ sync:
 config:
 	./macos
 
+icons:
+	cp $(PWD)/alacritty/alacritty.icns /Applications/Alacritty.app/Contents/Resources/alacritty.icns
+	touch /Applications/Alacritty.app
+
 clean:
 	rm -f ~/.vimrc
 	rm -f ~/.config/alacritty/alacritty.yml
@@ -52,4 +56,4 @@ clean:
 	rm -f ~/.psqlrc
 	rm -f ~/Library/LaunchAgents/dark-mode-notify.plist
 
-.PHONY: all sync config clean
+.PHONY: all sync config icons clean
