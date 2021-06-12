@@ -35,8 +35,16 @@ defaults -currentHost write -g AppleFontSmoothing -int 0
 # enable dark mode notify service
 launchctl load -w ~/Library/LaunchAgents/dark-mode-notify.plist
 
+# install asdf plugins and versions
+for lang in golang ruby nodejs python
+    asdf plugin add $lang
+    asdf install $lang latest
+    asdf global $lang latest
+end
+
 # install fisher
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+curl -sL https://git.io/fisher | source \
+    && fisher install jorgebucaran/fisher
 
 fisher install \
     jorgebucaran/autopair.fish \
@@ -49,6 +57,6 @@ fisher install \
 set tmpdir (mktemp -d)
 wget -P $tmpdir https://www.voxengo.com/files/VoxengoMarvelGEQ_110_Mac_VST_VST3_setup.dmg
 hdiutil attach $tmpdir/VoxengoMarvelGEQ_110_Mac_VST_VST3_setup.dmg
-cp -r /Volumes/Voxengo\ Marvel\ GEQ\ 1.10\ VST2_VST3/Marvel\ GEQ.vst /Library/Audio/Plug-Ins/VST
+sudo cp -r /Volumes/Voxengo\ Marvel\ GEQ\ 1.10\ VST2_VST3/Marvel\ GEQ.vst /Library/Audio/Plug-Ins/VST
 rm -rf $tmpdir
 ```
