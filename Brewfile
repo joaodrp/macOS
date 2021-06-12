@@ -6,9 +6,8 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "joaodrp/tap"
+tap "mike-engel/jwt-cli"
 tap "shopify/shopify"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
 # Download with resuming and segmented downloading
 brew "aria2"
 # Command-line interface for SQLite
@@ -37,6 +36,8 @@ brew "cloc"
 brew "cmake"
 # Color-highlighted diff(1) output
 brew "colordiff"
+# Tool for interacting with remote images and registries
+brew "crane"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Utility to replace problematic characters in filenames
@@ -48,27 +49,33 @@ brew "direnv"
 # Tool for exploring each layer in a docker image
 brew "dive"
 # Isolated development environments using Docker
-brew "docker-compose"
+brew "docker-compose", link: false
 # Minify and secure Docker images
 brew "docker-slim"
 # Modern replacement for 'ls'
 brew "exa"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
 # Distributed revision control system
 brew "git"
 # Enable transparent encryption/decryption of files in a git repo
 brew "git-crypt"
 # Git extension for versioning large files
 brew "git-lfs"
-# Official GitLab CI runner
-brew "gitlab-runner"
 # Command-line option parsing utility
 brew "gnu-getopt"
 # GNU implementation of the famous stream editor
@@ -77,12 +84,8 @@ brew "gnu-sed"
 brew "gnu-tar"
 # GNU implementation of time utility
 brew "gnu-time"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c"
 # Framework for layout and rendering of i18n text
 brew "pango"
 # Command-driven, interactive function plotting
@@ -121,6 +124,8 @@ brew "jq"
 brew "jsonnet-bundler"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
+# Conversion library
+brew "libiconv"
 # Postgres C API library
 brew "libpq"
 # Mac App Store command-line interface
@@ -143,6 +148,8 @@ brew "postgresql"
 brew "pstree"
 # Rsync for cloud storage
 brew "rclone"
+# Alternative to backtracking PCRE-style regular expression engines
+brew "re2"
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
 # Perl-powered file rename script with many helpful built-ins
@@ -151,6 +158,8 @@ brew "rename"
 brew "ripgrep"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
+# Collection of tools for managing UNIX services
+brew "runit"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Add a public key to a remote machine's authorized_keys file
@@ -159,6 +168,8 @@ brew "ssh-copy-id"
 brew "st"
 # Tail multiple Kubernetes pods & their containers
 brew "stern"
+# Version control system designed to be a better CVS
+brew "subversion"
 # User interface to the TELNET protocol
 brew "telnet"
 # Send macOS User Notifications from the command-line
@@ -181,8 +192,6 @@ brew "vim"
 brew "watch"
 # Internet file retriever
 brew "wget"
-# Homebrew, but with Docker images
-brew "whalebrew"
 # Tool for managing your YubiKey configuration
 brew "ykman"
 # YubiKey personalization library and tool
@@ -191,13 +200,21 @@ brew "ykpers"
 brew "z"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Super fast CLI tool to decode and encode JWTs built in Rust
+brew "mike-engel/jwt-cli/jwt-cli"
 brew "shopify/shopify/toxiproxy"
-# Password manager that keeps all passwords secure behind one password
-cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
 # GPU-accelerated terminal emulator
 cask "alacritty"
+# Application uninstaller
+cask "appcleaner"
+# Control and Loop-back Mixer
+cask "audient-evo"
+# Virtual Audio Driver
+cask "blackhole-2ch"
+# Automated testing of webapps for Google Chrome
+cask "chromedriver"
 # API documentation browser and code snippet manager
 cask "dash"
 # App to build and share containerized applications and microservices
@@ -236,31 +253,30 @@ cask "multipass"
 cask "ngrok"
 # Calculator and converter application
 cask "numi"
+# Open-source software for live streaming and screen recording
+cask "obs"
 # Desktop virtualization software
 cask "parallels"
-# QuickLook plug-in that renders source code with syntax highlighting
-cask "qlcolorcode"
-# Display image info and preview unsupported formats in QuickLook
-cask "qlimagesize"
-# QuickLook generator for Markdown files
-cask "qlmarkdown"
-cask "qlprettypatch"
-cask "qlstephen"
-cask "quicklook-csv"
-cask "quicklook-json"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# Ruby on Rails IDE
+cask "rubymine"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service
 cask "spotify"
+# Music streaming service with high fidelity sound and hi-def video quality
+cask "tidal"
 # Configurable document editor that supports Markdown
 cask "typora"
+# Tool to hide menu bar icons
+cask "vanilla"
 # Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
 # Video communication and virtual meeting platform
 cask "zoom"
-mas "1Password 7", id: 1333542190
 mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
 mas "CopyClip", id: 595191960
