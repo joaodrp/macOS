@@ -2,9 +2,10 @@ all: sync config
 
 sync:
 	mkdir -p ~/.config/alacritty
-	mkdir -p ~/.config/fish
-	mkdir -p ~/.tmux/
-	mkdir -p ~/.gnupg/
+	mkdir ~/.config/fish
+	mkdir ~/.tmux/
+	mkdir ~/.gnupg/
+	mkdir ~/Developer
 
 	[ -f ~/.config/alacritty/alacritty.yml ] || ln -s $(PWD)/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 	[ -f ~/.config/alacritty/colors.yml ] || ln -s $(PWD)/alacritty/colors.yml ~/.config/alacritty/colors.yml
