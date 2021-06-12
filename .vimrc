@@ -18,7 +18,7 @@ Plug 'ervandew/supertab'
 Plug 'gruvbox-community/gruvbox'
 Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fatih/vim-hclfmt'
 Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
 Plug 'godlygeek/tabular'
