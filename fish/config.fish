@@ -52,7 +52,7 @@ gpgconf --launch gpg-agent
 
 # Set correct tmuxline theme on start
 if set -q TMUX
-  sync_tmux_background
+  # sync_tmux_background # FIXME: tmux-prefix-highlight does not work with this
 end
 
 # TODO: review plugins:
