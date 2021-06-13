@@ -4,7 +4,7 @@ function change_background --argument mode_setting
 
   set -l mode "light" # default value
   if test -z $mode_setting
-    set -l val (defaults read -g AppleInterfaceStyle) >/dev/null
+    set -l val (defaults read -g AppleInterfaceStyle > /dev/null 2>&1)
     if test $status -eq 0
       set mode "dark"
     end
@@ -35,16 +35,16 @@ function change_background --argument mode_setting
   # change tmux
   switch $mode
     case dark
-      tmux source-file ~/.tmux/statusbar-dark.conf
+      tmux source-file ~/.tmux/tmuxline-dark.conf
     case light
-      tmux source-file ~/.tmux/statusbar-light.conf
+      tmux source-file ~/.tmux/tmuxline-light.conf
   end
 
   # change alacritty
   switch $mode
     case dark
-      alacritty-theme gruvbox_dark
+      alacritty_theme gruvbox_dark
     case light
-      alacritty-theme gruvbox_light
+      alacritty_theme gruvbox_light
   end
 end

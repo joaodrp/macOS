@@ -50,6 +50,11 @@ set -x GPG_TTY (tty)
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+# Set correct tmuxline theme on start
+if set -q TMUX
+  sync_tmux_background
+end
+
 # TODO: review plugins:
 # mattgreen/lucid.fish
 # pure-fish/pure

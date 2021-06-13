@@ -13,8 +13,8 @@ sync:
 	[ -d ~/.config/fish/functions/ ] || ln -s $(PWD)/fish/functions ~/.config/fish/functions
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux/.tmux.conf ~/.tmux.conf
-	[ -f ~/.tmux/statusbar-dark.conf ] || ln -s $(PWD)/tmux/statusbar-dark.conf ~/.tmux/statusbar-dark.conf
-	[ -f ~/.tmux/statusbar-light.conf ] || ln -s $(PWD)/tmux/statusbar-light.conf ~/.tmux/statusbar-light.conf
+	[ -f ~/.tmux/tmuxline-dark.conf ] || ln -s $(PWD)/tmux/tmuxline-dark.conf ~/.tmux/tmuxline-dark.conf
+	[ -f ~/.tmux/tmuxline-light.conf ] || ln -s $(PWD)/tmux/tmuxline-light.conf ~/.tmux/tmuxline-light.conf
 	[ -f ~/.gnupg/gpg.conf ] || ln -s $(PWD)/gnupg/gpg.conf ~/.gnupg/gpg.conf
 	[ -f ~/.gnupg/gpg-agent.conf ] || ln -s $(PWD)/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 	[ -f ~/.gnupg/scdaemon.conf ] || ln -s $(PWD)/gnupg/scdaemon.conf ~/.gnupg/scdaemon.conf
