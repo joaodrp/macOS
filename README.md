@@ -59,4 +59,7 @@ wget -P $tmpdir https://www.voxengo.com/files/VoxengoMarvelGEQ_110_Mac_VST_VST3_
 hdiutil attach $tmpdir/VoxengoMarvelGEQ_110_Mac_VST_VST3_setup.dmg
 sudo cp -r /Volumes/Voxengo\ Marvel\ GEQ\ 1.10\ VST2_VST3/Marvel\ GEQ.vst /Library/Audio/Plug-Ins/VST
 rm -rf $tmpdir
+
+# Fish completions
+wget -P ~/.config/fish/completions https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.fish
 ```
