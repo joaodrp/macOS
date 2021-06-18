@@ -36,7 +36,7 @@ defaults -currentHost write -g AppleFontSmoothing -int 0
 launchctl load -w ~/Library/LaunchAgents/dark-mode-notify.plist
 
 # install asdf plugins and versions
-for lang in golang ruby nodejs python
+for lang in golang ruby rust nodejs python
     asdf plugin add $lang
     asdf install $lang latest
     asdf global $lang latest
