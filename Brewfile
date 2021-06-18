@@ -66,6 +66,8 @@ brew "ffmpeg"
 brew "findutils"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
+# CLI program that accepts piped input and presents files for selection
+brew "fpp"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Toolkit for image loading and pixel buffer manipulation
@@ -114,8 +116,6 @@ brew "httpie"
 brew "httpstat"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
@@ -138,6 +138,8 @@ brew "minio"
 brew "mitmproxy"
 # NCurses Disk Usage
 brew "ncdu"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim", args: ["HEAD"]
 # PostgreSQL syntax beautifier
 brew "pgformatter"
 # Pinentry for GPG on Mac
@@ -232,6 +234,8 @@ cask "font-jetbrains-mono"
 cask "font-source-code-pro"
 # Solution that turns X Series and GFX System digital cameras into webcams
 cask "fujifilm-x-webcam"
+# Geo location editor for images
+cask "geotag"
 # Go (golang) IDE
 cask "goland"
 # Web browser
@@ -257,6 +261,8 @@ cask "ngrok"
 cask "numi"
 # Open-source software for live streaming and screen recording
 cask "obs"
+# Verify system files structure, run miscellaneous maintenance and more
+cask "onyx"
 # Desktop virtualization software
 cask "parallels"
 # Move and resize windows using keyboard shortcuts or snap areas
@@ -265,10 +271,6 @@ cask "rectangle"
 cask "rubymine"
 # Team communication and collaboration software
 cask "slack"
-# Music streaming service
-cask "spotify"
-# Music streaming service with high fidelity sound and hi-def video quality
-cask "tidal"
 # Configurable document editor that supports Markdown
 cask "typora"
 # Tool to hide menu bar icons
@@ -279,14 +281,7 @@ cask "visual-studio-code"
 cask "vlc"
 # Video communication and virtual meeting platform
 cask "zoom"
-mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
-mas "CopyClip", id: 595191960
-mas "Flow", id: 1423210932
 mas "Okta Extension App", id: 1439967473
 mas "Parcel", id: 639968404
 mas "Pocket", id: 568494494
-mas "Save to Pocket", id: 1477385213
-mas "Things", id: 904280696
-mas "WiFi Signal", id: 525912054
-mas "Xcode", id: 497799835
