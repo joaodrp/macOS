@@ -17,8 +17,10 @@ fish_add_path \
 	(npm config get prefix)/bin \
 	$HOME/go/bin
 
-alias cat="bat"
-alias ll="exa -l"
+# Aliases
+alias cat bat
+alias ls exa
+alias vim nvim
 
 # git prompt settings
 set -g __fish_git_prompt_show_informative_status 1
