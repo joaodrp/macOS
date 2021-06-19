@@ -162,6 +162,8 @@ brew "ripgrep"
 brew "ruby"
 # Collection of tools for managing UNIX services
 brew "runit"
+# Store SSH keys in the Secure Enclave
+brew "secretive"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Add a public key to a remote machine's authorized_keys file
