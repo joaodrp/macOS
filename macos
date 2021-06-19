@@ -76,6 +76,10 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Never reopen apps after a restart
+sudo chown root ~/Library/Preferences/ByHost/com.apple.loginwindow*
+sudo chmod 000 ~/Library/Preferences/ByHost/com.apple.loginwindow*
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
