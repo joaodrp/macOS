@@ -62,4 +62,10 @@ rm -rf $tmpdir
 
 # Fish completions
 wget -P ~/.config/fish/completions https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.fish
+
+# Loopback alias
+sudo cp com.joaodrp.loopback-alias.plist /Library/LaunchDaemons/
+sudo chmod 0644 /Library/LaunchDaemons/com.joaodrp.loopback-alias.plist
+sudo chown root:wheel /Library/LaunchDaemons/com.joaodrp.loopback-alias.plist
+launchctl load /Library/LaunchDaemons/com.joaodrp.loopback-alias.plist
 ```
