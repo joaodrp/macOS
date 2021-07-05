@@ -6,6 +6,8 @@ sync:
 	mkdir -p ~/.tmux/
 	mkdir -p ~/.gnupg/
 	mkdir -p ~/Developer
+	mkdir -p ~/.mitmproxy/
+	mkdir -p ~/.config/bat/
 
 	[ -f ~/.config/alacritty/alacritty.yml ] || ln -s $(PWD)/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 	[ -f ~/.config/alacritty/colors.yml ] || ln -s $(PWD)/alacritty/colors.yml ~/.config/alacritty/colors.yml
@@ -29,6 +31,8 @@ sync:
 	[ -f ~/.psqlrc ] || ln -s $(PWD)/.psqlrc ~/.psqlrc
 	[ -f ~/.psqlrc.local ] || touch ~/.psqlrc.local
 	[ -f ~/Library/LaunchAgents/dark-mode-notify.plist ] || ln -s $(PWD)/dark-mode-notify.plist ~/Library/LaunchAgents/dark-mode-notify.plist
+	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
+	[ -f ~/.mitmproxy/config.yaml ] || ln -s $(PWD)/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
 
 config:
 	./macos
@@ -42,7 +46,7 @@ clean:
 	rm -f ~/.config/alacritty/alacritty.yml
 	rm -f ~/.config/alacritty/colors.yml
 	rm -f ~/.config/fish/config.fish
-	rm -f ~/.config/fish/functions/
+	rm -rf ~/.config/fish/functions/
 	rm -f ~/.tmux.conf
 	rm -f ~/.gnupg/gpg.conf
 	rm -f ~/.gnupg/gpg-agent.conf
@@ -55,5 +59,7 @@ clean:
 	rm -f ~/.hushlogin
 	rm -f ~/.psqlrc
 	rm -f ~/Library/LaunchAgents/dark-mode-notify.plist
+	rm -f ~/.config/bat/config
+	rm -f ~/.mitmproxy/config.yaml
 
 .PHONY: all sync config icons clean
