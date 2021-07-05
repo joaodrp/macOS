@@ -16,8 +16,6 @@ brew "sqlite"
 brew "asciinema"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
-# YAML Parser
-brew "libyaml"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Official Amazon AWS command-line interface
@@ -26,10 +24,6 @@ brew "awscli"
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# GNU internationalization (i18n) and localization (l10n) library
-brew "gettext"
-# Manage compile and link flags for libraries
-brew "pkg-config"
 # Statistics utility to count lines of code
 brew "cloc"
 # Cross-platform make
@@ -54,8 +48,6 @@ brew "docker-compose", link: false
 brew "docker-slim"
 # Modern replacement for 'ls'
 brew "exa"
-# Perl lib for reading and writing EXIF metadata
-brew "exiftool"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # GNU Transport Layer Security (TLS) Library
@@ -78,6 +70,8 @@ brew "git"
 brew "git-crypt"
 # Git extension for versioning large files
 brew "git-lfs"
+# Render markdown on the CLI
+brew "glow"
 # Command-line option parsing utility
 brew "gnu-getopt"
 # GNU implementation of the famous stream editor
@@ -162,10 +156,10 @@ brew "ripgrep"
 brew "ruby"
 # Collection of tools for managing UNIX services
 brew "runit"
-# Store SSH keys in the Secure Enclave
-brew "secretive"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Terminal based presentation tool
+brew "slides"
 # Add a public key to a remote machine's authorized_keys file
 brew "ssh-copy-id"
 # Statistics from the command-line
@@ -209,6 +203,8 @@ brew "zlib"
 # Super fast CLI tool to decode and encode JWTs built in Rust
 brew "mike-engel/jwt-cli/jwt-cli"
 brew "shopify/shopify/toxiproxy"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
 # GPU-accelerated terminal emulator
@@ -217,6 +213,8 @@ cask "alacritty"
 cask "appcleaner"
 # Control and Loop-back Mixer
 cask "audient-evo"
+# Menu bar icon organizer
+cask "bartender"
 # Virtual Audio Driver
 cask "blackhole-2ch"
 # Automated testing of webapps for Google Chrome
@@ -229,6 +227,8 @@ cask "docker"
 cask "duet"
 # Screen color temperature controller
 cask "flux"
+# Download manager with a torrent client
+cask "folx"
 cask "font-inconsolata"
 cask "font-inconsolata-for-powerline"
 # Typeface made for developers
@@ -255,6 +255,8 @@ cask "keka"
 cask "little-snitch"
 # Software for Logitech devices
 cask "logitech-options"
+# Tool to create text-based art
+cask "monodraw"
 # Orchestrates virtual Ubuntu instances
 cask "multipass"
 # Reverse proxy, secure introspectable tunnels to localhost
@@ -271,6 +273,8 @@ cask "parallels"
 cask "rectangle"
 # Ruby on Rails IDE
 cask "rubymine"
+# Store SSH keys in the Secure Enclave
+cask "secretive"
 # Team communication and collaboration software
 cask "slack"
 # Configurable document editor that supports Markdown
@@ -283,7 +287,13 @@ cask "visual-studio-code"
 cask "vlc"
 # Video communication and virtual meeting platform
 cask "zoom"
+# Temporary makeshift alias for the video communication tool Zoom
+cask "zoomus"
 mas "Amphetamine", id: 937984704
+mas "CopyClip", id: 595191960
+mas "Grammarly for Safari", id: 1462114288
+mas "Key Codes", id: 414568915
 mas "Okta Extension App", id: 1439967473
 mas "Parcel", id: 639968404
 mas "Pocket", id: 568494494
+mas "Things", id: 904280696
