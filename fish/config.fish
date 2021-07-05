@@ -20,7 +20,8 @@ fish_add_path \
 # Aliases
 alias cat bat
 alias ls exa
-alias vim nvim
+alias tree 'exa -T'
+alias watch 'watch -d'
 
 # git prompt settings
 set -g __fish_git_prompt_show_informative_status 1
