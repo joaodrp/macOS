@@ -48,12 +48,12 @@ function change_background --argument mode_setting
       alacritty_theme gruvbox_light
   end
 
-  # change alacritty
+  # change bat
   switch $mode
     case dark
-      alacritty_theme gruvbox-dark
+      bat_theme gruvbox-dark
     case light
-      alacritty_theme gruvbox-light
+      bat_theme gruvbox-light
   end
 
   # change mitmproxy
