@@ -6,7 +6,8 @@ fish_add_path \
 	/usr/local/opt/gnu-time/libexec/gnubin \
 	/usr/local/opt/grep/libexec/gnubin \
 	/usr/local/opt/ssh-copy-id/bin \
-	/usr/local/opt/curl/bin
+	/usr/local/opt/curl/bin \
+	/usr/local/opt/openssl/bin
 
 set -gx EDITOR vim
 set -gx GOBIN $HOME/go/bin
