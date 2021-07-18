@@ -65,3 +65,24 @@ wget -P ~/.config/fish/completions https://raw.githubusercontent.com/tmuxinator/
 
 ln -shi /Applications/Docker.app/Contents/Resources/etc/docker.fish-completion ~/.config/fish/completions/docker.fish
 ln -shi /Applications/Docker.app/Contents/Resources/etc/docker-compose.fish-completion ~/.config/fish/completions/docker-compose.fish
+
+# Loopback aliases
+for target in app registry proxy
+    sudo cp network/dev.$target.lo0-alias.plist /Library/LaunchDaemons/
+    sudo chmod 0644 /Library/LaunchDaemons/dev.$target.lo0-alias.plist
+    sudo chown root:wheel /Library/LaunchDaemons/dev.$target.lo0-alias.plist
+    sudo launchctl load /Library/LaunchDaemons/dev.$target.lo0-alias.plist
+end
+
+cat network/hosts | sudo tee -a /private/etc/hosts
+
+mkdir ~/.config/certs
+for target in app registry proxy
+    openssl req \
+        -newkey rsa:4096 -nodes -sha256 -keyout ~/.config/certs/$target.dev.key \
+        -addext "subjectAltName = DNS:$target.dev" \
+        -x509 -out ~/.config/certs/$target.dev.crt -subj "/C=PT/CN=$target.dev"
+
+    sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/.config/certs/$target.dev.crt
+end
+```
