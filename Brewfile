@@ -90,6 +90,8 @@ brew "gnuplot"
 brew "go-jsonnet"
 # Fast linters runner for Go
 brew "golangci-lint"
+# Ping, but with a graph
+brew "gping"
 # Image processing tools collection
 brew "graphicsmagick"
 # Graph visualization software from AT&T and Bell Labs
@@ -139,7 +141,7 @@ brew "pgformatter"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Object-relational database system
-brew "postgresql"
+brew "postgresql", restart_service: true
 # Show ps output as a tree
 brew "pstree"
 # Rsync for cloud storage
@@ -209,6 +211,8 @@ cask "1password"
 cask "1password-cli"
 # GPU-accelerated terminal emulator
 cask "alacritty"
+# Utility to set up alt-tab to switch between windows
+cask "alt-tab"
 # Application uninstaller
 cask "appcleaner"
 # Control and Loop-back Mixer
@@ -225,6 +229,8 @@ cask "dash"
 cask "docker"
 # Tool for using an iPad as a second display
 cask "duet"
+# Web browser
+cask "firefox"
 # Screen color temperature controller
 cask "flux"
 # Download manager with a torrent client
@@ -255,6 +261,8 @@ cask "keka"
 cask "little-snitch"
 # Software for Logitech devices
 cask "logitech-options"
+# Clipboard manager
+cask "maccy"
 # Tool to create text-based art
 cask "monodraw"
 # Orchestrates virtual Ubuntu instances
@@ -290,7 +298,6 @@ cask "zoom"
 # Temporary makeshift alias for the video communication tool Zoom
 cask "zoomus"
 mas "Amphetamine", id: 937984704
-mas "CopyClip", id: 595191960
 mas "Grammarly for Safari", id: 1462114288
 mas "Key Codes", id: 414568915
 mas "Okta Extension App", id: 1439967473
