@@ -10,8 +10,6 @@ tap "mike-engel/jwt-cli"
 tap "shopify/shopify"
 # Download with resuming and segmented downloading
 brew "aria2"
-# Command-line interface for SQLite
-brew "sqlite"
 # Record and share terminal sessions
 brew "asciinema"
 # GNU File, Shell, and Text utilities
@@ -44,14 +42,10 @@ brew "direnv"
 brew "dive"
 # Isolated development environments using Docker
 brew "docker-compose", link: false
-# Minify and secure Docker images
-brew "docker-slim"
 # Modern replacement for 'ls'
 brew "exa"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
@@ -62,8 +56,6 @@ brew "fish"
 brew "fpp"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Toolkit for image loading and pixel buffer manipulation
-brew "gdk-pixbuf"
 # Distributed revision control system
 brew "git"
 # Enable transparent encryption/decryption of files in a git repo
@@ -82,8 +74,6 @@ brew "gnu-tar"
 brew "gnu-time"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# Framework for layout and rendering of i18n text
-brew "pango"
 # Command-driven, interactive function plotting
 brew "gnuplot"
 # Go implementation of configuration language for defining JSON data
@@ -110,8 +100,6 @@ brew "htop"
 brew "httpie"
 # Curl statistics made simple
 brew "httpstat"
-# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
-brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
@@ -135,7 +123,7 @@ brew "mitmproxy"
 # NCurses Disk Usage
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 # PostgreSQL syntax beautifier
 brew "pgformatter"
 # Pinentry for GPG on Mac
@@ -154,8 +142,6 @@ brew "reattach-to-user-namespace"
 brew "rename"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 # Collection of tools for managing UNIX services
 brew "runit"
 # Static analysis and lint tool, for (ba)sh scripts
@@ -205,18 +191,14 @@ brew "zlib"
 # Super fast CLI tool to decode and encode JWTs built in Rust
 brew "mike-engel/jwt-cli/jwt-cli"
 brew "shopify/shopify/toxiproxy"
-# Password manager that keeps all passwords secure behind one password
-cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Utility to set up alt-tab to switch between windows
 cask "alt-tab"
-# Application uninstaller
-cask "appcleaner"
-# Control and Loop-back Mixer
-cask "audient-evo"
+# Records audio from any application
+cask "audio-hijack"
 # Menu bar icon organizer
 cask "bartender"
 # Virtual Audio Driver
@@ -240,10 +222,6 @@ cask "font-inconsolata-for-powerline"
 # Typeface made for developers
 cask "font-jetbrains-mono"
 cask "font-source-code-pro"
-# Solution that turns X Series and GFX System digital cameras into webcams
-cask "fujifilm-x-webcam"
-# Geo location editor for images
-cask "geotag"
 # Go (golang) IDE
 cask "goland"
 # Web browser
@@ -252,15 +230,11 @@ cask "google-chrome"
 cask "google-cloud-sdk"
 # Utility to fix grammar errors and style issues in text
 cask "grammarly"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
 cask "itunes-volume-control"
 # File archiver
 cask "keka"
 # Host-based application firewall
 cask "little-snitch"
-# Software for Logitech devices
-cask "logitech-options"
 # Clipboard manager
 cask "maccy"
 # Tool to create text-based art
@@ -285,6 +259,8 @@ cask "rubymine"
 cask "secretive"
 # Team communication and collaboration software
 cask "slack"
+# Sound and audio controller
+cask "soundsource"
 # Configurable document editor that supports Markdown
 cask "typora"
 # Tool to hide menu bar icons
@@ -295,12 +271,10 @@ cask "visual-studio-code"
 cask "vlc"
 # Video communication and virtual meeting platform
 cask "zoom"
-# Temporary makeshift alias for the video communication tool Zoom
-cask "zoomus"
+mas "1Password 7", id: 1333542190
 mas "Amphetamine", id: 937984704
 mas "Grammarly for Safari", id: 1462114288
 mas "Key Codes", id: 414568915
 mas "Okta Extension App", id: 1439967473
 mas "Parcel", id: 639968404
 mas "Pocket", id: 568494494
-mas "Things", id: 904280696
