@@ -3,17 +3,16 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.joaodrp.loopback-alias</string>
+    <string>dev.pfctl</string>
     <key>RunAtLoad</key>
     <true/>
-    <key>Nice</key>
-    <integer>10</integer>
     <key>ProgramArguments</key>
     <array>
-      <string>/sbin/ifconfig</string>
-      <string>lo0</string>
-      <string>alias</string>
-      <string>172.16.123.1</string>
+        <string>sh</string>
+        <string>-c</string>
+        <string>cat /etc/pf.anchors/dev | sudo pfctl -ef - &amp;&amp; sysctl -w net.inet.ip.forwarding=1</string>
     </array>
+    <key>UserName</key>
+    <string>root</string>
 </dict>
 </plist>

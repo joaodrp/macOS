@@ -19,7 +19,6 @@ sync:
 	[ -f ~/.tmux/tmuxline-light.conf ] || ln -s $(PWD)/tmux/tmuxline-light.conf ~/.tmux/tmuxline-light.conf
 	[ -f ~/.gnupg/gpg.conf ] || ln -s $(PWD)/gnupg/gpg.conf ~/.gnupg/gpg.conf
 	[ -f ~/.gnupg/gpg-agent.conf ] || ln -s $(PWD)/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
-	[ -f ~/.gnupg/scdaemon.conf ] || ln -s $(PWD)/gnupg/scdaemon.conf ~/.gnupg/scdaemon.conf
 	[ -f ~/.tigrc ] || ln -s $(PWD)/.tigrc ~/.tigrc
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/.gitconfig ~/.gitconfig
 	[ -f ~/.gitignore ] || ln -s $(PWD)/gitignore ~/.gitignore
@@ -30,9 +29,14 @@ sync:
 	[ -f ~/.hushlogin ] || ln -s $(PWD)/.hushlogin ~/.hushlogin
 	[ -f ~/.psqlrc ] || ln -s $(PWD)/.psqlrc ~/.psqlrc
 	[ -f ~/.psqlrc.local ] || touch ~/.psqlrc.local
-	[ -f ~/Library/LaunchAgents/dark-mode-notify.plist ] || ln -s $(PWD)/dark-mode-notify.plist ~/Library/LaunchAgents/dark-mode-notify.plist
+	[ -f ~/Library/LaunchAgents/dark-mode-notify.plist ] || ln -s $(PWD)/dark-mode-notify/dark-mode-notify.plist ~/Library/LaunchAgents/dark-mode-notify.plist
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
 	[ -f ~/.mitmproxy/config.yaml ] || ln -s $(PWD)/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
+
+	gpgconf --kill dirmngr
+	chown -R $$USER ~/.gnupg/
+	find ~/.gnupg -type f -exec chmod 600 {} \;
+	find ~/.gnupg -type d -exec chmod 700 {} \;
 
 config:
 	./macos
@@ -50,7 +54,6 @@ clean:
 	rm -f ~/.tmux.conf
 	rm -f ~/.gnupg/gpg.conf
 	rm -f ~/.gnupg/gpg-agent.conf
-	rm -f ~/.gnupg/scdaemon.conf
 	rm -f ~/.tigrc
 	rm -f ~/.gitconfig
 	rm -f ~/.gitignore

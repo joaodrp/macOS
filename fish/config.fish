@@ -12,8 +12,6 @@ fish_add_path \
 set -gx EDITOR vim
 set -gx GOBIN $HOME/go/bin
 
-source /usr/local/opt/asdf/asdf.fish
-
 fish_add_path \
 	(npm config get prefix)/bin \
 	$HOME/go/bin
@@ -55,6 +53,10 @@ if set -q TMUX
   # sync_tmux_background # FIXME: tmux-prefix-highlight does not work with this
 end
 
+# asdf
+set -x ASDF_DIR (brew --prefix asdf)/libexec
+source $ASDF_DIR/asdf.fish
+
 # TODO: review plugins:
 # mattgreen/lucid.fish
 # pure-fish/pure
@@ -68,3 +70,6 @@ source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.i
 
 # Sensitive or local stuff not pushed to git
 source ~/.config/fish/local.fish
+
+# Docker
+set -x DOCKER_HOST docker.local

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>dev.proxy.loopback-alias</string>
+    <string>dev.proxy.lo0-alias</string>
     <key>RunAtLoad</key>
     <true/>
     <key>ProgramArguments</key>

@@ -49,7 +49,6 @@ curl -sL https://git.io/fisher | source \
 fisher install \
     jorgebucaran/autopair.fish \
     gazorby/fish-abbreviation-tips \
-    jethrokuan/z \
     mattgreen/lucid.fish \
     lgathy/google-cloud-sdk-fish-completion
 
@@ -85,4 +84,15 @@ for target in app registry proxy
 
     sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/.config/certs/$target.dev.crt
 end
+
+# Redirect ports 80 and 443 to 8080 and 8443 respectively
+# https://gist.github.com/novemberborn/aea3ea5bac3652a1df6b
+sudo ln -s $(PWD)/network/dev /etc/pf.anchors/dev
+# make /etc/pf.conf match ./network/pf.conf
+sudo pfctl -v -n -f /etc/pf.conf
+sudo pfctl -ef /etc/pf.conf
+sudo cp network/dev.pfctl.plist /Library/LaunchDaemons/
+sudo chmod 0644 /Library/LaunchDaemons/dev.pfctl.plist
+sudo chown root:wheel /Library/LaunchDaemons/dev.pfctl.plist
+sudo launchctl load /Library/LaunchDaemons/dev.pfctl.plist
 ```

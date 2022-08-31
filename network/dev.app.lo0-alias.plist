@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>dev.app.loopback-alias</string>
+    <string>dev.app.lo0-alias</string>
     <key>RunAtLoad</key>
     <true/>
     <key>ProgramArguments</key>
