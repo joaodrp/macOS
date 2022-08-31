@@ -41,7 +41,11 @@ brew "direnv"
 # Tool for exploring each layer in a docker image
 brew "dive"
 # Isolated development environments using Docker
-brew "docker-compose", link: false
+brew "docker-compose"
+# Text processing system for reStructuredText
+brew "docutils"
+# GNU version of the tar archiving utility
+brew "gnu-tar"
 # Modern replacement for 'ls'
 brew "exa"
 # Simple, fast and user-friendly alternative to find
@@ -64,14 +68,12 @@ brew "git-crypt"
 brew "git-lfs"
 # Render markdown on the CLI
 brew "glow"
-# Command-line option parsing utility
-brew "gnu-getopt"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
-# GNU version of the tar archiving utility
-brew "gnu-tar"
 # GNU implementation of time utility
 brew "gnu-time"
+# Passphrase entry dialog utilizing the Assuan protocol
+brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Command-driven, interactive function plotting
@@ -124,10 +126,14 @@ brew "mitmproxy"
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
+brew "nginx", restart_service: true
 # PostgreSQL syntax beautifier
 brew "pgformatter"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
+# Tool for managing OCI containers and pods
+brew "podman"
 # Object-relational database system
 brew "postgresql", restart_service: true
 # Show ps output as a tree
@@ -138,6 +144,8 @@ brew "rclone"
 brew "re2"
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
+# Persistent key-value database, with built-in net interface
+brew "redis", restart_service: true
 # Perl-powered file rename script with many helpful built-ins
 brew "rename"
 # Search tool like grep and The Silver Searcher
@@ -146,6 +154,8 @@ brew "ripgrep"
 brew "runit"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Work with remote images registries
+brew "skopeo"
 # Terminal based presentation tool
 brew "slides"
 # Add a public key to a remote machine's authorized_keys file
@@ -156,6 +166,8 @@ brew "st"
 brew "stern"
 # Version control system designed to be a better CVS
 brew "subversion"
+# Modern SSH server for teams managing distributed infrastructure
+brew "teleport"
 # User interface to the TELNET protocol
 brew "telnet"
 # Send macOS User Notifications from the command-line
@@ -180,6 +192,10 @@ brew "vim"
 brew "watch"
 # Internet file retriever
 brew "wget"
+# Linter for YAML files
+brew "yamllint"
+# JavaScript package manager
+brew "yarn"
 # Tool for managing your YubiKey configuration
 brew "ykman"
 # YubiKey personalization library and tool
@@ -195,7 +211,7 @@ brew "shopify/shopify/toxiproxy"
 cask "1password-cli"
 # GPU-accelerated terminal emulator
 cask "alacritty"
-# Utility to set up alt-tab to switch between windows
+# Enable Windows-like alt-tab
 cask "alt-tab"
 # Records audio from any application
 cask "audio-hijack"
@@ -207,8 +223,6 @@ cask "blackhole-2ch"
 cask "chromedriver"
 # API documentation browser and code snippet manager
 cask "dash"
-# App to build and share containerized applications and microservices
-cask "docker"
 # Tool for using an iPad as a second display
 cask "duet"
 # Web browser
@@ -222,6 +236,8 @@ cask "font-inconsolata-for-powerline"
 # Typeface made for developers
 cask "font-jetbrains-mono"
 cask "font-source-code-pro"
+# Displays all your GitLab activities in one place
+cask "gitdock"
 # Go (golang) IDE
 cask "goland"
 # Web browser
@@ -230,6 +246,9 @@ cask "google-chrome"
 cask "google-cloud-sdk"
 # Utility to fix grammar errors and style issues in text
 cask "grammarly"
+# HTTP and GraphQL Client
+cask "insomnia"
+# Control the volume of Apple Music and Spotify using keyboard volume keys
 cask "itunes-volume-control"
 # File archiver
 cask "keka"
@@ -251,6 +270,8 @@ cask "obs"
 cask "onyx"
 # Desktop virtualization software
 cask "parallels"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Ruby on Rails IDE
@@ -271,10 +292,3 @@ cask "visual-studio-code"
 cask "vlc"
 # Video communication and virtual meeting platform
 cask "zoom"
-mas "1Password 7", id: 1333542190
-mas "Amphetamine", id: 937984704
-mas "Grammarly for Safari", id: 1462114288
-mas "Key Codes", id: 414568915
-mas "Okta Extension App", id: 1439967473
-mas "Parcel", id: 639968404
-mas "Pocket", id: 568494494
