@@ -21,6 +21,8 @@
 	whoami = config user.email
 	# Reset permission changes
 	permission-reset = !git diff -p -R --no-ext-diff --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
+	# Stash changes but keep them visible
+	stash-keep = "!git stash store $(git stash create)"
 	[branch]
 	# Show most recently changed branches first.
 	sort = -committerdate
