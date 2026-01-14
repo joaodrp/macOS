@@ -226,7 +226,7 @@ chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
 sudo chflags nohidden /Volumes
 
 ###############################################################################
-# Dock, Dashboard, and hot corners                                            #
+# Dock and hot corners                                                        #
 ###############################################################################
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
@@ -241,16 +241,10 @@ defaults write com.apple.dock minimize-to-application -bool true
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
 
-# Don’t animate opening applications from the Dock
+# Don't animate opening applications from the Dock
 defaults write com.apple.dock launchanim -bool false
 
-# Disable Dashboard
-defaults write com.apple.dashboard mcx-disabled -bool true
-
-# Don’t show Dashboard as a Space
-defaults write com.apple.dock dashboard-in-overlay -bool true
-
-# Don’t automatically rearrange Spaces based on most recent use
+# Don't automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
 # Make Dock icons of hidden applications translucent
