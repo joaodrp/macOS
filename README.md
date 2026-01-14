@@ -11,13 +11,7 @@ cp /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SF-Mono*
 make
 
 # make fish the new default
-chsh -s /usr/local/bin/fish
-
-# dark-mode-notify
-set tmpdir (mktemp -d)
-git clone https://github.com/bouk/dark-mode-notify.git $tmpdir
-swiftc $tmpdir/dark-mode-notify.swift -o /usr/local/bin/dark-mode-notify
-rm -rf $tmpdir
+chsh -s /opt/homebrew/bin/fish
 
 # setup vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -31,9 +25,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # disable font smoothing
 defaults -currentHost write -g AppleFontSmoothing -int 0
-
-# enable dark mode notify service
-launchctl load -w ~/Library/LaunchAgents/dark-mode-notify.plist
 
 # install asdf plugins and versions
 for lang in golang ruby rust nodejs python
