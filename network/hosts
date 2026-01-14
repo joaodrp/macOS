@@ -1,5 +1,0 @@
-# BEGIN DEV ALIASES
-172.16.123.1 registry.dev
-172.16.123.2 app.dev
-172.16.123.3 proxy.dev
-# END DEV ALIASES

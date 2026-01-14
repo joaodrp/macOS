@@ -1,6 +1,0 @@
-rdr pass on lo0 inet proto tcp from any to 172.16.123.1 port 80 -> 172.16.123.1 port 8080
-rdr pass on lo0 inet proto tcp from any to 172.16.123.1 port 443 -> 172.16.123.1 port 8443
-rdr pass on lo0 inet proto tcp from any to 172.16.123.2 port 80 -> 172.16.123.2 port 8080
-rdr pass on lo0 inet proto tcp from any to 172.16.123.2 port 443 -> 172.16.123.2 port 8443
-rdr pass on lo0 inet proto tcp from any to 172.16.123.3 port 80 -> 172.16.123.3 port 8080
-rdr pass on lo0 inet proto tcp from any to 172.16.123.3 port 443 -> 172.16.123.3 port 8443

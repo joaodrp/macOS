@@ -15,7 +15,6 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── tmux/             # tmux configuration and themes
 ├── ghostty/          # Ghostty terminal config
 ├── gnupg/            # GPG agent configuration
-├── network/          # Local .dev domain routing setup
 ├── bat/              # bat (cat replacement) config
 └── mitmproxy/        # HTTP proxy config
 ```
@@ -69,9 +68,3 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 - **Multiplexer**: tmux with Ctrl+A prefix, vim-style navigation
 - **Terminal**: Ghostty with Gruvbox theme (auto dark/light mode)
 
-## Local Development
-
-The `network/` directory sets up `.dev` domain routing:
-- Loopback aliases on 172.16.123.x
-- Port forwarding 80/443 → 8080/8443 via pfctl
-- Requires manual LaunchDaemon installation
