@@ -1,13 +1,22 @@
+# Local functions (not tracked in git)
+set -p fish_function_path ~/.config/fish/functions.local
+
+# Homebrew
+eval (/opt/homebrew/bin/brew shellenv)
+
 # Promote Homebrew installs
 fish_add_path \
-	/usr/local/opt/findutils/libexec/gnubin \
-	/usr/local/opt/gnu-sed/libexec/gnubin \
-	/usr/local/opt/gnu-tar/libexec/gnubin \
-	/usr/local/opt/gnu-time/libexec/gnubin \
-	/usr/local/opt/grep/libexec/gnubin \
-	/usr/local/opt/ssh-copy-id/bin \
-	/usr/local/opt/curl/bin \
-	/usr/local/opt/openssl/bin
+	(brew --prefix findutils)/libexec/gnubin \
+	(brew --prefix gnu-sed)/libexec/gnubin \
+	(brew --prefix gnu-tar)/libexec/gnubin \
+	(brew --prefix gnu-time)/libexec/gnubin \
+	(brew --prefix grep)/libexec/gnubin \
+	(brew --prefix grep)/coreutils/gnubin \
+	(brew --prefix ssh-copy-id)/bin \
+	(brew --prefix curl)/bin \
+	(brew --prefix postgresql@12)/bin \
+	(brew --prefix icu4c)/bin \
+	$HOME/.rd/bin
 
 set -gx EDITOR vim
 set -gx GOBIN $HOME/go/bin
@@ -21,6 +30,7 @@ alias cat bat
 alias ls exa
 alias tree 'exa -T'
 alias watch 'watch -d'
+alias vim nvim
 
 # git prompt settings
 set -g __fish_git_prompt_show_informative_status 1
@@ -53,10 +63,6 @@ if set -q TMUX
   # sync_tmux_background # FIXME: tmux-prefix-highlight does not work with this
 end
 
-# asdf
-set -x ASDF_DIR (brew --prefix asdf)/libexec
-source $ASDF_DIR/asdf.fish
-
 # TODO: review plugins:
 # mattgreen/lucid.fish
 # pure-fish/pure
@@ -66,10 +72,17 @@ source $ASDF_DIR/asdf.fish
 
 direnv hook fish | source
 
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
 
 # Sensitive or local stuff not pushed to git
 source ~/.config/fish/local.fish
 
 # Docker
-set -x DOCKER_HOST docker.local
+# set -x DOCKER_HOST tcp://192.168.64.2:2375
+
+# git
+set -x GIT_COMPLETION_CHECKOUT_NO_GUESS 1
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/jpereira/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
