@@ -206,8 +206,6 @@ cask "ghostty"
 cask "alt-tab"
 # Records audio from any application
 cask "audio-hijack"
-# Menu bar icon organizer
-cask "bartender"
 # Virtual Audio Driver
 cask "blackhole-2ch"
 # Automated testing of webapps for Google Chrome
@@ -275,8 +273,6 @@ cask "slack"
 cask "soundsource"
 # Configurable document editor that supports Markdown
 cask "typora"
-# Tool to hide menu bar icons
-cask "vanilla"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
