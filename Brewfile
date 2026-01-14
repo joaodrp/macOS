@@ -209,8 +209,8 @@ brew "mike-engel/jwt-cli/jwt-cli"
 brew "shopify/shopify/toxiproxy"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
-# GPU-accelerated terminal emulator
-cask "alacritty"
+# Terminal emulator with native dark mode support
+cask "ghostty"
 # Enable Windows-like alt-tab
 cask "alt-tab"
 # Records audio from any application

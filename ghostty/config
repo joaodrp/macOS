@@ -1,0 +1,43 @@
+# Ghostty configuration
+# Reload at runtime with cmd+shift+, (macOS)
+# Full config reference: ghostty +show-config --default --docs
+
+# Theme - auto-switches with macOS dark/light mode
+# List available themes with: ghostty +list-themes
+theme = light:Gruvbox Light Hard,dark:Gruvbox Dark Hard
+
+# Font family. List available fonts with: ghostty +list-fonts
+font-family = JetBrains Mono
+
+# Font size in points. Scaled appropriately for screen DPI
+font-size = 12
+
+# Horizontal window padding between terminal cells and window borders (in points)
+window-padding-x = 10
+
+# Vertical window padding between terminal cells and window borders (in points)
+window-padding-y = 10
+
+# Whether to save/restore window state across launches (macOS only)
+# Values: default, never, always
+window-save-state = always
+
+# Hide mouse cursor immediately when typing
+mouse-hide-while-typing = true
+
+# Auto-copy selected text to clipboard. 'clipboard' copies to both selection
+# and system clipboard. Middle-click paste always uses selection clipboard
+copy-on-select = clipboard
+
+# Disable cursor blinking. If unset, respects DEC Mode 12
+cursor-style-blink = false
+
+# Skip confirmation when closing a surface (tab/split/window)
+confirm-close-surface = false
+
+# Treat left Option key as Alt for terminal sequences
+# Values: true, false, left, right
+macos-option-as-alt = left
+
+# Keybindings - shift+enter sends literal newline (useful for multi-line input)
+keybind = shift+enter=text:\n
