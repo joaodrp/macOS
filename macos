@@ -104,6 +104,9 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # Show language menu in the top right corner of the boot screen
 sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
+# Set the timezone (see /var/db/timezone/zoneinfo for available zones)
+sudo ln -sf /var/db/timezone/zoneinfo/Europe/Lisbon /etc/localtime
+
 ###############################################################################
 # Energy saving                                                               #
 ###############################################################################
