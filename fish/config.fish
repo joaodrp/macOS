@@ -3,6 +3,7 @@ set -p fish_function_path ~/.config/fish/functions.local
 
 # Homebrew
 eval (/opt/homebrew/bin/brew shellenv)
+set -gx HOMEBREW_NO_ENV_HINTS 1
 
 # Promote Homebrew installs
 fish_add_path \
@@ -71,7 +72,7 @@ end
 
 direnv hook fish | source
 
-source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
+source "/opt/homebrew/Caskroom/gcloud-cli/latest/google-cloud-sdk/path.fish.inc"
 
 # Sensitive or local stuff not pushed to git
 source ~/.config/fish/local.fish

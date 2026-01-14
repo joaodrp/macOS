@@ -37,6 +37,9 @@ sync:
 	find ~/.gnupg -type f -exec chmod 600 {} \;
 	find ~/.gnupg -type d -exec chmod 700 {} \;
 
+brew:
+	brew bundle --verbose
+
 config:
 	./macos
 
@@ -58,4 +61,4 @@ clean:
 	rm -f ~/.config/bat/config
 	rm -f ~/.mitmproxy/config.yaml
 
-.PHONY: all sync config clean
+.PHONY: all sync brew config clean

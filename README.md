@@ -2,7 +2,7 @@
 
 ```
 # install all brew dependencies
-brew bundle
+make brew
 
 # install Apple SF Mono fonts
 cp /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SF-Mono*.otf ~/Library/Fonts/
@@ -50,9 +50,7 @@ hdiutil attach $tmpdir/VoxengoMarvelGEQ_110_Mac_VST_VST3_setup.dmg
 sudo cp -r /Volumes/Voxengo\ Marvel\ GEQ\ 1.10\ VST2_VST3/Marvel\ GEQ.vst /Library/Audio/Plug-Ins/VST
 rm -rf $tmpdir
 
-# Fish completions
-wget -P ~/.config/fish/completions https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.fish
-
+# Docker completions
 ln -shi /Applications/Docker.app/Contents/Resources/etc/docker.fish-completion ~/.config/fish/completions/docker.fish
 ln -shi /Applications/Docker.app/Contents/Resources/etc/docker-compose.fish-completion ~/.config/fish/completions/docker-compose.fish
 

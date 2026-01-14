@@ -1,14 +1,15 @@
+tap "anomalyco/tap"
 tap "joaodrp/tap"
 tap "mike-engel/jwt-cli"
+tap "mobile-dev-inc/tap"
 tap "shopify/shopify"
-# Download with resuming and segmented downloading
-brew "aria2"
+tap "steveyegge/beads"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
 # Record and share terminal sessions
 brew "asciinema"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
-# Extendable version manager with support for Ruby, Node.js, Erlang & more
-brew "asdf"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -17,18 +18,16 @@ brew "bash"
 brew "bat"
 # Statistics utility to count lines of code
 brew "cloc"
+# Cloudflare Tunnel client
+brew "cloudflared"
 # Cross-platform make
 brew "cmake"
-# Color-highlighted diff(1) output
-brew "colordiff"
 # Tool for interacting with remote images and registries
 brew "crane"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
-# Utility to replace problematic characters in filenames
-brew "detox"
-# Good-lookin' diffs with diff-highlight and more
-brew "diff-so-fancy"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Tool for exploring each layer in a docker image
@@ -37,8 +36,8 @@ brew "dive"
 brew "docker-compose"
 # Text processing system for reStructuredText
 brew "docutils"
-# GNU version of the tar archiving utility
-brew "gnu-tar"
+# Utilities for the ext2, ext3, and ext4 file systems
+brew "e2fsprogs"
 # Modern replacement for 'ls'
 brew "eza"
 # Simple, fast and user-friendly alternative to find
@@ -49,10 +48,10 @@ brew "ffmpeg"
 brew "findutils"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
-# CLI program that accepts piped input and presents files for selection
-brew "fpp"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GitHub command-line tool
+brew "gh"
 # Distributed revision control system
 brew "git"
 # Enable transparent encryption/decryption of files in a git repo
@@ -65,20 +64,18 @@ brew "glow"
 brew "gnu-sed"
 # GNU implementation of time utility
 brew "gnu-time"
+# GNU version of the tar archiving utility
+brew "gnu-tar"
 # Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Command-driven, interactive function plotting
 brew "gnuplot"
-# Go implementation of configuration language for defining JSON data
-brew "go-jsonnet"
 # Fast linters runner for Go
 brew "golangci-lint"
 # Ping, but with a graph
 brew "gping"
-# Image processing tools collection
-brew "graphicsmagick"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # Colorize logfiles and command output
@@ -87,8 +84,6 @@ brew "grc"
 brew "grep"
 # Kubernetes package manager
 brew "helm"
-# Command-line tools for OpenPGP-related operations
-brew "hopenpgp-tools"
 # Improved top (interactive process viewer)
 brew "htop"
 # User-friendly cURL replacement (command-line HTTP client)
@@ -99,8 +94,6 @@ brew "httpstat"
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Package manager for Jsonnet
-brew "jsonnet-bundler"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
 # Conversion library
@@ -111,30 +104,30 @@ brew "libpq"
 brew "mas"
 # Run a Kubernetes cluster locally
 brew "minikube"
-# Intercept, modify, replay, save HTTP/S traffic
-brew "mitmproxy"
+# Remote terminal application
+brew "mosh"
 # NCurses Disk Usage
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Port scanning utility for large networks
+brew "nmap"
+# Platform built on V8 to build network applications
+brew "node"
 # PostgreSQL syntax beautifier
 brew "pgformatter"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
-# Tool for managing OCI containers and pods
-brew "podman"
 # Show ps output as a tree
 brew "pstree"
+# Tools for and transforming and inspecting PDF files
+brew "qpdf"
 # Rsync for cloud storage
 brew "rclone"
 # Alternative to backtracking PCRE-style regular expression engines
 brew "re2"
-# Perl-powered file rename script with many helpful built-ins
-brew "rename"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Collection of tools for managing UNIX services
-brew "runit"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Work with remote images registries
@@ -143,129 +136,149 @@ brew "skopeo"
 brew "slides"
 # Add a public key to a remote machine's authorized_keys file
 brew "ssh-copy-id"
-# Statistics from the command-line
-brew "st"
 # Tail multiple Kubernetes pods & their containers
 brew "stern"
-# Version control system designed to be a better CVS
-brew "subversion"
 # Modern SSH server for teams managing distributed infrastructure
 brew "teleport"
 # User interface to the TELNET protocol
 brew "telnet"
 # Send macOS User Notifications from the command-line
 brew "terminal-notifier"
-# Code-search similar to ack
-brew "the_silver_searcher"
 # Text interface for Git repositories
 brew "tig"
 # Simplified and community-driven man pages
 brew "tldr"
 # Terminal multiplexer
 brew "tmux"
-# Manage complex tmux sessions easily
-brew "tmuxinator"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Extremely fast Python package installer and resolver
+brew "uv"
 # HTTP load testing tool and library
 brew "vegeta"
-# Vi 'workalike' with many additional features
-brew "vim"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
+# Watch files and take action when they change
+brew "watchman"
 # Internet file retriever
 brew "wget"
 # Linter for YAML files
 brew "yamllint"
-# JavaScript package manager
-brew "yarn"
 # Tool for managing your YubiKey configuration
 brew "ykman"
 # YubiKey personalization library and tool
 brew "ykpers"
-# Tracks most-used directories to make cd smarter
-brew "z"
 # General-purpose lossless data-compression library
 brew "zlib"
+# AI-powered coding assistant
+brew "anomalyco/tap/opencode"
 # Super fast CLI tool to decode and encode JWTs built in Rust
 brew "mike-engel/jwt-cli/jwt-cli"
+# Mobile UI testing framework
+brew "mobile-dev-inc/tap/maestro"
+# Proxy for simulating network conditions
 brew "shopify/shopify/toxiproxy"
+# Beads issue tracker CLI
+brew "steveyegge/beads/bd"
+# Password manager
+cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
-# Terminal emulator with native dark mode support
-cask "ghostty"
-# Enable Windows-like alt-tab
-cask "alt-tab"
-# Records audio from any application
-cask "audio-hijack"
-# Virtual Audio Driver
-cask "blackhole-2ch"
-# Automated testing of webapps for Google Chrome
-cask "chromedriver"
-# API documentation browser and code snippet manager
-cask "dash"
+# Remote desktop application
+cask "anydesk"
+# Application uninstaller
+cask "appcleaner"
+# Battery management app
+cask "batfi"
+# OpenAI's ChatGPT desktop app
+cask "chatgpt"
+# Anthropic's Claude desktop app
+cask "claude"
+# Screenshot and screen recording tool
+cask "cleanshot"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
 # Web browser
 cask "firefox"
-# Screen color temperature controller
-cask "flux"
-# Download manager with a torrent client
-cask "folx"
-cask "font-inconsolata"
-cask "font-inconsolata-for-powerline"
+# Slender monospace typeface
+cask "font-iosevka"
 # Typeface made for developers
 cask "font-jetbrains-mono"
-cask "font-source-code-pro"
-# Displays all your GitLab activities in one place
-cask "gitdock"
-# Go (golang) IDE
-cask "goland"
+# Monospaced font family from GitHub
+cask "font-monaspace"
+# Programming font with rounded corners
+cask "font-mononoki"
+# Sync software for Garmin devices
+cask "garmin-express"
+# Terminal emulator with native dark mode support
+cask "ghostty"
 # Web browser
 cask "google-chrome"
 # Set of tools to manage resources and applications hosted on Google Cloud
-cask "google-cloud-sdk"
-# Utility to fix grammar errors and style issues in text
-cask "grammarly"
-# HTTP and GraphQL Client
-cask "insomnia"
-# Control the volume of Apple Music and Spotify using keyboard volume keys
-cask "itunes-volume-control"
+cask "gcloud-cli"
+# Keyboard customiser
+cask "karabiner-elements"
 # File archiver
 cask "keka"
 # Host-based application firewall
 cask "little-snitch"
-# Clipboard manager
-cask "maccy"
-# Tool to create text-based art
-cask "monodraw"
-# Orchestrates virtual Ubuntu instances
-cask "multipass"
+# Full TeX Live distribution
+cask "mactex"
+# Intercept, modify, replay, save HTTP/S traffic
+cask "mitmproxy"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
-# Calculator and converter application
-cask "numi"
-# Open-source software for live streaming and screen recording
-cask "obs"
-# Verify system files structure, run miscellaneous maintenance and more
-cask "onyx"
-# Desktop virtualization software
-cask "parallels"
 # Control your tools with a few keystrokes
 cask "raycast"
-# Move and resize windows using keyboard shortcuts or snap areas
-cask "rectangle"
-# Ruby on Rails IDE
-cask "rubymine"
+# SD card formatter
+cask "sdformatter"
 # Store SSH keys in the Secure Enclave
 cask "secretive"
 # Team communication and collaboration software
 cask "slack"
-# Sound and audio controller
-cask "soundsource"
-# Configurable document editor that supports Markdown
-cask "typora"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
 # Video communication and virtual meeting platform
 cask "zoom"
+# 1Password Safari extension
+mas "1Password for Safari", id: 1569813296
+# Markdown notes app
+mas "Bear", id: 1091189122
+# Home automation
+mas "Home Assistant", id: 1099568401
+# HP printer drivers
+mas "HP Smart", id: 1474276998
+# Kagi search Safari extension
+mas "Kagi for Safari", id: 1622835804
+# Amazon price tracker
+mas "Keepa - Price Tracker", id: 1533805339
+# Kindle e-reader
+mas "Kindle", id: 302584613
+# Delivery tracking
+mas "Parcel - Delivery Tracking", id: 375589283
+# Picture in picture for Safari
+mas "PiPifier", id: 1160374471
+# Strava live segments on Apple Watch
+mas "Sauce for Strava", id: 1570922521
+# Save to Readwise Reader
+mas "Save to Reader", id: 1640236961
+# 3D CAD modeling
+mas "Shapr3D", id: 1091675654
+# Golf game
+mas "Sink It", id: 6449873635
+# YouTube sponsor skipper
+mas "SponsorBlock for YouTube", id: 1573461917
+# VPN and mesh networking
+mas "Tailscale", id: 1475387142
+# Messaging app
+mas "Telegram", id: 747648890
+# Task manager
+mas "Things", id: 904280696
+# Messaging app
+mas "WhatsApp", id: 310633997
+# Apple IDE
+mas "Xcode", id: 497799835
+# Hardware security key authenticator
+mas "Yubico Authenticator", id: 1497506650
