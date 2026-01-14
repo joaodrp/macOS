@@ -111,32 +111,24 @@ brew "libpq"
 brew "mas"
 # Run a Kubernetes cluster locally
 brew "minikube"
-# High Performance, Kubernetes Native Object Storage
-brew "minio"
 # Intercept, modify, replay, save HTTP/S traffic
 brew "mitmproxy"
 # NCurses Disk Usage
 brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
-brew "nginx", restart_service: true
 # PostgreSQL syntax beautifier
 brew "pgformatter"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Tool for managing OCI containers and pods
 brew "podman"
-# Object-relational database system
-brew "postgresql", restart_service: true
 # Show ps output as a tree
 brew "pstree"
 # Rsync for cloud storage
 brew "rclone"
 # Alternative to backtracking PCRE-style regular expression engines
 brew "re2"
-# Persistent key-value database, with built-in net interface
-brew "redis", restart_service: true
 # Perl-powered file rename script with many helpful built-ins
 brew "rename"
 # Search tool like grep and The Silver Searcher

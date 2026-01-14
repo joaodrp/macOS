@@ -14,7 +14,6 @@ fish_add_path \
 	(brew --prefix grep)/coreutils/gnubin \
 	(brew --prefix ssh-copy-id)/bin \
 	(brew --prefix curl)/bin \
-	(brew --prefix postgresql@12)/bin \
 	(brew --prefix icu4c)/bin \
 	$HOME/.rd/bin
 
