@@ -135,8 +135,6 @@ brew "pstree"
 brew "rclone"
 # Alternative to backtracking PCRE-style regular expression engines
 brew "re2"
-# Reattach process (e.g., tmux) to background
-brew "reattach-to-user-namespace"
 # Persistent key-value database, with built-in net interface
 brew "redis", restart_service: true
 # Perl-powered file rename script with many helpful built-ins
