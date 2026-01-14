@@ -1,0 +1,77 @@
+# Agents Guide
+
+This is a macOS dotfiles repository for setting up development machines.
+
+## Structure
+
+```
+.
+├── Brewfile          # Homebrew packages (formulas, casks, taps)
+├── Makefile          # Installation automation
+├── macos             # macOS system preferences script
+├── fish/             # Fish shell configuration
+│   ├── config.fish   # Main shell config
+│   └── functions/    # Custom fish functions
+├── tmux/             # tmux configuration and themes
+├── ghostty/          # Ghostty terminal config
+├── gnupg/            # GPG agent configuration
+├── network/          # Local .dev domain routing setup
+├── bat/              # bat (cat replacement) config
+└── mitmproxy/        # HTTP proxy config
+```
+
+## Key Commands
+
+- `make sync` - Symlink all configs to their standard locations
+- `make config` - Run macOS system preferences script
+- `make clean` - Remove all symlinked configs
+
+## Conventions
+
+- **Symlinks over copies**: Configs are symlinked from this repo to their target locations (e.g., `~/.config/fish`)
+- **Brewfile**: All packages managed via Homebrew. Add new tools here, not manually
+- **Fish functions**: One function per file in `fish/functions/`
+- **Ghostty keybindings**: Use tmux-style Ctrl+A prefix for consistency
+
+## Commit Messages
+
+Follow [Conventional Commits](https://www.conventionalcommits.org/):
+
+```
+<type>: <description>
+
+[optional body]
+```
+
+**Types:**
+- `feat` - New feature or tool
+- `fix` - Bug fix
+- `docs` - Documentation changes
+- `chore` - Maintenance (updating packages, cleanup)
+- `refactor` - Code restructuring without behavior change
+
+**Examples:**
+- `feat: add starship prompt configuration`
+- `fix: correct fish PATH ordering`
+- `chore: add comments to Brewfile`
+- `docs: add installation instructions to README`
+
+## When Modifying
+
+1. **Adding a new tool**: Add to `Brewfile`, then add any config files to appropriate directory
+2. **Fish aliases/functions**: Add to `fish/functions/` as separate `.fish` files
+3. **System preferences**: Modify the `macos` script
+4. **New config directory**: Add symlink target to `Makefile`'s sync target
+
+## Terminal Stack
+
+- **Shell**: Fish with custom prompt and FZF integration
+- **Multiplexer**: tmux with Ctrl+A prefix, vim-style navigation
+- **Terminal**: Ghostty with Gruvbox theme (auto dark/light mode)
+
+## Local Development
+
+The `network/` directory sets up `.dev` domain routing:
+- Loopback aliases on 172.16.123.x
+- Port forwarding 80/443 → 8080/8443 via pfctl
+- Requires manual LaunchDaemon installation
