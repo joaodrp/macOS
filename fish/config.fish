@@ -27,8 +27,8 @@ fish_add_path \
 
 # Aliases
 alias cat bat
-alias ls exa
-alias tree 'exa -T'
+alias ls eza
+alias tree 'eza -T'
 alias watch 'watch -d'
 alias vim nvim
 

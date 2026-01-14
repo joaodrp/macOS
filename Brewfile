@@ -40,7 +40,7 @@ brew "docutils"
 # GNU version of the tar archiving utility
 brew "gnu-tar"
 # Modern replacement for 'ls'
-brew "exa"
+brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream audio and video
