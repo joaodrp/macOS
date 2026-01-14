@@ -81,7 +81,3 @@ source ~/.config/fish/local.fish
 
 # git
 set -x GIT_COMPLETION_CHECKOUT_NO_GUESS 1
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/jpereira/.rd/bin"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
