@@ -212,8 +212,6 @@ cask "blackhole-2ch"
 cask "chromedriver"
 # API documentation browser and code snippet manager
 cask "dash"
-# Tool for using an iPad as a second display
-cask "duet"
 # Web browser
 cask "firefox"
 # Screen color temperature controller
