@@ -2,9 +2,17 @@
 # Reload at runtime with cmd+shift+, (macOS)
 # Full config reference: ghostty +show-config --default --docs
 
-# Theme - auto-switches with macOS dark/light mode
+# ------------------------------------------------------------------------------
+# Theme
+# ------------------------------------------------------------------------------
+
+# Auto-switches with macOS dark/light mode
 # List available themes with: ghostty +list-themes
 theme = light:Gruvbox Light Hard,dark:Gruvbox Dark Hard
+
+# ------------------------------------------------------------------------------
+# Font
+# ------------------------------------------------------------------------------
 
 # Font family. List available fonts with: ghostty +list-fonts
 font-family = JetBrains Mono
@@ -12,21 +20,37 @@ font-family = JetBrains Mono
 # Font size in points. Scaled appropriately for screen DPI
 font-size = 12
 
-# Horizontal window padding between terminal cells and window borders (in points)
-window-padding-x = 10
+# ------------------------------------------------------------------------------
+# Window
+# ------------------------------------------------------------------------------
 
-# Vertical window padding between terminal cells and window borders (in points)
+# Padding between terminal cells and window borders (in points)
+window-padding-x = 10
 window-padding-y = 10
 
-# Whether to save/restore window state across launches (macOS only)
+# Save/restore window state across launches (macOS only)
 # Values: default, never, always
 window-save-state = always
+
+# Hide resize overlay (default: after-first)
+resize-overlay = never
+
+# ------------------------------------------------------------------------------
+# Splits
+# ------------------------------------------------------------------------------
+
+# Less fading on unfocused splits (default: 0.7)
+unfocused-split-opacity = 0.90
+
+# ------------------------------------------------------------------------------
+# Behavior
+# ------------------------------------------------------------------------------
 
 # Hide mouse cursor immediately when typing
 mouse-hide-while-typing = true
 
-# Auto-copy selected text to clipboard. 'clipboard' copies to both selection
-# and system clipboard. Middle-click paste always uses selection clipboard
+# Auto-copy selected text. 'clipboard' copies to both selection and system clipboard
+# Middle-click paste always uses selection clipboard
 copy-on-select = clipboard
 
 # Disable cursor blinking. If unset, respects DEC Mode 12
@@ -35,9 +59,43 @@ cursor-style-blink = false
 # Skip confirmation when closing a surface (tab/split/window)
 confirm-close-surface = false
 
+# ------------------------------------------------------------------------------
+# macOS
+# ------------------------------------------------------------------------------
+
 # Treat left Option key as Alt for terminal sequences
 # Values: true, false, left, right
 macos-option-as-alt = left
 
-# Keybindings - shift+enter sends literal newline (useful for multi-line input)
+# ------------------------------------------------------------------------------
+# Keybindings
+# ------------------------------------------------------------------------------
+
+# Shift+enter sends literal newline (useful for multi-line input)
 keybind = shift+enter=text:\n
+
+# Tmux-style split navigation with vim keys (direct, no prefix)
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right
+
+# Tmux-style split creation with ctrl+a prefix
+# Press ctrl+a, release, then press direction key
+keybind = ctrl+a>h=new_split:left
+keybind = ctrl+a>j=new_split:down
+keybind = ctrl+a>k=new_split:up
+keybind = ctrl+a>l=new_split:right
+
+# Tmux-style split zoom toggle (ctrl+a then f, like tmux prefix+z)
+keybind = ctrl+a>f=toggle_split_zoom
+
+# Tmux-style tab navigation
+keybind = ctrl+a>n=next_tab
+keybind = ctrl+a>p=previous_tab
+
+# Tmux-style split resizing (ctrl+a then shift+direction)
+keybind = ctrl+a>shift+h=resize_split:left,50
+keybind = ctrl+a>shift+j=resize_split:down,50
+keybind = ctrl+a>shift+k=resize_split:up,50
+keybind = ctrl+a>shift+l=resize_split:right,50
