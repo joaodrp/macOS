@@ -9,6 +9,14 @@ insert_final_newline = true
 max_line_length = 80
 trim_trailing_whitespace = true
 
-[*.{rb,yaml,yml}]
-indent_style = space
+[*.{rb,yaml,yml,json}]
 indent_size = 2
+
+[Makefile]
+indent_style = tab
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{sh,fish}]
+indent_size = 4
