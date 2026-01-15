@@ -82,6 +82,8 @@ clean:
 	rm -f ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	rm -f ~/.config/fish/fzf/gruvbox-light-hard.fish
 	rm -f ~/.tmux.conf
+	rm -f ~/.tmux/tmuxline-dark.conf
+	rm -f ~/.tmux/tmuxline-light.conf
 	rm -f ~/.gnupg/gpg.conf
 	rm -f ~/.gnupg/gpg-agent.conf
 	rm -f ~/.tigrc
