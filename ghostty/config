@@ -20,6 +20,10 @@ font-family = JetBrains Mono
 # Font size in points. Scaled appropriately for screen DPI
 font-size = 12
 
+# Thicken font strokes for better readability on high-DPI displays
+font-thicken = true
+font-thicken-strength = 128
+
 # ------------------------------------------------------------------------------
 # Window
 # ------------------------------------------------------------------------------
