@@ -1,4 +1,4 @@
-all: sync config
+all: brew-all sync fish-plugins config
 
 sync:
 	mkdir -p ~/.config/ghostty
@@ -27,7 +27,6 @@ sync:
 	ln -sf $(PWD)/fish/fzf/gruvbox-light-hard.fish ~/.config/fish/fzf/gruvbox-light-hard.fish
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
 	[ -f ~/.mitmproxy/config.yaml ] || ln -s $(PWD)/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
-	fish -c "fisher update"
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	[ -f ~/.tmux/tmuxline-dark.conf ] || ln -s $(PWD)/tmux/tmuxline-dark.conf ~/.tmux/tmuxline-dark.conf
@@ -61,6 +60,9 @@ brew-personal:
 
 brew-all: brew brew-personal
 
+fish-plugins:
+	fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update"
+
 config:
 	./macos
 
@@ -93,4 +95,4 @@ clean:
 	rm -f ~/.config/bat/config
 	rm -f ~/.mitmproxy/config.yaml
 
-.PHONY: all sync brew brew-personal brew-all config clean
+.PHONY: all sync brew brew-personal brew-all fish-plugins config clean

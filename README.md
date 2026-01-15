@@ -10,8 +10,11 @@ make brew-all
 # install Apple SF Mono fonts
 cp /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SF-Mono*.otf ~/Library/Fonts/
 
-# copy dotfiles to the appropriate places
-make
+# symlink dotfiles to the appropriate places
+make sync
+
+# install fisher and fish plugins
+make fish-plugins
 
 # make fish the new default
 chsh -s /opt/homebrew/bin/fish
@@ -35,9 +38,6 @@ for lang in golang ruby rust nodejs python
     asdf install $lang latest
     asdf global $lang latest
 end
-
-# install fisher (plugins are auto-installed via make sync)
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 # Voxengo Marvel GEQ for OBS
 set tmpdir (mktemp -d)
