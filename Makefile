@@ -1,4 +1,4 @@
-all: brew-all sync fish-plugins config
+all: brew-all sync fish config
 
 sync:
 	mkdir -p ~/.config/ghostty
@@ -60,8 +60,26 @@ brew-personal:
 
 brew-all: brew brew-personal
 
-fish-plugins:
+fish:
 	fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update"
+	@grep -q /opt/homebrew/bin/fish /etc/shells || (echo "Adding fish to /etc/shells (requires sudo)..." && echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells)
+	@[ "$$SHELL" = "/opt/homebrew/bin/fish" ] && echo "Fish is already the default shell" || chsh -s /opt/homebrew/bin/fish
+
+vim-plugins:
+	[ -f ~/.vim/autoload/plug.vim ] || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	vim +PlugInstall +qall
+
+tmux-plugins:
+	[ -d ~/.tmux/plugins/tpm ] || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+docker-completions:
+	mkdir -p ~/.config/fish/completions
+	@[ -f /Applications/Docker.app/Contents/Resources/etc/docker.fish-completion ] && \
+		ln -sf /Applications/Docker.app/Contents/Resources/etc/docker.fish-completion ~/.config/fish/completions/docker.fish && \
+		ln -sf /Applications/Docker.app/Contents/Resources/etc/docker-compose.fish-completion ~/.config/fish/completions/docker-compose.fish && \
+		echo "Docker completions installed" || echo "Docker.app not found, skipping completions"
+
+post-install: tmux-plugins vim-plugins docker-completions
 
 config:
 	./macos
@@ -97,4 +115,4 @@ clean:
 	rm -f ~/.config/bat/config
 	rm -f ~/.mitmproxy/config.yaml
 
-.PHONY: all sync brew brew-personal brew-all fish-plugins config clean
+.PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions post-install config clean
