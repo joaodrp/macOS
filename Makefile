@@ -15,6 +15,8 @@ sync:
 	mkdir -p ~/.config/bat/
 	mkdir -p ~/.config/opencode/
 	mkdir -p ~/.claude
+	mkdir -p ~/.claude/scripts
+	mkdir -p ~/.claude/commands
 	mkdir -p ~/Library/LaunchAgents
 
 	[ -f ~/.config/ghostty/config ] || ln -s $(PWD)/ghostty/config ~/.config/ghostty/config
@@ -39,6 +41,11 @@ sync:
 	[ -f ~/.config/opencode/opencode.json ] || ln -s $(PWD)/opencode/opencode.json ~/.config/opencode/opencode.json
 	ln -sf $(PWD)/opencode/AGENTS.md ~/.config/opencode/AGENTS.md
 	ln -sf $(PWD)/claude/CLAUDE.md ~/.claude/CLAUDE.md
+	[ -f ~/.claude/settings.json ] || ln -s $(PWD)/claude/settings.json ~/.claude/settings.json
+	ln -sf $(PWD)/claude/statusline-command.sh ~/.claude/statusline-command.sh
+	ln -sf $(PWD)/claude/scripts/validate-git-commit.sh ~/.claude/scripts/validate-git-commit.sh
+	ln -sf $(PWD)/claude/commands/bd-log.md ~/.claude/commands/bd-log.md
+	ln -sf $(PWD)/claude/commands/bd-save.md ~/.claude/commands/bd-save.md
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	[ -f ~/.tmux/tmuxline-dark.conf ] || ln -s $(PWD)/tmux/tmuxline-dark.conf ~/.tmux/tmuxline-dark.conf
@@ -135,5 +142,10 @@ clean:
 	rm -f ~/.config/opencode/opencode.json
 	rm -f ~/.config/opencode/AGENTS.md
 	rm -f ~/.claude/CLAUDE.md
+	rm -f ~/.claude/settings.json
+	rm -f ~/.claude/statusline-command.sh
+	rm -f ~/.claude/scripts/validate-git-commit.sh
+	rm -f ~/.claude/commands/bd-log.md
+	rm -f ~/.claude/commands/bd-save.md
 
 .PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions post-install config clean

@@ -1,0 +1,162 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch",
+      "WebSearch",
+      "Read(~/.claude/*)",
+
+      "Bash(date:*)",
+      "Bash(echo:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(wc:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(sort:*)",
+      "Bash(grep:*)",
+      "Bash(tr:*)",
+      "Bash(xargs:*)",
+      "Bash(curl:*)",
+      "Bash(open:*)",
+
+      "Bash(git:*)",
+      "Bash(bd:*)",
+
+      "Skill(superpowers:brainstorming)",
+      "Skill(superpowers:systematic-debugging)",
+      "Skill(superpowers:writing-plans)",
+      "Skill(bd-save)",
+      "Skill(bd-log)"
+    ],
+    "deny": [
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git rebase:*)",
+      "Bash(npm publish:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/scripts/validate-git-commit.sh"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/bin/terminal-notifier -title 'Claude Code' -message 'Permission needed' -sender com.anthropic.claudefordesktop"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/bin/terminal-notifier -title 'Claude Code' -message 'Awaiting your input' -sender com.anthropic.claudefordesktop"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bd prime"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bd prime"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "agent-sdk-dev@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "episodic-memory@superpowers-marketplace": true,
+    "feature-dev@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "superpowers@superpowers-marketplace": true,
+    "context7@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "supabase@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "pr-review-toolkit@claude-plugins-official": true,
+    "figma@claude-plugins-official": true,
+    "linear@claude-plugins-official": true,
+    "hookify@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true,
+    "double-shot-latte@superpowers-marketplace": true,
+    "elements-of-style@superpowers-marketplace": true,
+    "accessibility-compliance@claude-code-workflows": true,
+    "api-scaffolding@claude-code-workflows": true,
+    "api-testing-observability@claude-code-workflows": true,
+    "application-performance@claude-code-workflows": true,
+    "backend-api-security@claude-code-workflows": true,
+    "backend-development@claude-code-workflows": true,
+    "cicd-automation@claude-code-workflows": true,
+    "code-documentation@claude-code-workflows": true,
+    "code-refactoring@claude-code-workflows": true,
+    "code-review-ai@claude-code-workflows": true,
+    "codebase-cleanup@claude-code-workflows": true,
+    "comprehensive-review@claude-code-workflows": true,
+    "database-design@claude-code-workflows": true,
+    "database-migrations@claude-code-workflows": true,
+    "dependency-management@claude-code-workflows": true,
+    "developer-essentials@claude-code-workflows": true,
+    "documentation-generation@claude-code-workflows": true,
+    "error-debugging@claude-code-workflows": true,
+    "error-diagnostics@claude-code-workflows": true,
+    "frontend-mobile-development@claude-code-workflows": true,
+    "frontend-mobile-security@claude-code-workflows": true,
+    "full-stack-orchestration@claude-code-workflows": true,
+    "git-pr-workflows@claude-code-workflows": true,
+    "hr-legal-compliance@claude-code-workflows": true,
+    "javascript-typescript@claude-code-workflows": true,
+    "multi-platform-apps@claude-code-workflows": true,
+    "observability-monitoring@claude-code-workflows": true,
+    "payment-processing@claude-code-workflows": true,
+    "performance-testing-review@claude-code-workflows": true,
+    "security-compliance@claude-code-workflows": true,
+    "security-scanning@claude-code-workflows": true,
+    "seo-analysis-monitoring@claude-code-workflows": true,
+    "seo-content-creation@claude-code-workflows": true,
+    "seo-technical-optimization@claude-code-workflows": true,
+    "shell-scripting@claude-code-workflows": true,
+    "tdd-workflows@claude-code-workflows": true,
+    "unit-testing@claude-code-workflows": true,
+    "beads@beads-marketplace": true,
+    "get-shit-done@get-shit-done": true
+  }
+}
