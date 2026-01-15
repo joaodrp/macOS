@@ -1,4 +1,5 @@
-# Pure prompt customization (loads before pure.fish due to underscore prefix)
+# https://github.com/pure-fish/pure
+# Customization (loads before pure.fish due to underscore prefix)
 set -g pure_color_prompt_on_success yellow
 set -g pure_color_current_directory green
 set -g pure_color_git_branch brblack

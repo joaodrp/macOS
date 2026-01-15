@@ -33,6 +33,7 @@ sync:
 	ln -sf $(PWD)/fish/fzf/gruvbox-dark-hard.fish ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-light-hard.fish ~/.config/fish/fzf/gruvbox-light-hard.fish
 	ln -sf $(PWD)/fish/conf.d/_pure.fish ~/.config/fish/conf.d/_pure.fish
+	ln -sf $(PWD)/fish/conf.d/_done.fish ~/.config/fish/conf.d/_done.fish
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
 	[ -f ~/.mitmproxy/config.yaml ] || ln -s $(PWD)/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
 	[ -f ~/.config/opencode/opencode.json ] || ln -s $(PWD)/opencode/opencode.json ~/.config/opencode/opencode.json
@@ -115,6 +116,7 @@ clean:
 	rm -f ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	rm -f ~/.config/fish/fzf/gruvbox-light-hard.fish
 	rm -f ~/.config/fish/conf.d/_pure.fish
+	rm -f ~/.config/fish/conf.d/_done.fish
 	rm -f ~/.tmux.conf
 	rm -f ~/.tmux/tmuxline-dark.conf
 	rm -f ~/.tmux/tmuxline-light.conf
