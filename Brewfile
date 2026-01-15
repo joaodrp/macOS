@@ -253,6 +253,10 @@ cask "tsh"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# Messaging app
+cask "whatsapp"
+# Hardware security key authenticator
+cask "yubico-authenticator"
 # Video communication and virtual meeting platform
 cask "zoom"
 # 1Password Safari extension
@@ -263,12 +267,8 @@ mas "Kagi for Safari", id: 1622835804
 mas "Save to Reader", id: 1640236961
 # Task manager
 mas "Things", id: 904280696
-# Messaging app
-mas "WhatsApp", id: 310633997
 # Apple IDE
 mas "Xcode", id: 497799835
-# Hardware security key authenticator
-mas "Yubico Authenticator", id: 1497506650
 
 # =============================================================================
 # Personal packages (skip with SKIP_PERSONAL=1 brew bundle)
@@ -291,11 +291,17 @@ unless ENV['SKIP_PERSONAL']
   cask "mactex"
   # SD card formatter
   cask "sdformatter"
+  # 3D CAD modeling
+  cask "shapr3d"
+  # VPN and mesh networking
+  cask "tailscale-app"
+  # Messaging app
+  cask "telegram"
 
+  # Home automation
+  cask "home-assistant"
   # Markdown notes app
   mas "Bear", id: 1091189122
-  # Home automation
-  mas "Home Assistant", id: 1099568401
   # HP printer drivers
   mas "HP Smart", id: 1474276998
   # Amazon price tracker
@@ -308,14 +314,8 @@ unless ENV['SKIP_PERSONAL']
   mas "PiPifier", id: 1160374471
   # Strava live segments on Apple Watch
   mas "Sauce for Strava", id: 1570922521
-  # 3D CAD modeling
-  mas "Shapr3D", id: 1091675654
   # Golf game
   mas "Sink It", id: 6449873635
   # YouTube sponsor skipper
   mas "SponsorBlock for YouTube", id: 1573461917
-  # VPN and mesh networking
-  mas "Tailscale", id: 1475387142
-  # Messaging app
-  mas "Telegram", id: 747648890
 end
