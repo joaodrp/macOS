@@ -66,6 +66,7 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 ## Theme-Synced Configs
 
 The following files are automatically updated by `sync_theme` based on macOS appearance:
+- `.gitconfig` - delta syntax-theme setting
 - `bat/config` - theme setting
 - `mitmproxy/config.yaml` - console_palette setting
 

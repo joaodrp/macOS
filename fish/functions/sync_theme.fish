@@ -1,4 +1,4 @@
-function sync_theme --description 'Sync bat, fzf, and mitmproxy themes with macOS appearance'
+function sync_theme --description 'Sync bat, delta, fzf, and mitmproxy themes with macOS appearance'
     # Detect current macOS appearance (dark mode returns 0, light mode returns error)
     if defaults read -g AppleInterfaceStyle &>/dev/null
         set mode dark
@@ -13,6 +13,16 @@ function sync_theme --description 'Sync bat, fzf, and mitmproxy themes with macO
             sed -i "s/^--theme=.*/--theme='gruvbox-dark'/" "$bat_config"
         else
             sed -i "s/^--theme=.*/--theme='gruvbox-light'/" "$bat_config"
+        end
+    end
+
+    # --- delta (git pager) ---
+    set -l git_config (realpath ~/.gitconfig 2>/dev/null)
+    if test -n "$git_config" -a -f "$git_config"
+        if test $mode = dark
+            sed -i 's/syntax-theme = gruvbox-light/syntax-theme = gruvbox-dark/' "$git_config"
+        else
+            sed -i 's/syntax-theme = gruvbox-dark/syntax-theme = gruvbox-light/' "$git_config"
         end
     end
 

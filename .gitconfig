@@ -23,7 +23,7 @@
 	permission-reset = !git diff -p -R --no-ext-diff --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
 	# Stash changes but keep them visible
 	stash-keep = "!git stash store $(git stash create)"
-	[branch]
+[branch]
 	# Show most recently changed branches first.
 	sort = -committerdate
 [apply]
@@ -48,6 +48,8 @@
 [diff]
 	# Detect copies as well as renames.
 	renames = copies
+	# Better diff algorithm
+	algorithm = histogram
 [diff "bin"]
 	# Use `hexdump` to diff binary files.
 	textconv = hexdump -v -C
@@ -55,13 +57,26 @@
 	default = current
 	autoSetupRemote = true
 [pull]
-	rebase = false
+	rebase = true
 [help]
 	# Automatically correct and execute mistyped commands.
-	autocorrect = 1
+	autocorrect = prompt
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	# Better conflict markers showing base, ours, and theirs
+	conflictStyle = zdiff3
+[fetch]
+	# Auto-prune deleted remote branches
+	prune = true
+[rebase]
+	# Auto-squash fixup/squash commits
+	autoSquash = true
+	# Auto-stash before rebase
+	autoStash = true
+[rerere]
+	# Remember conflict resolutions
+	enabled = true
 [interactive]
 	diffFilter = delta --color-only
 [delta]
@@ -70,11 +85,6 @@
 	syntax-theme = gruvbox-dark
 [color]
 	ui = true
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
 [color "diff"]
 	meta = 11
 	frag = magenta bold
