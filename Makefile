@@ -26,6 +26,12 @@ sync:
 	ln -sf $(PWD)/fish/functions/sync_theme.fish ~/.config/fish/functions/sync_theme.fish
 	ln -sf $(PWD)/fish/functions/upgrade.fish ~/.config/fish/functions/upgrade.fish
 	ln -sf $(PWD)/fish/functions/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
+	ln -sf $(PWD)/fish/functions/fish_title.fish ~/.config/fish/functions/fish_title.fish
+	ln -sf $(PWD)/fish/functions/cdr.fish ~/.config/fish/functions/cdr.fish
+	ln -sf $(PWD)/fish/functions/co.fish ~/.config/fish/functions/co.fish
+	ln -sf $(PWD)/fish/functions/hb.fish ~/.config/fish/functions/hb.fish
+	ln -sf $(PWD)/fish/functions/hc.fish ~/.config/fish/functions/hc.fish
+	ln -sf $(PWD)/fish/functions/ghpr.fish ~/.config/fish/functions/ghpr.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-dark-hard.fish ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-light-hard.fish ~/.config/fish/fzf/gruvbox-light-hard.fish
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
@@ -104,6 +110,12 @@ clean:
 	rm -f ~/.config/fish/functions/sync_theme.fish
 	rm -f ~/.config/fish/functions/upgrade.fish
 	rm -f ~/.config/fish/functions/fish_prompt.fish
+	rm -f ~/.config/fish/functions/fish_title.fish
+	rm -f ~/.config/fish/functions/cdr.fish
+	rm -f ~/.config/fish/functions/co.fish
+	rm -f ~/.config/fish/functions/hb.fish
+	rm -f ~/.config/fish/functions/hc.fish
+	rm -f ~/.config/fish/functions/ghpr.fish
 	rm -f ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	rm -f ~/.config/fish/fzf/gruvbox-light-hard.fish
 	rm -f ~/.tmux.conf
