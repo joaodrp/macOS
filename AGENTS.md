@@ -31,6 +31,7 @@ This is a macOS dotfiles repository for setting up development machines.
 - **Brewfile**: All packages managed via Homebrew. Add new tools here, not manually
 - **Fish functions**: One function per file in `fish/functions/`
 - **Ghostty keybindings**: Use tmux-style Ctrl+A prefix for consistency
+- **GNU tools in PATH**: GNU versions of sed, grep, tar, find, etc. are prioritized over BSD versions (see `config.fish`). Use GNU syntax in scripts (e.g., `sed -i 'pattern'` not `sed -i '' 'pattern'`)
 
 ## Commit Messages
 

@@ -8,21 +8,21 @@ function sync_theme --description 'Sync bat, fzf, and mitmproxy themes with macO
 
     # --- bat ---
     set -l bat_config (realpath ~/.config/bat/config 2>/dev/null)
-    if test -f "$bat_config"
+    if test -n "$bat_config" -a -f "$bat_config"
         if test $mode = dark
-            sed -i '' "s/^--theme=.*/--theme='gruvbox-dark'/" $bat_config
+            sed -i "s/^--theme=.*/--theme='gruvbox-dark'/" "$bat_config"
         else
-            sed -i '' "s/^--theme=.*/--theme='gruvbox-light'/" $bat_config
+            sed -i "s/^--theme=.*/--theme='gruvbox-light'/" "$bat_config"
         end
     end
 
     # --- mitmproxy ---
     set -l mitm_config (realpath ~/.mitmproxy/config.yaml 2>/dev/null)
-    if test -f "$mitm_config"
+    if test -n "$mitm_config" -a -f "$mitm_config"
         if test $mode = dark
-            sed -i '' 's/^console_palette:.*/console_palette: solarized_dark/' $mitm_config
+            sed -i 's/^console_palette:.*/console_palette: solarized_dark/' "$mitm_config"
         else
-            sed -i '' 's/^console_palette:.*/console_palette: solarized_light/' $mitm_config
+            sed -i 's/^console_palette:.*/console_palette: solarized_light/' "$mitm_config"
         end
     end
 
