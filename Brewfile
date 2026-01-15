@@ -21,6 +21,8 @@ brew "bat"
 brew "cloc"
 # Cross-platform make
 brew "cmake"
+# Container signing, verification, and storage in an OCI registry
+brew "cosign"
 # Tool for interacting with remote images and registries
 brew "crane"
 # Get a file from an HTTP, HTTPS or FTP server
@@ -55,6 +57,8 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# GitLab command-line tool
+brew "glab"
 # Enable transparent encryption/decryption of files in a git repo
 brew "git-crypt"
 # Git extension for versioning large files
@@ -75,6 +79,8 @@ brew "gnupg"
 brew "gnuplot"
 # Fast linters runner for Go
 brew "golangci-lint"
+# Release automation tool for Go projects
+brew "goreleaser"
 # Ping, but with a graph
 brew "gping"
 # Graph visualization software from AT&T and Bell Labs
@@ -105,6 +111,8 @@ brew "libpq"
 brew "mas"
 # Run a Kubernetes cluster locally
 brew "minikube"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Remote terminal application
 brew "mosh"
 # NCurses Disk Usage
@@ -117,10 +125,14 @@ brew "nmap"
 brew "node"
 # PostgreSQL syntax beautifier
 brew "pgformatter"
+# PGP packet visualizer
+brew "pgpdump"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Show ps output as a tree
 brew "pstree"
+# Draw UML diagrams from text descriptions
+brew "plantuml"
 # Tools for and transforming and inspecting PDF files
 brew "qpdf"
 # Rsync for cloud storage
