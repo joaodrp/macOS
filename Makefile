@@ -6,6 +6,7 @@ sync:
 	mkdir -p ~/.config/fish/functions.local
 	mkdir -p ~/.config/fish/functions
 	mkdir -p ~/.config/fish/fzf
+	mkdir -p ~/.config/fish/conf.d
 	mkdir -p ~/.tmux/
 	mkdir -p ~/.gnupg/
 	mkdir -p ~/.config/git
@@ -24,8 +25,6 @@ sync:
 	ln -sf $(PWD)/fish/functions/showhidden.fish ~/.config/fish/functions/showhidden.fish
 	ln -sf $(PWD)/fish/functions/sync_theme.fish ~/.config/fish/functions/sync_theme.fish
 	ln -sf $(PWD)/fish/functions/upgrade.fish ~/.config/fish/functions/upgrade.fish
-	ln -sf $(PWD)/fish/functions/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
-	ln -sf $(PWD)/fish/functions/fish_title.fish ~/.config/fish/functions/fish_title.fish
 	ln -sf $(PWD)/fish/functions/cdr.fish ~/.config/fish/functions/cdr.fish
 	ln -sf $(PWD)/fish/functions/co.fish ~/.config/fish/functions/co.fish
 	ln -sf $(PWD)/fish/functions/hb.fish ~/.config/fish/functions/hb.fish
@@ -33,6 +32,7 @@ sync:
 	ln -sf $(PWD)/fish/functions/ghpr.fish ~/.config/fish/functions/ghpr.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-dark-hard.fish ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-light-hard.fish ~/.config/fish/fzf/gruvbox-light-hard.fish
+	ln -sf $(PWD)/fish/conf.d/_pure.fish ~/.config/fish/conf.d/_pure.fish
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
 	[ -f ~/.mitmproxy/config.yaml ] || ln -s $(PWD)/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
 	[ -f ~/.config/opencode/opencode.json ] || ln -s $(PWD)/opencode/opencode.json ~/.config/opencode/opencode.json
@@ -107,8 +107,6 @@ clean:
 	rm -f ~/.config/fish/functions/showhidden.fish
 	rm -f ~/.config/fish/functions/sync_theme.fish
 	rm -f ~/.config/fish/functions/upgrade.fish
-	rm -f ~/.config/fish/functions/fish_prompt.fish
-	rm -f ~/.config/fish/functions/fish_title.fish
 	rm -f ~/.config/fish/functions/cdr.fish
 	rm -f ~/.config/fish/functions/co.fish
 	rm -f ~/.config/fish/functions/hb.fish
@@ -116,6 +114,7 @@ clean:
 	rm -f ~/.config/fish/functions/ghpr.fish
 	rm -f ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	rm -f ~/.config/fish/fzf/gruvbox-light-hard.fish
+	rm -f ~/.config/fish/conf.d/_pure.fish
 	rm -f ~/.tmux.conf
 	rm -f ~/.tmux/tmuxline-dark.conf
 	rm -f ~/.tmux/tmuxline-light.conf
