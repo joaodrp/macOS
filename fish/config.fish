@@ -58,10 +58,8 @@ set -x GPG_TTY (tty)
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
-# Set correct tmuxline theme on start
-if set -q TMUX
-  # sync_tmux_background # FIXME: tmux-prefix-highlight does not work with this
-end
+# Sync theme for bat, fzf, mitmproxy on shell start
+sync_theme
 
 # TODO: review plugins:
 # mattgreen/lucid.fish
@@ -76,9 +74,6 @@ source "/opt/homebrew/Caskroom/gcloud-cli/latest/google-cloud-sdk/path.fish.inc"
 
 # Sensitive or local stuff not pushed to git
 source ~/.config/fish/local.fish
-
-# Docker
-# set -x DOCKER_HOST tcp://192.168.64.2:2375
 
 # git
 set -x GIT_COMPLETION_CHECKOUT_NO_GUESS 1

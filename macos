@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Based on https://github.com/mathiasbynens/dotfiles
+# Based on https://github.com/mathiasbynens/dotfiles and https://macos-defaults.com
 
 # Close any open System Settings panes, to prevent them from overriding
 # settings we're about to change

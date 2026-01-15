@@ -1,4 +1,5 @@
 tap "anomalyco/tap"
+tap "cormacrelf/tap"
 tap "joaodrp/tap"
 tap "mike-engel/jwt-cli"
 tap "mobile-dev-inc/tap"
@@ -24,6 +25,8 @@ brew "cmake"
 brew "crane"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Watcher for macOS dark/light mode changes
+brew "cormacrelf/tap/dark-notify"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
 # Load/unload environment variables based on $PWD
