@@ -1,3 +1,9 @@
+# General settings
+set mouse = yes
+set line-graphics = utf-8
+set wrap-lines = yes
+set diff-context = 3
+
 # Use Git's default (reverse chronological) order, never automatically
 # use topo-order for the commit graph
 set commit-order = default
@@ -8,15 +14,20 @@ set main-options = -n 1000
 # Don't show staged and unstaged changes in the main view
 set show-changes = no
 
-# Optionally, use the old and faster but less acurate graph renderer
+# Optionally, use the old and faster but less accurate graph renderer
 set main-view-commit-title-graph = v1
 
+# Navigation (vim-style)
 bind generic r refresh
-bind status d !@?rm -rf %(file) # delete untracked files
-
-# Allow moving in the main menu while displaying a diff in the bottom of the
-# screen.
+bind generic gg move-first-line
+bind generic G move-last-line
 bind generic J next
 bind generic K previous
-bind generic G move-last-line
+
+# Status view
+bind status d !?rm %(file)
 bind status A !?git commit --amend
+
+# Main view
+bind main C !?git cherry-pick %(commit)
+bind main F !git fetch
