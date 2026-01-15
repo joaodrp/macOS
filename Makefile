@@ -1,4 +1,4 @@
-all: brew-all sync fish config
+all: brew-all sync fish post-install config
 
 sync:
 	mkdir -p ~/.config/ghostty
