@@ -29,9 +29,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # install tmux plugins
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# disable font smoothing
-defaults -currentHost write -g AppleFontSmoothing -int 0
-
 # install asdf plugins and versions
 for lang in golang ruby rust nodejs python
     asdf plugin add $lang
