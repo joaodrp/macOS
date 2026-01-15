@@ -193,8 +193,6 @@ brew "zlib"
 brew "anomalyco/tap/opencode"
 # Super fast CLI tool to decode and encode JWTs built in Rust
 brew "mike-engel/jwt-cli/jwt-cli"
-# Mobile UI testing framework
-brew "mobile-dev-inc/tap/maestro"
 # Proxy for simulating network conditions
 brew "shopify/shopify/toxiproxy"
 # Beads issue tracker CLI
@@ -207,8 +205,6 @@ cask "1password-cli"
 cask "appcleaner"
 # Battery management app
 cask "batfi"
-# OpenAI's ChatGPT desktop app
-cask "chatgpt"
 # Anthropic's Claude desktop app
 cask "claude"
 # Screenshot and screen recording tool
@@ -233,8 +229,6 @@ cask "ghostty"
 cask "google-chrome"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
-# Keyboard customiser
-cask "karabiner-elements"
 # File archiver
 cask "keka"
 # Host-based application firewall
@@ -263,16 +257,10 @@ cask "vlc"
 cask "zoom"
 # 1Password Safari extension
 mas "1Password for Safari", id: 1569813296
-# HP printer drivers
-mas "HP Smart", id: 1474276998
 # Kagi search Safari extension
 mas "Kagi for Safari", id: 1622835804
-# Picture in picture for Safari
-mas "PiPifier", id: 1160374471
 # Save to Readwise Reader
 mas "Save to Reader", id: 1640236961
-# VPN and mesh networking
-mas "Tailscale", id: 1475387142
 # Task manager
 mas "Things", id: 904280696
 # Messaging app
@@ -288,11 +276,17 @@ mas "Yubico Authenticator", id: 1497506650
 unless ENV['SKIP_PERSONAL']
   # Cloudflare Tunnel client
   brew "cloudflared"
+  # Mobile UI testing framework
+  brew "mobile-dev-inc/tap/maestro"
 
   # Remote desktop application
   cask "anydesk"
+  # OpenAI's ChatGPT desktop app
+  cask "chatgpt"
   # Sync software for Garmin devices
   cask "garmin-express"
+  # Keyboard customiser
+  cask "karabiner-elements"
   # Full TeX Live distribution
   cask "mactex"
   # SD card formatter
@@ -302,12 +296,16 @@ unless ENV['SKIP_PERSONAL']
   mas "Bear", id: 1091189122
   # Home automation
   mas "Home Assistant", id: 1099568401
+  # HP printer drivers
+  mas "HP Smart", id: 1474276998
   # Amazon price tracker
   mas "Keepa - Price Tracker", id: 1533805339
   # Kindle e-reader
   mas "Kindle", id: 302584613
   # Delivery tracking
   mas "Parcel - Delivery Tracking", id: 375589283
+  # Picture in picture for Safari
+  mas "PiPifier", id: 1160374471
   # Strava live segments on Apple Watch
   mas "Sauce for Strava", id: 1570922521
   # 3D CAD modeling
@@ -316,6 +314,8 @@ unless ENV['SKIP_PERSONAL']
   mas "Sink It", id: 6449873635
   # YouTube sponsor skipper
   mas "SponsorBlock for YouTube", id: 1573461917
+  # VPN and mesh networking
+  mas "Tailscale", id: 1475387142
   # Messaging app
   mas "Telegram", id: 747648890
 end
