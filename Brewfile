@@ -2,7 +2,6 @@ tap "anomalyco/tap"
 tap "cormacrelf/tap"
 tap "joaodrp/tap"
 tap "mike-engel/jwt-cli"
-tap "mobile-dev-inc/tap"
 tap "shopify/shopify"
 tap "steveyegge/beads"
 # Automate deployment, configuration, and upgrading
@@ -269,53 +268,3 @@ mas "Save to Reader", id: 1640236961
 mas "Things", id: 904280696
 # Apple IDE
 mas "Xcode", id: 497799835
-
-# =============================================================================
-# Personal packages (skip with SKIP_PERSONAL=1 brew bundle)
-# =============================================================================
-unless ENV['SKIP_PERSONAL']
-  # Cloudflare Tunnel client
-  brew "cloudflared"
-  # Mobile UI testing framework
-  brew "mobile-dev-inc/tap/maestro"
-
-  # Remote desktop application
-  cask "anydesk"
-  # OpenAI's ChatGPT desktop app
-  cask "chatgpt"
-  # Sync software for Garmin devices
-  cask "garmin-express"
-  # Keyboard customiser
-  cask "karabiner-elements"
-  # Full TeX Live distribution
-  cask "mactex"
-  # SD card formatter
-  cask "sdformatter"
-  # 3D CAD modeling
-  cask "shapr3d"
-  # VPN and mesh networking
-  cask "tailscale-app"
-  # Messaging app
-  cask "telegram"
-
-  # Home automation
-  cask "home-assistant"
-  # Markdown notes app
-  mas "Bear", id: 1091189122
-  # HP printer drivers
-  mas "HP Smart", id: 1474276998
-  # Amazon price tracker
-  mas "Keepa - Price Tracker", id: 1533805339
-  # Kindle e-reader
-  mas "Kindle", id: 302584613
-  # Delivery tracking
-  mas "Parcel - Delivery Tracking", id: 375589283
-  # Picture in picture for Safari
-  mas "PiPifier", id: 1160374471
-  # Strava live segments on Apple Watch
-  mas "Sauce for Strava", id: 1570922521
-  # Golf game
-  mas "Sink It", id: 6449873635
-  # YouTube sponsor skipper
-  mas "SponsorBlock for YouTube", id: 1573461917
-end

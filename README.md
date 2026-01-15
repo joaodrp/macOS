@@ -1,8 +1,11 @@
 # Setup
 
 ```
-# install all brew dependencies
+# install brew dependencies (work machine)
 make brew
+
+# install personal packages too (personal machine)
+make brew-all
 
 # install Apple SF Mono fonts
 cp /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SF-Mono*.otf ~/Library/Fonts/
@@ -33,15 +36,8 @@ for lang in golang ruby rust nodejs python
     asdf global $lang latest
 end
 
-# install fisher
-curl -sL https://git.io/fisher | source \
-    && fisher install jorgebucaran/fisher
-
-fisher install \
-    jorgebucaran/autopair.fish \
-    gazorby/fish-abbreviation-tips \
-    mattgreen/lucid.fish \
-    lgathy/google-cloud-sdk-fish-completion
+# install fisher (plugins are auto-installed via make sync)
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 # Voxengo Marvel GEQ for OBS
 set tmpdir (mktemp -d)
