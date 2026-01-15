@@ -1,25 +1,39 @@
 -- Official docs: https://www.postgresql.org/docs/current/app-psql.html
 -- Don't display the "helpful" message on startup.
 \set QUIET 1
+
+-- Null display
 \pset null '[NULL]'
 
--- Custom prompt
-\set PROMPT1 '%[%033[1m%]%M %n@%/%R%[%033[0m%]%# '
-\set PROMPT2 '[more] %R > '
+-- Custom prompt (green host, yellow user@db)
+\set PROMPT1 '%[%033[32m%]%M %[%033[33m%]%n@%/%[%033[0m%]%R%# '
+\set PROMPT2 '%[%033[33m%][more]%[%033[0m%] %R > '
 
 -- Show how long each query takes to execute
 \timing
 
--- pager with less -SX
-\setenv PAGER 'less -SX'
+-- Pager settings
+\setenv PAGER 'less -SXF'
 
--- Use best available output format
+-- Output format
 \x auto
+\pset linestyle unicode
+\pset border 2
+
+-- Error handling
 \set VERBOSITY verbose
+\set ON_ERROR_ROLLBACK interactive
+
+-- History
 \set HISTFILE ~/.psql_history- :DBNAME
 \set HISTCONTROL ignoredups
+\set HISTSIZE 10000
+
+-- Autocomplete keywords in uppercase
 \set COMP_KEYWORD_CASE upper
+
 \unset QUIET
 
--- Load local ~/.psqlrc.local
-\i ~/.psqlrc.local
+-- Load local overrides (optional)
+\set LOCAL_PSQLRC `test -f ~/.psqlrc.local && echo ~/.psqlrc.local || echo /dev/null`
+\i :LOCAL_PSQLRC
