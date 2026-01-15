@@ -42,7 +42,6 @@ Brewfile.personal.lock.json
 
 # Plugin files
 fish/functions/fisher.fish
-fish/functions/fish_prompt.fish
 fish/functions/gcloud_sdk_argcomplete.fish
 fish/functions/_*
 

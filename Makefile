@@ -25,6 +25,7 @@ sync:
 	ln -sf $(PWD)/fish/functions/showhidden.fish ~/.config/fish/functions/showhidden.fish
 	ln -sf $(PWD)/fish/functions/sync_theme.fish ~/.config/fish/functions/sync_theme.fish
 	ln -sf $(PWD)/fish/functions/upgrade.fish ~/.config/fish/functions/upgrade.fish
+	ln -sf $(PWD)/fish/functions/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-dark-hard.fish ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-light-hard.fish ~/.config/fish/fzf/gruvbox-light-hard.fish
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
@@ -102,6 +103,7 @@ clean:
 	rm -f ~/.config/fish/functions/showhidden.fish
 	rm -f ~/.config/fish/functions/sync_theme.fish
 	rm -f ~/.config/fish/functions/upgrade.fish
+	rm -f ~/.config/fish/functions/fish_prompt.fish
 	rm -f ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	rm -f ~/.config/fish/fzf/gruvbox-light-hard.fish
 	rm -f ~/.tmux.conf
