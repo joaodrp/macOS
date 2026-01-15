@@ -17,5 +17,5 @@
 ## Commits
 
 - Follow Conventional Commits (feat/fix/chore/docs etc.)
-- Keep descriptions concise and direct. Use markdown formatting for code/identifiers
+- Keep descriptions concise and direct. Use markdown formatting for code or identifiers
 - No Co-Authored-By footers
