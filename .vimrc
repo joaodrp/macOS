@@ -6,7 +6,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'ConradIrwin/vim-bracketed-paste'
+" vim-bracketed-paste removed - native in vim 8.0+
 Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
 Plug 'arthurxavierx/vim-caser'
@@ -23,16 +23,17 @@ Plug 'fatih/vim-hclfmt'
 Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-hashicorp-tools'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+" fzf installed via Homebrew, just need the vim plugin
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'preservim/nerdcommenter'
+" nerdcommenter removed - using vim-commentary instead
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'scrooloose/nerdtree'
 Plug 't9md/vim-choosewin'
 Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
-Plug 'tmux-plugins/vim-tmux-focus-events'
+" vim-tmux-focus-events removed - native in modern vim/tmux
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
@@ -49,14 +50,12 @@ call plug#end()
 "=====================================================
 "===================== SETTINGS ======================
 
-set nocompatible
-filetype off
 filetype plugin indent on
 
 set ttyfast
 
 if !has('nvim')
-  set ttymouse=xterm2
+  set ttymouse=sgr
   set ttyscroll=3
 endif
 
@@ -89,6 +88,10 @@ set nocursorline
 set updatetime=300
 set pumheight=10             " Completion window max size
 set conceallevel=2           " Concealed text is completely hidden
+set signcolumn=yes           " Always show sign column for stable gutter
+set scrolloff=8              " Keep 8 lines visible when scrolling
+set wildmenu                 " Enhanced command line completion
+set wildmode=longest:full,full
 
 set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " If Vim beeps during completion
@@ -358,8 +361,8 @@ nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
 " ==================== Fugitive ====================
-vnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gb :Gblame<CR>
+vnoremap <leader>gb :Git blame<CR>
+nnoremap <leader>gb :Git blame<CR>
 
 " ==================== vim-go ====================
 let g:go_fmt_fail_silently = 1
@@ -372,8 +375,8 @@ let g:go_test_show_name = 1
 let g:go_list_type = "quickfix"
 
 let g:go_autodetect_gopath = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let g:go_metalinter_enabled = ['vet', 'golint']
+let g:go_metalinter_autosave_enabled = ['vet', 'staticcheck']
+let g:go_metalinter_enabled = ['vet', 'staticcheck']
 
 let g:go_gopls_complete_unimported = 1
 
@@ -472,8 +475,8 @@ noremap <Leader>f :NERDTreeFind<cr>
 
 let NERDTreeShowHidden=1
 
-" ==================== ag ====================
-let g:ackprg = 'ag --vimgrep --smart-case'
+" ==================== ack.vim (using rg) ====================
+let g:ackprg = 'rg --vimgrep --smart-case'
 
 " ==================== markdown ====================
 let g:vim_markdown_folding_disabled = 1
@@ -556,16 +559,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" ==================== NERD Commenter ====================
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
 " ==================== Various other plugin settings ====================
 nmap  -  <Plug>(choosewin)
 
-" Trigger a highlight in the appropriate direction when pressing these keys:
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-" vim: sw=2 sw=2 et
+" vim: sw=2 et
