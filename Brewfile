@@ -188,6 +188,8 @@ brew "ykman"
 brew "ykpers"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # AI-powered coding assistant
 brew "anomalyco/tap/opencode"
 # Super fast CLI tool to decode and encode JWTs built in Rust

@@ -68,6 +68,9 @@ direnv hook fish | source
 test -f /opt/homebrew/Caskroom/gcloud-cli/latest/google-cloud-sdk/path.fish.inc \
     && source /opt/homebrew/Caskroom/gcloud-cli/latest/google-cloud-sdk/path.fish.inc
 
+# zoxide (smarter cd)
+zoxide init fish | source
+
 # =============================================================================
 # Local overrides (not tracked in git)
 # =============================================================================
