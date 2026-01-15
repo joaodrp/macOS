@@ -63,6 +63,8 @@ brew "glab"
 brew "git-crypt"
 # Git extension for versioning large files
 brew "git-lfs"
+# Scan git repos for secrets
+brew "gitleaks"
 # Render markdown on the CLI
 brew "glow"
 # GNU implementation of the famous stream editor

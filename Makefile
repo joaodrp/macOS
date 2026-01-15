@@ -8,6 +8,7 @@ sync:
 	mkdir -p ~/.config/fish/fzf
 	mkdir -p ~/.tmux/
 	mkdir -p ~/.gnupg/
+	mkdir -p ~/.config/git
 	mkdir -p ~/Developer
 	mkdir -p ~/.mitmproxy/
 	mkdir -p ~/.config/bat/
@@ -34,6 +35,7 @@ sync:
 	[ -f ~/.tigrc ] || ln -s $(PWD)/.tigrc ~/.tigrc
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/.gitconfig ~/.gitconfig
 	[ -f ~/.gitignore ] || ln -s $(PWD)/gitignore ~/.gitignore
+	ln -sfn $(PWD)/git/hooks ~/.config/git/hooks
 	[ -f ~/.dockerignore ] || ln -s $(PWD)/.dockerignore ~/.dockerignore
 	[ -f ~/.ignore ] || ln -s $(PWD)/.ignore ~/.ignore
 	[ -f ~/.gitconfig.local ] || touch ~/.gitconfig.local
@@ -81,6 +83,7 @@ clean:
 	rm -f ~/.tigrc
 	rm -f ~/.gitconfig
 	rm -f ~/.gitignore
+	rm -rf ~/.config/git/hooks
 	rm -f ~/.dockerignore
 	rm -f ~/.ignore
 	rm -f ~/.hushlogin
