@@ -125,6 +125,8 @@ brew "neovim"
 brew "nmap"
 # Platform built on V8 to build network applications
 brew "node"
+# OCI Registry As Storage
+brew "oras"
 # PostgreSQL syntax beautifier
 brew "pgformatter"
 # PGP packet visualizer
@@ -165,6 +167,8 @@ brew "tig"
 brew "tldr"
 # Terminal multiplexer
 brew "tmux"
+# Manage complex tmux sessions easily
+brew "tmuxinator"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Extremely fast Python package installer and resolver
@@ -209,6 +213,8 @@ cask "chatgpt"
 cask "claude"
 # Screenshot and screen recording tool
 cask "cleanshot"
+# AI coding assistant CLI
+cask "claude-code"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # Web browser
@@ -233,16 +239,22 @@ cask "karabiner-elements"
 cask "keka"
 # Host-based application firewall
 cask "little-snitch"
+# Show upcoming meetings in menu bar
+cask "meetingbar"
 # Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # Control your tools with a few keystrokes
 cask "raycast"
+# GUI for Redis databases
+cask "redis-insight"
 # Store SSH keys in the Secure Enclave
 cask "secretive"
 # Team communication and collaboration software
 cask "slack"
+# Teleport shell client
+cask "tsh"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
