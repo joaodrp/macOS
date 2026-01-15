@@ -13,6 +13,7 @@ sync:
 	mkdir -p ~/.mitmproxy/
 	mkdir -p ~/.config/bat/
 	mkdir -p ~/.config/opencode/
+	mkdir -p ~/.claude
 	mkdir -p ~/Library/LaunchAgents
 
 	[ -f ~/.config/ghostty/config ] || ln -s $(PWD)/ghostty/config ~/.config/ghostty/config
@@ -29,6 +30,8 @@ sync:
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
 	[ -f ~/.mitmproxy/config.yaml ] || ln -s $(PWD)/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
 	[ -f ~/.config/opencode/opencode.json ] || ln -s $(PWD)/opencode/opencode.json ~/.config/opencode/opencode.json
+	ln -sf $(PWD)/opencode/AGENTS.md ~/.config/opencode/AGENTS.md
+	ln -sf $(PWD)/claude/CLAUDE.md ~/.claude/CLAUDE.md
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	[ -f ~/.tmux/tmuxline-dark.conf ] || ln -s $(PWD)/tmux/tmuxline-dark.conf ~/.tmux/tmuxline-dark.conf
@@ -117,5 +120,7 @@ clean:
 	rm -f ~/.config/bat/config
 	rm -f ~/.mitmproxy/config.yaml
 	rm -f ~/.config/opencode/opencode.json
+	rm -f ~/.config/opencode/AGENTS.md
+	rm -f ~/.claude/CLAUDE.md
 
 .PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions post-install config clean

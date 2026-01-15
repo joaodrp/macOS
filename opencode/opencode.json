@@ -3,6 +3,11 @@
   "theme": "opencode",
   "autoupdate": true,
   "share": "manual",
+  "tui": {
+    "scroll_acceleration": {
+      "enabled": true
+    }
+  },
   "keybinds": {
     "leader": "ctrl+a"
   },
