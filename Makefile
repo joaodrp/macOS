@@ -15,6 +15,8 @@ sync:
 
 	[ -f ~/.config/ghostty/config ] || ln -s $(PWD)/ghostty/config ~/.config/ghostty/config
 	[ -f ~/.config/fish/config.fish ] || ln -s $(PWD)/fish/config.fish ~/.config/fish/config.fish
+	ln -sf $(PWD)/fish/fish_plugins ~/.config/fish/fish_plugins
+	fish -c "fisher update"
 	ln -sf $(PWD)/fish/functions/fish_user_key_bindings.fish ~/.config/fish/functions/fish_user_key_bindings.fish
 	ln -sf $(PWD)/fish/functions/fzf_key_bindings.fish ~/.config/fish/functions/fzf_key_bindings.fish
 	ln -sf $(PWD)/fish/functions/op_signin.fish ~/.config/fish/functions/op_signin.fish
@@ -64,6 +66,7 @@ clean:
 	rm -f ~/.vimrc
 	rm -f ~/.config/ghostty/config
 	rm -f ~/.config/fish/config.fish
+	rm -f ~/.config/fish/fish_plugins
 	rm -f ~/.config/fish/functions/fish_user_key_bindings.fish
 	rm -f ~/.config/fish/functions/fzf_key_bindings.fish
 	rm -f ~/.config/fish/functions/op_signin.fish

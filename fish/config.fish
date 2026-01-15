@@ -61,13 +61,6 @@ gpgconf --launch gpg-agent
 # Sync theme for bat, fzf, mitmproxy on shell start
 sync_theme
 
-# TODO: review plugins:
-# mattgreen/lucid.fish
-# pure-fish/pure
-# jethrokuan/z
-# franciscolourenco/done
-# PatrickF1/fzf.fish
-
 direnv hook fish | source
 
 source "/opt/homebrew/Caskroom/gcloud-cli/latest/google-cloud-sdk/path.fish.inc"
