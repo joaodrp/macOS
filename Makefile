@@ -12,6 +12,7 @@ sync:
 	mkdir -p ~/Developer
 	mkdir -p ~/.mitmproxy/
 	mkdir -p ~/.config/bat/
+	mkdir -p ~/.config/opencode/
 	mkdir -p ~/Library/LaunchAgents
 
 	[ -f ~/.config/ghostty/config ] || ln -s $(PWD)/ghostty/config ~/.config/ghostty/config
@@ -27,6 +28,7 @@ sync:
 	ln -sf $(PWD)/fish/fzf/gruvbox-light-hard.fish ~/.config/fish/fzf/gruvbox-light-hard.fish
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
 	[ -f ~/.mitmproxy/config.yaml ] || ln -s $(PWD)/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
+	[ -f ~/.config/opencode/opencode.json ] || ln -s $(PWD)/opencode/opencode.json ~/.config/opencode/opencode.json
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	[ -f ~/.tmux/tmuxline-dark.conf ] || ln -s $(PWD)/tmux/tmuxline-dark.conf ~/.tmux/tmuxline-dark.conf
@@ -114,5 +116,6 @@ clean:
 	rm -f ~/.psqlrc
 	rm -f ~/.config/bat/config
 	rm -f ~/.mitmproxy/config.yaml
+	rm -f ~/.config/opencode/opencode.json
 
 .PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions post-install config clean

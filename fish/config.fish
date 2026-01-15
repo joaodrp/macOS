@@ -70,3 +70,6 @@ source ~/.config/fish/local.fish
 
 # git
 set -x GIT_COMPLETION_CHECKOUT_NO_GUESS 1
+
+# OpenCode
+set -x OPENCODE_EXPERIMENTAL_LSP_TOOL true

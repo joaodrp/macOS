@@ -1,4 +1,4 @@
-# Agents Guide
+# AGENTS.md
 
 This is a macOS dotfiles repository for setting up development machines.
 
