@@ -1,5 +1,6 @@
-*.git
-*vendor
-!node_modules/
-!dist/
-!build/
+# Ignored by ripgrep, fd, and other tools using .ignore
+.git/
+vendor/
+node_modules/
+dist/
+build/

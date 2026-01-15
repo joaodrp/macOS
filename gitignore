@@ -1,3 +1,26 @@
-_local/*
+# Global gitignore (symlinked to ~/.gitignore)
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editors
+*.swp
+*.swo
+*~
+.idea/
 .vscode/
-.claude/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Project-specific local files
+_local/
+
+# Claude Code (local overrides only - keep CLAUDE.md, settings.json, rules/, agents/ trackable)
+.claude/settings.local.json
+.claude/CLAUDE.local.md
