@@ -17,7 +17,6 @@ sync:
 	[ -f ~/.config/ghostty/config ] || ln -s $(PWD)/ghostty/config ~/.config/ghostty/config
 	[ -f ~/.config/fish/config.fish ] || ln -s $(PWD)/fish/config.fish ~/.config/fish/config.fish
 	ln -sf $(PWD)/fish/fish_plugins ~/.config/fish/fish_plugins
-	fish -c "fisher update"
 	ln -sf $(PWD)/fish/functions/fish_user_key_bindings.fish ~/.config/fish/functions/fish_user_key_bindings.fish
 	ln -sf $(PWD)/fish/functions/fzf_key_bindings.fish ~/.config/fish/functions/fzf_key_bindings.fish
 	ln -sf $(PWD)/fish/functions/op_signin.fish ~/.config/fish/functions/op_signin.fish
@@ -26,6 +25,9 @@ sync:
 	ln -sf $(PWD)/fish/functions/upgrade.fish ~/.config/fish/functions/upgrade.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-dark-hard.fish ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-light-hard.fish ~/.config/fish/fzf/gruvbox-light-hard.fish
+	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
+	[ -f ~/.mitmproxy/config.yaml ] || ln -s $(PWD)/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
+	fish -c "fisher update"
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	[ -f ~/.tmux/tmuxline-dark.conf ] || ln -s $(PWD)/tmux/tmuxline-dark.conf ~/.tmux/tmuxline-dark.conf
@@ -43,8 +45,6 @@ sync:
 	[ -f ~/.hushlogin ] || ln -s $(PWD)/.hushlogin ~/.hushlogin
 	[ -f ~/.psqlrc ] || ln -s $(PWD)/.psqlrc ~/.psqlrc
 	[ -f ~/.psqlrc.local ] || touch ~/.psqlrc.local
-	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
-	[ -f ~/.mitmproxy/config.yaml ] || ln -s $(PWD)/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
 	[ -f ~/Library/LaunchAgents/com.joaodrp.dark-notify.plist ] || ln -s $(PWD)/dark-notify.plist ~/Library/LaunchAgents/com.joaodrp.dark-notify.plist
 	-launchctl load ~/Library/LaunchAgents/com.joaodrp.dark-notify.plist 2>/dev/null
 
