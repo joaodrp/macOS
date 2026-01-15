@@ -18,8 +18,6 @@ brew "bash"
 brew "bat"
 # Statistics utility to count lines of code
 brew "cloc"
-# Cloudflare Tunnel client
-brew "cloudflared"
 # Cross-platform make
 brew "cmake"
 # Tool for interacting with remote images and registries
@@ -184,8 +182,6 @@ brew "steveyegge/beads/bd"
 cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
-# Remote desktop application
-cask "anydesk"
 # Application uninstaller
 cask "appcleaner"
 # Battery management app
@@ -208,8 +204,6 @@ cask "font-jetbrains-mono"
 cask "font-monaspace"
 # Programming font with rounded corners
 cask "font-mononoki"
-# Sync software for Garmin devices
-cask "garmin-express"
 # Terminal emulator with native dark mode support
 cask "ghostty"
 # Web browser
@@ -222,16 +216,12 @@ cask "karabiner-elements"
 cask "keka"
 # Host-based application firewall
 cask "little-snitch"
-# Full TeX Live distribution
-cask "mactex"
 # Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # Control your tools with a few keystrokes
 cask "raycast"
-# SD card formatter
-cask "sdformatter"
 # Store SSH keys in the Secure Enclave
 cask "secretive"
 # Team communication and collaboration software
@@ -244,36 +234,16 @@ cask "vlc"
 cask "zoom"
 # 1Password Safari extension
 mas "1Password for Safari", id: 1569813296
-# Markdown notes app
-mas "Bear", id: 1091189122
-# Home automation
-mas "Home Assistant", id: 1099568401
 # HP printer drivers
 mas "HP Smart", id: 1474276998
 # Kagi search Safari extension
 mas "Kagi for Safari", id: 1622835804
-# Amazon price tracker
-mas "Keepa - Price Tracker", id: 1533805339
-# Kindle e-reader
-mas "Kindle", id: 302584613
-# Delivery tracking
-mas "Parcel - Delivery Tracking", id: 375589283
 # Picture in picture for Safari
 mas "PiPifier", id: 1160374471
-# Strava live segments on Apple Watch
-mas "Sauce for Strava", id: 1570922521
 # Save to Readwise Reader
 mas "Save to Reader", id: 1640236961
-# 3D CAD modeling
-mas "Shapr3D", id: 1091675654
-# Golf game
-mas "Sink It", id: 6449873635
-# YouTube sponsor skipper
-mas "SponsorBlock for YouTube", id: 1573461917
 # VPN and mesh networking
 mas "Tailscale", id: 1475387142
-# Messaging app
-mas "Telegram", id: 747648890
 # Task manager
 mas "Things", id: 904280696
 # Messaging app
@@ -282,3 +252,41 @@ mas "WhatsApp", id: 310633997
 mas "Xcode", id: 497799835
 # Hardware security key authenticator
 mas "Yubico Authenticator", id: 1497506650
+
+# =============================================================================
+# Personal packages (skip with SKIP_PERSONAL=1 brew bundle)
+# =============================================================================
+unless ENV['SKIP_PERSONAL']
+  # Cloudflare Tunnel client
+  brew "cloudflared"
+
+  # Remote desktop application
+  cask "anydesk"
+  # Sync software for Garmin devices
+  cask "garmin-express"
+  # Full TeX Live distribution
+  cask "mactex"
+  # SD card formatter
+  cask "sdformatter"
+
+  # Markdown notes app
+  mas "Bear", id: 1091189122
+  # Home automation
+  mas "Home Assistant", id: 1099568401
+  # Amazon price tracker
+  mas "Keepa - Price Tracker", id: 1533805339
+  # Kindle e-reader
+  mas "Kindle", id: 302584613
+  # Delivery tracking
+  mas "Parcel - Delivery Tracking", id: 375589283
+  # Strava live segments on Apple Watch
+  mas "Sauce for Strava", id: 1570922521
+  # 3D CAD modeling
+  mas "Shapr3D", id: 1091675654
+  # Golf game
+  mas "Sink It", id: 6449873635
+  # YouTube sponsor skipper
+  mas "SponsorBlock for YouTube", id: 1573461917
+  # Messaging app
+  mas "Telegram", id: 747648890
+end

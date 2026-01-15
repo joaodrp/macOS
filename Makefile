@@ -40,6 +40,9 @@ sync:
 brew:
 	brew bundle --verbose
 
+brew-skip-personal:
+	SKIP_PERSONAL=1 brew bundle --verbose
+
 config:
 	./macos
 
@@ -61,4 +64,4 @@ clean:
 	rm -f ~/.config/bat/config
 	rm -f ~/.mitmproxy/config.yaml
 
-.PHONY: all sync brew config clean
+.PHONY: all sync brew brew-skip-personal config clean
