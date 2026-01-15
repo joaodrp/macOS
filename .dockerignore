@@ -1,1 +1,29 @@
+# Global .dockerignore (symlinked to ~/.dockerignore)
+# Keep minimal - project-specific patterns belong in project .dockerignore
+
+# Version control
 .git
+**/.git
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# IDE/Editors
+.vscode
+.idea
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Secrets (never include in images)
+.env
+.env.*
+
+# Meta
+.dockerignore
