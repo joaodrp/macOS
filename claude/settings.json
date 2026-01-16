@@ -4,10 +4,13 @@
     "pr": ""
   },
   "cleanupPeriodDays": 30,
+  "forceLoginMethod": "claudeai",
+  "enableAllProjectMcpServers": true,
   "permissions": {
     "allow": [
       "WebFetch",
       "WebSearch",
+
       "Read(~/.claude/*)",
 
       "Bash(date:*)",
@@ -35,7 +38,11 @@
     ],
     "deny": [
       "Read(./.env)",
-      "Read(./.env.*)"
+      "Read(./.env.*)",
+      "Read(.envrc)",
+      "Read(./secrets/**)",
+      "Read(./config/credentials.json)",
+      "Read(./build)"
     ]
   },
   "hooks": {
@@ -112,5 +119,8 @@
 
     "beads@beads-marketplace": true,
     "get-shit-done@get-shit-done": true
+  },
+  "env": {
+    "CLAUDE_CODE_HIDE_ACCOUNT_INFO": "1"
   }
 }
