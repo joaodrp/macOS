@@ -1,5 +1,8 @@
+# Machine-specific overrides (not tracked in git)
+Include config.local
+
 Host *
-  # Use 1Password SSH agent
+  # Use 1Password SSH agent (override in config.local for GPG/YubiKey)
   IdentityAgent ~/.1password/agent.sock
   AddKeysToAgent yes
 

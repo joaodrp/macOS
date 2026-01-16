@@ -55,8 +55,10 @@ sync:
 	[ -f ~/.gnupg/gpg-agent.conf ] || ln -s $(PWD)/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 	[ -f ~/.tigrc ] || ln -s $(PWD)/.tigrc ~/.tigrc
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/.gitconfig ~/.gitconfig
+	[ -f ~/.gitconfig-github ] || ln -s $(PWD)/.gitconfig-github ~/.gitconfig-github
 	[ -f ~/.gitignore ] || ln -s $(PWD)/gitignore ~/.gitignore
 	[ -f ~/.ssh/config ] || ln -s $(PWD)/ssh/config ~/.ssh/config
+	[ -f ~/.ssh/config.local ] || touch ~/.ssh/config.local
 	[ -S ~/.1password/agent.sock ] || ln -s ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ~/.1password/agent.sock
 	ln -sfn $(PWD)/git/hooks ~/.config/git/hooks
 	[ -f ~/.dockerignore ] || ln -s $(PWD)/.dockerignore ~/.dockerignore
@@ -135,6 +137,7 @@ clean:
 	rm -f ~/.gnupg/gpg-agent.conf
 	rm -f ~/.tigrc
 	rm -f ~/.gitconfig
+	rm -f ~/.gitconfig-github
 	rm -f ~/.gitignore
 	rm -rf ~/.config/git/hooks
 	rm -f ~/.ssh/config

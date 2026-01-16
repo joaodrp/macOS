@@ -57,21 +57,24 @@ These files are created by `make sync` but not tracked in git:
 - `~/.gitconfig.local` - Local git config (user email)
 - `~/.config/fish/local.fish` - Local fish config (secrets, machine-specific)
 - `~/.config/opencode/opencode.local.json` - Local opencode config
+- `~/.ssh/config.local` - Local SSH config (host overrides, IdentityAgent)
 - `~/.psqlrc.local` - Local psql config
 
 ### SSH Agent
 
-The SSH agent is configured per-machine in `~/.config/fish/local.fish`:
+The default `ssh/config` uses 1Password agent. For GPG/YubiKey, override in `~/.ssh/config.local`:
 
-```fish
-# 1Password
-set -gx SSH_AUTH_SOCK ~/.1password/agent.sock
-````
+```ssh
+# Override to use GPG agent
+Host *
+  IdentityAgent $SSH_AUTH_SOCK
+```
 
-OR
+And configure the agent socket in `~/.config/fish/local.fish`:
 
 ```fish
 # GPG/YubiKey
-set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -x GPG_TTY (tty)
+set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 ```
