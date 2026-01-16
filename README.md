@@ -56,6 +56,7 @@ make config
 These files are created by `make sync` but not tracked in git:
 - `~/.gitconfig.local` - Local git config (user email)
 - `~/.config/fish/local.fish` - Local fish config (secrets, machine-specific)
+- `~/.config/opencode/opencode.local.json` - Local opencode config
 - `~/.psqlrc.local` - Local psql config
 
 ### SSH Agent
