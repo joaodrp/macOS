@@ -15,6 +15,10 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── tmux/             # tmux configuration and themes
 ├── ghostty/          # Ghostty terminal config
 ├── gnupg/            # GPG agent configuration
+├── ssh/              # SSH config with Include for local overrides
+├── git/              # Git hooks (gitleaks)
+├── opencode/         # Opencode AI assistant config
+├── claude/           # Claude Code config
 ├── bat/              # bat (cat replacement) config
 └── mitmproxy/        # HTTP proxy config
 ```
@@ -31,7 +35,6 @@ This is a macOS dotfiles repository for setting up development machines.
 - **Brewfile**: All packages managed via Homebrew. Add new tools here, not manually
 - **Fish functions**: One function per file in `fish/functions/`
 - **Ghostty keybindings**: Use tmux-style Ctrl+A prefix for consistency
-- **GNU tools in PATH**: GNU versions of sed, grep, tar, find, etc. are prioritized over BSD versions (see `config.fish`). Use GNU syntax in scripts (e.g., `sed -i 'pattern'` not `sed -i '' 'pattern'`)
 
 ## Commit Messages
 
@@ -65,10 +68,10 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ## Theme-Synced Configs
 
-The following files are automatically updated by `sync_theme` based on macOS appearance:
-- `.gitconfig` - `delta.syntax-theme` setting
-- `bat/config` - `--theme` setting
-- `mitmproxy/config.yaml` - `console_palette` setting
+These files auto-switch based on macOS appearance mode. Only commit non-theme changes:
+- `.gitconfig` - do not commit `delta.syntax-theme` changes
+- `bat/config` - do not commit `--theme` changes
+- `mitmproxy/config.yaml` - do not commit `console_palette` changes
 
 These files will often show as modified in git due to automatic theme switching. Only commit non-theme changes to these files.
 
