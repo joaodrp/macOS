@@ -95,16 +95,6 @@
           }
         ]
       }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/hooks/gsd-notify.sh"
-          }
-        ]
-      }
     ]
   },
   "statusLine": {
