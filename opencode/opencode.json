@@ -2,6 +2,10 @@
   "$schema": "https://opencode.ai/config.json",
   "theme": "gruvbox",
   "autoupdate": true,
+  "plugin": [
+    "@mohak34/opencode-notifier@latest",
+    "@gitlab/opencode-gitlab-plugin@latest"
+  ],
   "share": "manual",
   "tui": {
     "scroll_acceleration": {
