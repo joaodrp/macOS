@@ -9,6 +9,9 @@ sync:
 	mkdir -p ~/.config/fish/conf.d
 	mkdir -p ~/.tmux/
 	mkdir -p ~/.gnupg/
+	mkdir -p ~/.ssh
+	mkdir -p ~/.ssh/sockets
+	mkdir -p ~/.1password
 	mkdir -p ~/.config/git
 	mkdir -p ~/Developer
 	mkdir -p ~/.mitmproxy/
@@ -53,6 +56,8 @@ sync:
 	[ -f ~/.tigrc ] || ln -s $(PWD)/.tigrc ~/.tigrc
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/.gitconfig ~/.gitconfig
 	[ -f ~/.gitignore ] || ln -s $(PWD)/gitignore ~/.gitignore
+	[ -f ~/.ssh/config ] || ln -s $(PWD)/ssh/config ~/.ssh/config
+	[ -S ~/.1password/agent.sock ] || ln -s ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ~/.1password/agent.sock
 	ln -sfn $(PWD)/git/hooks ~/.config/git/hooks
 	[ -f ~/.dockerignore ] || ln -s $(PWD)/.dockerignore ~/.dockerignore
 	[ -f ~/.ignore ] || ln -s $(PWD)/.ignore ~/.ignore
@@ -131,6 +136,8 @@ clean:
 	rm -f ~/.gitconfig
 	rm -f ~/.gitignore
 	rm -rf ~/.config/git/hooks
+	rm -f ~/.ssh/config
+	rm -f ~/.1password/agent.sock
 	rm -f ~/.dockerignore
 	rm -f ~/.ignore
 	rm -f ~/.hushlogin

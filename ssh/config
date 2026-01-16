@@ -1,0 +1,13 @@
+Host *
+  # Use 1Password SSH agent
+  IdentityAgent ~/.1password/agent.sock
+  AddKeysToAgent yes
+
+  # Keep connections alive
+  ServerAliveInterval 60
+  ServerAliveCountMax 3
+
+  # Connection multiplexing (reuse connections for faster subsequent sessions)
+  ControlMaster auto
+  ControlPath ~/.ssh/sockets/%r@%h-%p
+  ControlPersist 600

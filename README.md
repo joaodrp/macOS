@@ -54,6 +54,23 @@ make config
 ## Local Overrides
 
 These files are created by `make sync` but not tracked in git:
-- `~/.gitconfig.local` - Local git config (user, signing key)
+- `~/.gitconfig.local` - Local git config (user email)
 - `~/.config/fish/local.fish` - Local fish config (secrets, machine-specific)
 - `~/.psqlrc.local` - Local psql config
+
+### SSH Agent
+
+The SSH agent is configured per-machine in `~/.config/fish/local.fish`:
+
+```fish
+# 1Password
+set -gx SSH_AUTH_SOCK ~/.1password/agent.sock
+````
+
+OR
+
+```fish
+# GPG/YubiKey
+set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+```

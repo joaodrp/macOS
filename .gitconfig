@@ -30,20 +30,33 @@
 	# Detect whitespace errors when applying a patch.
 	whitespace = fix
 [core]
+	# Use OpenSSH for git operations (ensures 1Password agent is used)
+	sshCommand = /usr/bin/ssh
 	pager = delta
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	editor = nvim
+	# Don't escape non-ASCII characters in paths
 	quotepath = false
 	excludesfile = ~/.gitignore
 	hooksPath = ~/.config/git/hooks
 [include]
+	# Local config (email, machine-specific settings)
     path = .gitconfig.local
+[includeIf "gitdir/i:github.com/"]
+	# GitHub-specific config (noreply email)
+    path = .gitconfig-github
 [user]
 	name = João Pereira
+	# SSH key for commit signing (1Password)
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDwZ2R/ioFT1WW6J0fUptkefCmhCSOB0n1P1fBLgZPU0
 [gpg]
-	program = gpg
+	# Use SSH keys for signing instead of GPG
+	format = ssh
+[gpg "ssh"]
+	# 1Password handles SSH signing
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
-	# Sign commits with GPG
+	# Sign all commits
 	gpgsign = true
 [diff]
 	# Detect copies as well as renames.
@@ -54,9 +67,12 @@
 	# Use `hexdump` to diff binary files.
 	textconv = hexdump -v -C
 [push]
+	# Push to branch with same name on remote
 	default = current
+	# Automatically set upstream on first push
 	autoSetupRemote = true
 [pull]
+	# Rebase instead of merge when pulling
 	rebase = true
 [help]
 	# Automatically correct and execute mistyped commands.
@@ -78,8 +94,10 @@
 	# Remember conflict resolutions
 	enabled = true
 [interactive]
+	# Use delta for interactive diffs (git add -p)
 	diffFilter = delta --color-only
 [delta]
+	# Enable n/N navigation between diff sections
 	navigate = true
 	line-numbers = true
 	syntax-theme = gruvbox-dark
@@ -94,4 +112,5 @@
 	new = green bold
 	whitespace = red reverse
 [init]
+	# Default branch name for new repositories
 	defaultBranch = main
