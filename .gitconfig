@@ -40,7 +40,7 @@
 	excludesfile = ~/.gitignore
 	hooksPath = ~/.config/git/hooks
 [include]
-	# Local config (email, machine-specific settings)
+	# Local config (personal email, machine-specific settings)
     path = .gitconfig.local
 [includeIf "gitdir/i:github.com/"]
 	# GitHub-specific config (noreply email)
@@ -55,6 +55,8 @@
 [gpg "ssh"]
 	# 1Password handles SSH signing
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+	# Allowed signers for local signature verification (see README)
+	allowedSignersFile = ~/.config/git/allowed_signers
 [commit]
 	# Sign all commits
 	gpgsign = true

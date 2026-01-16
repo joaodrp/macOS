@@ -78,3 +78,14 @@ set -x GPG_TTY (tty)
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 ```
+
+### Commit Signature Verification
+
+For local verification of SSH-signed commits, create `~/.config/git/allowed_signers`:
+
+```
+your@email.com ssh-ed25519 AAAA...your-public-key
+another@email.com ssh-ed25519 AAAA...your-public-key
+```
+
+List each email you sign commits with, followed by your public signing key.

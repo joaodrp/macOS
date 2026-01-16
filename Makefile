@@ -64,6 +64,7 @@ sync:
 	[ -f ~/.dockerignore ] || ln -s $(PWD)/.dockerignore ~/.dockerignore
 	[ -f ~/.ignore ] || ln -s $(PWD)/.ignore ~/.ignore
 	[ -f ~/.gitconfig.local ] || touch ~/.gitconfig.local
+	[ -f ~/.config/git/allowed_signers ] || touch ~/.config/git/allowed_signers
 	[ -f ~/.config/fish/local.fish ] || touch ~/.config/fish/local.fish
 	[ -f ~/.config/opencode/opencode.local.json ] || echo '{}' > ~/.config/opencode/opencode.local.json
 	[ -f ~/.hushlogin ] || ln -s $(PWD)/.hushlogin ~/.hushlogin
