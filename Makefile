@@ -41,7 +41,7 @@ sync:
 	ln -sf $(PWD)/opencode/AGENTS.md ~/.config/opencode/AGENTS.md
 	ln -sf $(PWD)/claude/CLAUDE.md ~/.claude/CLAUDE.md
 	[ -f ~/.claude/settings.json ] || ln -s $(PWD)/claude/settings.json ~/.claude/settings.json
-	ln -sf $(PWD)/claude/statusline-command.sh ~/.claude/statusline-command.sh
+	ln -sf $(PWD)/claude/statusline.sh ~/.claude/statusline.sh
 	ln -sf $(PWD)/claude/commands/bd-log.md ~/.claude/commands/bd-log.md
 	ln -sf $(PWD)/claude/commands/bd-save.md ~/.claude/commands/bd-save.md
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
@@ -141,7 +141,7 @@ clean:
 	rm -f ~/.config/opencode/AGENTS.md
 	rm -f ~/.claude/CLAUDE.md
 	rm -f ~/.claude/settings.json
-	rm -f ~/.claude/statusline-command.sh
+	rm -f ~/.claude/statusline.sh
 	rm -f ~/.claude/commands/bd-log.md
 	rm -f ~/.claude/commands/bd-save.md
 
