@@ -25,6 +25,7 @@ fish_add_path \
 
 set -gx EDITOR nvim
 set -gx GOBIN $HOME/go/bin
+set -gx OPENCODE_CONFIG $HOME/.config/opencode/opencode.local.json
 set -gx OPENCODE_EXPERIMENTAL_LSP_TOOL true
 
 fish_add_path $HOME/go/bin
