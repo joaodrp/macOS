@@ -1,4 +1,8 @@
 {
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "allow": [
       "WebFetch",
@@ -34,22 +38,10 @@
       "Bash(git push --force:*)",
       "Bash(git push -f:*)",
       "Bash(git reset --hard:*)",
-      "Bash(git rebase:*)",
       "Bash(npm publish:*)"
     ]
   },
   "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/scripts/validate-git-commit.sh"
-          }
-        ]
-      }
-    ],
     "PermissionRequest": [
       {
         "matcher": "",
@@ -128,7 +120,6 @@
     "cicd-automation@claude-code-workflows": true,
     "code-documentation@claude-code-workflows": true,
     "code-refactoring@claude-code-workflows": true,
-    "code-review-ai@claude-code-workflows": true,
     "codebase-cleanup@claude-code-workflows": true,
     "comprehensive-review@claude-code-workflows": true,
     "database-design@claude-code-workflows": true,
@@ -142,17 +133,12 @@
     "frontend-mobile-security@claude-code-workflows": true,
     "full-stack-orchestration@claude-code-workflows": true,
     "git-pr-workflows@claude-code-workflows": true,
-    "hr-legal-compliance@claude-code-workflows": true,
     "javascript-typescript@claude-code-workflows": true,
     "multi-platform-apps@claude-code-workflows": true,
     "observability-monitoring@claude-code-workflows": true,
-    "payment-processing@claude-code-workflows": true,
     "performance-testing-review@claude-code-workflows": true,
     "security-compliance@claude-code-workflows": true,
     "security-scanning@claude-code-workflows": true,
-    "seo-analysis-monitoring@claude-code-workflows": true,
-    "seo-content-creation@claude-code-workflows": true,
-    "seo-technical-optimization@claude-code-workflows": true,
     "shell-scripting@claude-code-workflows": true,
     "tdd-workflows@claude-code-workflows": true,
     "unit-testing@claude-code-workflows": true,

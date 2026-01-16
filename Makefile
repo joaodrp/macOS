@@ -15,7 +15,6 @@ sync:
 	mkdir -p ~/.config/bat/
 	mkdir -p ~/.config/opencode/
 	mkdir -p ~/.claude
-	mkdir -p ~/.claude/scripts
 	mkdir -p ~/.claude/commands
 	mkdir -p ~/Library/LaunchAgents
 
@@ -43,7 +42,6 @@ sync:
 	ln -sf $(PWD)/claude/CLAUDE.md ~/.claude/CLAUDE.md
 	[ -f ~/.claude/settings.json ] || ln -s $(PWD)/claude/settings.json ~/.claude/settings.json
 	ln -sf $(PWD)/claude/statusline-command.sh ~/.claude/statusline-command.sh
-	ln -sf $(PWD)/claude/scripts/validate-git-commit.sh ~/.claude/scripts/validate-git-commit.sh
 	ln -sf $(PWD)/claude/commands/bd-log.md ~/.claude/commands/bd-log.md
 	ln -sf $(PWD)/claude/commands/bd-save.md ~/.claude/commands/bd-save.md
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
@@ -144,7 +142,6 @@ clean:
 	rm -f ~/.claude/CLAUDE.md
 	rm -f ~/.claude/settings.json
 	rm -f ~/.claude/statusline-command.sh
-	rm -f ~/.claude/scripts/validate-git-commit.sh
 	rm -f ~/.claude/commands/bd-log.md
 	rm -f ~/.claude/commands/bd-save.md
 
