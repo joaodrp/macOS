@@ -1,18 +1,17 @@
 {
+  "cleanupPeriodDays": 30,
+  "env": {
+    "CLAUDE_CODE_HIDE_ACCOUNT_INFO": "1"
+  },
   "attribution": {
     "commit": "",
     "pr": ""
   },
-  "cleanupPeriodDays": 30,
-  "forceLoginMethod": "claudeai",
-  "enableAllProjectMcpServers": true,
   "permissions": {
     "allow": [
       "WebFetch",
       "WebSearch",
-
       "Read(~/.claude/*)",
-
       "Bash(date:*)",
       "Bash(echo:*)",
       "Bash(cat:*)",
@@ -28,10 +27,8 @@
       "Bash(xargs:*)",
       "Bash(curl:*)",
       "Bash(open:*)",
-
       "Bash(git:*)",
       "Bash(bd:*)",
-
       "Skill(superpowers:*)",
       "Skill(bd-save)",
       "Skill(bd-log)"
@@ -45,6 +42,7 @@
       "Read(./build)"
     ]
   },
+  "enableAllProjectMcpServers": true,
   "hooks": {
     "PermissionRequest": [
       {
@@ -88,12 +86,30 @@
             "command": "bd prime"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/gsd-check-update.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/gsd-notify.sh"
+          }
+        ]
       }
     ]
   },
   "statusLine": {
     "type": "command",
-    "command": "~/.claude/statusline.sh"
+    "command": "$HOME/.claude/hooks/statusline.sh"
   },
   "enabledPlugins": {
     "agent-sdk-dev@claude-plugins-official": true,
@@ -101,9 +117,7 @@
     "commit-commands@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
-    "figma@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
-    "github@claude-plugins-official": true,
     "hookify@claude-plugins-official": true,
     "linear@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
@@ -111,16 +125,11 @@
     "security-guidance@claude-plugins-official": true,
     "supabase@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
-
     "double-shot-latte@superpowers-marketplace": true,
     "elements-of-style@superpowers-marketplace": true,
-    "episodic-memory@superpowers-marketplace": true,
     "superpowers@superpowers-marketplace": true,
-
     "beads@beads-marketplace": true,
     "get-shit-done@get-shit-done": true
   },
-  "env": {
-    "CLAUDE_CODE_HIDE_ACCOUNT_INFO": "1"
-  }
+  "forceLoginMethod": "claudeai"
 }
