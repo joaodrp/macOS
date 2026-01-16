@@ -1,77 +1,58 @@
 #!/bin/bash
+# Claude Code Statusline - GSD Edition
+# Shows: model | current task | directory | context usage
 
-# Read JSON input from stdin
 input=$(cat)
+model=$(echo "$input" | jq -r '.model.display_name')
+dir=$(echo "$input" | jq -r '.workspace.current_dir')
+session=$(echo "$input" | jq -r '.session_id')
+remaining=$(echo "$input" | jq -r '.context_window.remaining_percentage // empty')
 
-# Extract basic info
-cwd=$(echo "$input" | jq -r '.workspace.current_dir')
-user=$(whoami)
-dir=$(basename "$cwd")
+# Context window display (shows USED percentage)
+ctx=""
+if [ -n "$remaining" ]; then
+    rem=$(printf "%.0f" "$remaining")
+    used=$((100 - rem))
 
-# Get git branch and dirty status
-git_branch=""
-git_dirty=""
-if [ -d "$cwd/.git" ] || git -C "$cwd" rev-parse --git-dir > /dev/null 2>&1; then
-    branch=$(git -C "$cwd" --no-optional-locks branch --show-current 2>/dev/null)
-    [ -n "$branch" ] && git_branch=" ($branch)"
+    # Build progress bar (10 segments) - fills as context is consumed
+    filled=$((used / 10))
+    bar=""
+    for ((i=0; i<filled; i++)); do bar+="█"; done
+    for ((i=filled; i<10; i++)); do bar+="░"; done
 
-    # Check for uncommitted changes
-    if ! git -C "$cwd" --no-optional-locks diff --quiet HEAD 2>/dev/null || \
-       [ -n "$(git -C "$cwd" --no-optional-locks ls-files --others --exclude-standard 2>/dev/null)" ]; then
-        git_dirty=$(printf ' \033[31m✗\033[0m')
-    fi
-fi
-
-# Get model name
-model_display=""
-model_name=$(echo "$input" | jq -r '.model.display_name // empty')
-if [ -n "$model_name" ] && [ "$model_name" != "null" ]; then
-    # Use short name (e.g., "Opus 4.5" -> "Opus 4.5")
-    model_display=$(printf ' | \033[2;37m%s\033[0m' "$model_name")
-fi
-
-# Get session duration from cost.total_duration_ms
-duration_display=""
-duration_ms=$(echo "$input" | jq -r '.cost.total_duration_ms // empty')
-if [ -n "$duration_ms" ] && [ "$duration_ms" != "null" ] && [ "$duration_ms" -gt 0 ] 2>/dev/null; then
-    elapsed=$((duration_ms / 1000))
-    hours=$((elapsed / 3600))
-    minutes=$(((elapsed % 3600) / 60))
-    if [ $hours -gt 0 ]; then
-        duration_display=$(printf ' | \033[2;37m%dh%dm\033[0m' "$hours" "$minutes")
+    # Color based on usage with blinking skull at 80%+
+    if [ "$used" -lt 50 ]; then
+        ctx=$' \033[32m'"$bar $used%"$'\033[0m'
+    elif [ "$used" -lt 65 ]; then
+        ctx=$' \033[33m'"$bar $used%"$'\033[0m'
+    elif [ "$used" -lt 80 ]; then
+        ctx=$' \033[38;5;208m'"$bar $used%"$'\033[0m'
     else
-        duration_display=$(printf ' | \033[2;37m%dm\033[0m' "$minutes")
+        # Blinking red with skull
+        ctx=$' \033[5;31m💀 '"$bar $used%"$'\033[0m'
     fi
 fi
 
-# Calculate context usage and percentage
-context_info=""
-size=$(echo "$input" | jq -r '.context_window.context_window_size // empty')
-
-if [ -n "$size" ] && [ "$size" != "null" ] && [ "$size" -gt 0 ] 2>/dev/null; then
-    # Use total_input_tokens as current usage
-    current=$(echo "$input" | jq -r '.context_window.total_input_tokens // 0')
-
-    pct=$((current * 100 / size))
-
-    # Format with K suffix for readability
-    if [ $current -ge 1000 ]; then
-        current_k=$(echo "scale=1; $current / 1000" | bc)
-        current_fmt="${current_k}K"
-    else
-        current_fmt=$current
-    fi
-
-    # Orange (208) if > 80%, yellow (33) otherwise
-    if [ $pct -gt 80 ]; then
-        pct_color="38;5;208"
-    else
-        pct_color="33"
-    fi
-
-    context_info=$(printf ' | \033[35m%s\033[0m (\033[%sm%d%%\033[0m)' "$current_fmt" "$pct_color" "$pct")
+# Current task from todos
+task=""
+todo=$(ls -t "$HOME/.claude/todos/${session}"-agent-*.json 2>/dev/null | head -1)
+if [[ -f "$todo" ]]; then
+    task=$(jq -r '.[] | select(.status=="in_progress") | .activeForm' "$todo" 2>/dev/null | head -1)
 fi
 
-# Output: yellow user, "in", cyan dir, dimmed branch, dirty indicator, context, model, duration
-printf '\033[33m%s\033[0m in \033[36m%s\033[0m\033[2;37m%s\033[0m%s%s%s%s' \
-    "$user" "$dir" "$git_branch" "$git_dirty" "$context_info" "$model_display" "$duration_display"
+# GSD update available?
+gsd_update=""
+if [[ -f "$HOME/.claude/cache/gsd-update-check.json" ]]; then
+    update_available=$(jq -r '.update_available' "$HOME/.claude/cache/gsd-update-check.json" 2>/dev/null)
+    if [[ "$update_available" == "true" ]]; then
+        gsd_update=$'\033[33m⬆ /gsd:update\033[0m │ '
+    fi
+fi
+
+# Output
+dirname=$(basename "$dir")
+if [[ -n "$task" ]]; then
+    printf '%s\033[2m%s\033[0m │ \033[1m%s\033[0m │ \033[2m%s\033[0m%s' "$gsd_update" "$model" "$task" "$dirname" "$ctx"
+else
+    printf '%s\033[2m%s\033[0m │ \033[2m%s\033[0m%s' "$gsd_update" "$model" "$dirname" "$ctx"
+fi
