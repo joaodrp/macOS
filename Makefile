@@ -47,6 +47,7 @@ sync:
 	ln -sf $(PWD)/claude/statusline.sh ~/.claude/statusline.sh
 	ln -sf $(PWD)/claude/commands/bd-log.md ~/.claude/commands/bd-log.md
 	ln -sf $(PWD)/claude/commands/bd-save.md ~/.claude/commands/bd-save.md
+	ln -sf $(PWD)/claude/npx-packages ~/.claude/npx-packages
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	[ -f ~/.tmux/tmuxline-dark.conf ] || ln -s $(PWD)/tmux/tmuxline-dark.conf ~/.tmux/tmuxline-dark.conf
@@ -105,7 +106,10 @@ docker-completions:
 		ln -sf /Applications/Docker.app/Contents/Resources/etc/docker-compose.fish-completion ~/.config/fish/completions/docker-compose.fish && \
 		echo "Docker completions installed" || echo "Docker.app not found, skipping completions"
 
-post-install: tmux-plugins vim-plugins docker-completions
+claude-npx:
+	@while read -r cmd; do npx $$cmd; done < ~/.claude/npx-packages
+
+post-install: tmux-plugins vim-plugins docker-completions claude-npx
 
 config:
 	./macos
@@ -156,5 +160,6 @@ clean:
 	rm -f ~/.claude/statusline.sh
 	rm -f ~/.claude/commands/bd-log.md
 	rm -f ~/.claude/commands/bd-save.md
+	rm -f ~/.claude/npx-packages
 
-.PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions post-install config clean
+.PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions claude-npx post-install config clean

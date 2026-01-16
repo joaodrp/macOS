@@ -19,6 +19,8 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── git/              # Git hooks (gitleaks)
 ├── opencode/         # Opencode AI assistant config
 ├── claude/           # Claude Code config
+│   ├── commands/     # Custom slash commands
+│   └── npx-packages  # Third-party npx installers (one command per line)
 ├── bat/              # bat (cat replacement) config
 └── mitmproxy/        # HTTP proxy config
 ```
@@ -26,8 +28,10 @@ This is a macOS dotfiles repository for setting up development machines.
 ## Key Commands
 
 - `make sync` - Symlink all configs to their standard locations
+- `make claude-npx` - Install/update Claude npx packages
 - `make config` - Run macOS system preferences script
 - `make clean` - Remove all symlinked configs
+- `upgrade` - Fish function to update Homebrew, Fisher, App Store, and Claude npx packages
 
 ## Conventions
 
