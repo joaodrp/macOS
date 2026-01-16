@@ -67,7 +67,7 @@ The default `ssh/config` uses 1Password agent. For GPG/YubiKey, override in `~/.
 ```ssh
 # Override to use GPG agent
 Host *
-  IdentityAgent $SSH_AUTH_SOCK
+  IdentityAgent ${SSH_AUTH_SOCK}
 ```
 
 And configure the agent socket in `~/.config/fish/local.fish`:
