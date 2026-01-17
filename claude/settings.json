@@ -47,20 +47,18 @@
   },
   "enableAllProjectMcpServers": true,
   "hooks": {
-    "PermissionRequest": [
+    "Notification": [
       {
-        "matcher": "",
+        "matcher": "permission_prompt",
         "hooks": [
           {
             "type": "command",
             "command": "/opt/homebrew/bin/terminal-notifier -title 'Claude Code' -message 'Permission needed' -sender com.anthropic.claudefordesktop"
           }
         ]
-      }
-    ],
-    "Notification": [
+      },
       {
-        "matcher": "",
+        "matcher": "idle_prompt",
         "hooks": [
           {
             "type": "command",
