@@ -18,7 +18,7 @@ sync:
 	mkdir -p ~/.config/bat/
 	mkdir -p ~/.config/opencode/
 	mkdir -p ~/.claude
-	mkdir -p ~/.claude/commands
+	mkdir -p ~/.claude/commands/bd
 	mkdir -p ~/.claude/hooks
 	mkdir -p ~/Library/LaunchAgents
 
@@ -46,8 +46,8 @@ sync:
 	ln -sf $(PWD)/claude/CLAUDE.md ~/.claude/CLAUDE.md
 	[ -f ~/.claude/settings.json ] || ln -s $(PWD)/claude/settings.json ~/.claude/settings.json
 	ln -sf $(PWD)/claude/statusline.sh ~/.claude/hooks/statusline.sh
-	ln -sf $(PWD)/claude/commands/bd-log.md ~/.claude/commands/bd-log.md
-	ln -sf $(PWD)/claude/commands/bd-save.md ~/.claude/commands/bd-save.md
+	ln -sf $(PWD)/claude/commands/bd/log.md ~/.claude/commands/bd/log.md
+	ln -sf $(PWD)/claude/commands/bd/checkpoint.md ~/.claude/commands/bd/checkpoint.md
 	ln -sf $(PWD)/claude/npx-packages ~/.claude/npx-packages
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux/.tmux.conf ~/.tmux.conf
@@ -159,8 +159,7 @@ clean:
 	rm -f ~/.claude/CLAUDE.md
 	rm -f ~/.claude/settings.json
 	rm -f ~/.claude/hooks/statusline.sh
-	rm -f ~/.claude/commands/bd-log.md
-	rm -f ~/.claude/commands/bd-save.md
+	rm -rf ~/.claude/commands/bd
 	rm -f ~/.claude/npx-packages
 
 .PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions claude-npx post-install config clean

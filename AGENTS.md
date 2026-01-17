@@ -69,6 +69,7 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 2. **Fish aliases/functions**: Add to `fish/functions/` as separate `.fish` files
 3. **System preferences**: Modify the `macos` script
 4. **New config directory**: Add symlink target to `Makefile`'s sync target
+5. **Renaming/moving/deleting files**: Update `Makefile` sync and clean targets accordingly
 
 ## Theme-Synced Configs
 

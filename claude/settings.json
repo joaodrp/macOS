@@ -33,8 +33,7 @@
       "Bash(tig:*)",
       "Bash(defaults read:*)",
       "Skill(superpowers:*)",
-      "Skill(bd-save)",
-      "Skill(bd-log)"
+      "Skill(bd:*)"
     ],
     "deny": [
       "Read(./.env)",
