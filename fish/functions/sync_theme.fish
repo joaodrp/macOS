@@ -1,4 +1,4 @@
-function sync_theme --description 'Sync bat, delta, fzf, and mitmproxy themes with macOS appearance'
+function sync_theme --description 'Sync bat, delta, fzf, mitmproxy, and Claude Code themes with macOS appearance'
     # Detect current macOS appearance (dark mode returns 0, light mode returns error)
     if defaults read -g AppleInterfaceStyle &>/dev/null
         set mode dark
@@ -41,5 +41,15 @@ function sync_theme --description 'Sync bat, delta, fzf, and mitmproxy themes wi
         source ~/.config/fish/fzf/gruvbox-dark-hard.fish
     else
         source ~/.config/fish/fzf/gruvbox-light-hard.fish
+    end
+
+    # --- Claude Code ---
+    if test -f ~/.claude.json; and command -q jq
+        set -l claude_theme (test $mode = dark; and echo "dark-ansi"; or echo "light-ansi")
+        set -l current_theme (jq -r '.theme // empty' ~/.claude.json 2>/dev/null)
+        if test "$current_theme" != "$claude_theme"
+            set -l tmp (mktemp)
+            jq --arg theme "$claude_theme" '.theme = $theme' ~/.claude.json > $tmp && mv $tmp ~/.claude.json
+        end
     end
 end

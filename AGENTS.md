@@ -72,10 +72,11 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ## Theme-Synced Configs
 
-These files auto-switch based on macOS appearance mode. Only commit non-theme changes:
+These files auto-switch based on macOS appearance mode via `sync_theme`. Only commit non-theme changes:
 - `.gitconfig` - do not commit `delta.syntax-theme` changes
 - `bat/config` - do not commit `--theme` changes
 - `mitmproxy/config.yaml` - do not commit `console_palette` changes
+- `~/.claude.json` - `theme` field auto-managed (not tracked)
 
 These files will often show as modified in git due to automatic theme switching. Only commit non-theme changes to these files.
 

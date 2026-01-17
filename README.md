@@ -47,7 +47,7 @@ make config
 - **Multiplexer**: tmux with vim-style navigation
 
 ### Features
-- Automatic theme sync (delta, bat, fzf, mitmproxy) with macOS dark/light mode via [dark-notify](https://github.com/cormacrelf/dark-notify)
+- Automatic theme sync (delta, bat, fzf, mitmproxy, Claude Code) with macOS dark/light mode via [dark-notify](https://github.com/cormacrelf/dark-notify)
 - GNU coreutils prioritized over BSD versions
 - Global git hooks with gitleaks for secret detection
 
