@@ -37,6 +37,7 @@ make config
 | `make docker-completions` | Install Docker fish completions                            |
 | `make claude-npx`         | Install Claude Code npx packages                           |
 | `make claude-plugins`     | Install Claude Code marketplaces and plugins               |
+| `make claude-plugins-prune` | Same as above, plus remove unlisted items                |
 | `make post-install`       | Run all optional installs (tmux, vim, docker, claude)      |
 | `make config`             | Run macOS system preferences script                        |
 | `make clean`              | Remove all symlinked dotfiles                              |

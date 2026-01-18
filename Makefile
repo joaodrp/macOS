@@ -35,6 +35,7 @@ sync:
 	ln -sf $(PWD)/fish/functions/hb.fish ~/.config/fish/functions/hb.fish
 	ln -sf $(PWD)/fish/functions/hc.fish ~/.config/fish/functions/hc.fish
 	ln -sf $(PWD)/fish/functions/ghpr.fish ~/.config/fish/functions/ghpr.fish
+	ln -sf $(PWD)/fish/functions/claude_sync.fish ~/.config/fish/functions/claude_sync.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-dark-hard.fish ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-light-hard.fish ~/.config/fish/fzf/gruvbox-light-hard.fish
 	ln -sf $(PWD)/fish/conf.d/_pure.fish ~/.config/fish/conf.d/_pure.fish
@@ -126,6 +127,32 @@ claude-plugins:
 		claude plugin install "$$plugin" 2>&1 || true; \
 	done
 
+claude-plugins-prune: claude-plugins
+	@echo "Pruning unlisted marketplaces..."
+	@desired=$$(grep -v '^#' ~/.claude/marketplaces.txt 2>/dev/null | grep -v '^$$'); \
+	claude plugin marketplace list --json 2>/dev/null | jq -r '.[] | "\(.name)|\(.repo)"' | while read -r entry; do \
+		mp_name=$$(echo "$$entry" | cut -d'|' -f1); \
+		mp_repo=$$(echo "$$entry" | cut -d'|' -f2); \
+		if ! echo "$$desired" | grep -qx "$$mp_repo"; then \
+			echo "Removing marketplace: $$mp_name"; \
+			claude plugin marketplace remove "$$mp_name" 2>&1 || true; \
+		fi; \
+	done
+	@echo "Pruning unlisted plugins (user scope)..."
+	@desired=$$(grep -v '^#' ~/.claude/plugins.txt 2>/dev/null | grep -v '^$$' | sed 's/@.*//'); \
+	npx_pkgs=$$(grep -v '^#' ~/.claude/npx-packages.txt 2>/dev/null | grep -v '^$$' | sed 's/@.*//' | sed 's/-cc$$//'); \
+	claude plugin list --json 2>/dev/null | jq -r '.[] | select(.scope == "user") | .id' | sort -u | while read -r id; do \
+		name=$$(echo "$$id" | sed 's/@.*//'); \
+		if ! echo "$$desired" | grep -qx "$$name"; then \
+			if echo "$$npx_pkgs" | grep -qx "$$name"; then \
+				echo "Skipping npx plugin: $$name"; \
+			else \
+				echo "Removing plugin: $$name"; \
+				claude plugin uninstall "$$name" --scope user 2>&1 || true; \
+			fi; \
+		fi; \
+	done
+
 post-install: tmux-plugins vim-plugins docker-completions claude-npx claude-plugins
 
 config:
@@ -148,6 +175,7 @@ clean:
 	rm -f ~/.config/fish/functions/hb.fish
 	rm -f ~/.config/fish/functions/hc.fish
 	rm -f ~/.config/fish/functions/ghpr.fish
+	rm -f ~/.config/fish/functions/claude_sync.fish
 	rm -f ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	rm -f ~/.config/fish/fzf/gruvbox-light-hard.fish
 	rm -f ~/.config/fish/conf.d/_pure.fish
@@ -180,4 +208,4 @@ clean:
 	rm -f ~/.claude/marketplaces.txt
 	rm -f ~/.claude/plugins.txt
 
-.PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions claude-npx claude-plugins post-install config clean
+.PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions claude-npx claude-plugins claude-plugins-prune post-install config clean

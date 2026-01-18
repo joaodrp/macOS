@@ -32,6 +32,8 @@ This is a macOS dotfiles repository for setting up development machines.
 - `make sync` - Symlink all configs to their standard locations
 - `make claude-npx` - Install/update Claude npx packages
 - `make claude-plugins` - Install/update Claude marketplaces and plugins
+- `make claude-plugins-prune` - Same as above, plus remove unlisted marketplaces/plugins
+- `claude_sync` - Fish function for plugin sync (`claude_sync --prune` to remove unlisted)
 - `make config` - Run macOS system preferences script
 - `make clean` - Remove all symlinked configs
 - `upgrade` - Fish function to update Homebrew, Fisher, App Store, Claude npx packages, and Claude plugins
