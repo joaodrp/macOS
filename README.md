@@ -35,7 +35,9 @@ make config
 | `make vim-plugins`        | Install vim-plug and plugins                               |
 | `make tmux-plugins`       | Install tmux plugin manager                                |
 | `make docker-completions` | Install Docker fish completions                            |
-| `make post-install`       | Run all optional installs (tmux, vim, docker)              |
+| `make claude-npx`         | Install Claude Code npx packages                           |
+| `make claude-plugins`     | Install Claude Code marketplaces and plugins               |
+| `make post-install`       | Run all optional installs (tmux, vim, docker, claude)      |
 | `make config`             | Run macOS system preferences script                        |
 | `make clean`              | Remove all symlinked dotfiles                              |
 
@@ -48,6 +50,7 @@ make config
 
 ### Features
 - Automatic theme sync (delta, bat, fzf, mitmproxy, Claude Code) with macOS dark/light mode via [dark-notify](https://github.com/cormacrelf/dark-notify)
+- Claude Code plugin management via `claude/marketplaces.txt` and `claude/plugins.txt`
 - GNU coreutils prioritized over BSD versions
 - Global git hooks with gitleaks for secret detection
 

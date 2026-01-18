@@ -18,9 +18,11 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── ssh/              # SSH config with Include for local overrides
 ├── git/              # Git hooks (gitleaks)
 ├── opencode/         # Opencode AI assistant config
-├── claude/           # Claude Code config
-│   ├── commands/     # Custom slash commands
-│   └── npx-packages  # Third-party npx installers (one command per line)
+├── claude/              # Claude Code config
+│   ├── commands/        # Custom slash commands
+│   ├── npx-packages.txt # Third-party npx installers
+│   ├── marketplaces.txt # Plugin marketplaces (GitHub repos)
+│   └── plugins.txt      # Plugins to install
 ├── bat/              # bat (cat replacement) config
 └── mitmproxy/        # HTTP proxy config
 ```
@@ -29,9 +31,10 @@ This is a macOS dotfiles repository for setting up development machines.
 
 - `make sync` - Symlink all configs to their standard locations
 - `make claude-npx` - Install/update Claude npx packages
+- `make claude-plugins` - Install/update Claude marketplaces and plugins
 - `make config` - Run macOS system preferences script
 - `make clean` - Remove all symlinked configs
-- `upgrade` - Fish function to update Homebrew, Fisher, App Store, and Claude npx packages
+- `upgrade` - Fish function to update Homebrew, Fisher, App Store, Claude npx packages, and Claude plugins
 
 ## Conventions
 
@@ -70,6 +73,7 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 3. **System preferences**: Modify the `macos` script
 4. **New config directory**: Add symlink target to `Makefile`'s sync target
 5. **Renaming/moving/deleting files**: Update `Makefile` sync and clean targets accordingly
+6. **Claude plugins**: Add marketplace to `claude/marketplaces.txt`, plugin to `claude/plugins.txt`
 
 ## Theme-Synced Configs
 

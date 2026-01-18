@@ -1,0 +1,21 @@
+# Claude Code plugins (<plugin>@<marketplace>)
+# Official
+agent-sdk-dev@claude-plugins-official
+code-review@claude-plugins-official
+commit-commands@claude-plugins-official
+context7@claude-plugins-official
+feature-dev@claude-plugins-official
+frontend-design@claude-plugins-official
+hookify@claude-plugins-official
+playwright@claude-plugins-official
+pr-review-toolkit@claude-plugins-official
+security-guidance@claude-plugins-official
+supabase@claude-plugins-official
+swift-lsp@claude-plugins-official
+
+# Superpowers
+elements-of-style@superpowers-marketplace
+superpowers@superpowers-marketplace
+
+# Beads
+beads@beads-marketplace

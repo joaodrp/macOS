@@ -1,0 +1,4 @@
+# Claude Code plugin marketplaces (GitHub repos)
+anthropics/claude-plugins-official
+obra/superpowers-marketplace
+steveyegge/beads

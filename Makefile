@@ -48,7 +48,9 @@ sync:
 	ln -sf $(PWD)/claude/statusline.sh ~/.claude/hooks/statusline.sh
 	ln -sf $(PWD)/claude/commands/bd/log.md ~/.claude/commands/bd/log.md
 	ln -sf $(PWD)/claude/commands/bd/checkpoint.md ~/.claude/commands/bd/checkpoint.md
-	ln -sf $(PWD)/claude/npx-packages ~/.claude/npx-packages
+	ln -sf $(PWD)/claude/npx-packages.txt ~/.claude/npx-packages.txt
+	ln -sf $(PWD)/claude/marketplaces.txt ~/.claude/marketplaces.txt
+	ln -sf $(PWD)/claude/plugins.txt ~/.claude/plugins.txt
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	[ -f ~/.tmux/tmuxline-dark.conf ] || ln -s $(PWD)/tmux/tmuxline-dark.conf ~/.tmux/tmuxline-dark.conf
@@ -108,9 +110,23 @@ docker-completions:
 		echo "Docker completions installed" || echo "Docker.app not found, skipping completions"
 
 claude-npx:
-	@while read -r cmd; do npx $$cmd; done < ~/.claude/npx-packages
+	@grep -v '^#' ~/.claude/npx-packages.txt 2>/dev/null | grep -v '^$$' | while read -r cmd; do \
+		npx $$cmd; \
+	done
 
-post-install: tmux-plugins vim-plugins docker-completions claude-npx
+claude-plugins:
+	@echo "Adding marketplaces..."
+	@grep -v '^#' ~/.claude/marketplaces.txt 2>/dev/null | grep -v '^$$' | while read -r repo; do \
+		claude plugin marketplace add "$$repo" 2>&1 || true; \
+	done
+	@echo "Updating marketplaces..."
+	@claude plugin marketplace update
+	@echo "Installing plugins..."
+	@grep -v '^#' ~/.claude/plugins.txt 2>/dev/null | grep -v '^$$' | while read -r plugin; do \
+		claude plugin install "$$plugin" 2>&1 || true; \
+	done
+
+post-install: tmux-plugins vim-plugins docker-completions claude-npx claude-plugins
 
 config:
 	./macos
@@ -160,6 +176,8 @@ clean:
 	rm -f ~/.claude/settings.json
 	rm -f ~/.claude/hooks/statusline.sh
 	rm -rf ~/.claude/commands/bd
-	rm -f ~/.claude/npx-packages
+	rm -f ~/.claude/npx-packages.txt
+	rm -f ~/.claude/marketplaces.txt
+	rm -f ~/.claude/plugins.txt
 
-.PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions claude-npx post-install config clean
+.PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions claude-npx claude-plugins post-install config clean
