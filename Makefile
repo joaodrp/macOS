@@ -112,7 +112,7 @@ docker-completions:
 
 claude-npx:
 	@grep -v '^#' ~/.claude/npx-packages.txt 2>/dev/null | grep -v '^$$' | while read -r cmd; do \
-		npx $$cmd; \
+		eval npx $$cmd; \
 	done
 
 claude-plugins:
