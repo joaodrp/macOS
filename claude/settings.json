@@ -33,7 +33,8 @@
       "Bash(tig:*)",
       "Bash(defaults read:*)",
       "Skill(superpowers:*)",
-      "Skill(bd:*)"
+      "Skill(bd:*)",
+      "mcp__firecrawl__firecrawl_scrape"
     ],
     "deny": [
       "Read(./.env)",
