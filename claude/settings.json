@@ -92,24 +92,15 @@
             "command": "bd prime"
           }
         ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/hooks/gsd-check-update.sh"
-          }
-        ]
       }
     ]
   },
   "statusLine": {
     "type": "command",
-    "command": "node \"$HOME/.claude/hooks/statusline.js\""
+    "command": "\"$HOME/.claude/hooks/statusline.sh\""
   },
   "enabledPlugins": {
     "supabase@claude-plugins-official": true,
-    "get-shit-done@get-shit-done": true,
     "beads@beads-marketplace": true,
     "typescript-lsp@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,

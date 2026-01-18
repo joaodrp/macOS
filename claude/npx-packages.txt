@@ -1,2 +1,1 @@
 # Claude npx packages (one per line)
-get-shit-done-cc@latest --global --force-statusline --no-notify
