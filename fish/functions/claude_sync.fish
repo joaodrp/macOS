@@ -1,8 +1,11 @@
 function claude_sync -d "Sync Claude Code marketplaces and plugins from config files" -a prune
-    # Add marketplaces
+    # Add marketplaces (skip if already installed)
     echo (set_color --bold blue)':: Adding Claude marketplaces'(set_color normal)
+    set -l installed_repos (claude plugin marketplace list --json 2>/dev/null | jq -r '.[].repo')
     for repo in (grep -v '^#' ~/.claude/marketplaces.txt 2>/dev/null | grep -v '^$')
-        claude plugin marketplace add $repo 2>&1; or true
+        if not contains $repo $installed_repos
+            claude plugin marketplace add $repo 2>&1; or true
+        end
     end
 
     # Update marketplaces

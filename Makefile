@@ -117,8 +117,11 @@ claude-npx:
 
 claude-plugins:
 	@echo "Adding marketplaces..."
-	@grep -v '^#' ~/.claude/marketplaces.txt 2>/dev/null | grep -v '^$$' | while read -r repo; do \
-		claude plugin marketplace add "$$repo" 2>&1 || true; \
+	@installed=$$(claude plugin marketplace list --json 2>/dev/null | jq -r '.[].repo'); \
+	grep -v '^#' ~/.claude/marketplaces.txt 2>/dev/null | grep -v '^$$' | while read -r repo; do \
+		if ! echo "$$installed" | grep -qx "$$repo"; then \
+			claude plugin marketplace add "$$repo" 2>&1 || true; \
+		fi; \
 	done
 	@echo "Updating marketplaces..."
 	@claude plugin marketplace update
