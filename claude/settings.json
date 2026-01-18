@@ -42,7 +42,12 @@
       "Read(.envrc)",
       "Read(./secrets/**)",
       "Read(./config/credentials.json)",
-      "Read(./build)"
+      "Read(./build)",
+      "Bash(git push*--force*)",
+      "Bash(git push*-f *)",
+      "Bash(git push*--delete*)",
+      "Bash(git push*-d *)",
+      "Bash(git push* :*)"
     ]
   },
   "enableAllProjectMcpServers": true,
@@ -117,8 +122,8 @@
     "swift-lsp@claude-plugins-official": true,
     "elements-of-style@superpowers-marketplace": true,
     "superpowers@superpowers-marketplace": true,
-    "beads@beads-marketplace": true,
-    "get-shit-done@get-shit-done": true
+    "get-shit-done@get-shit-done": true,
+    "beads@beads-marketplace": true
   },
   "forceLoginMethod": "claudeai"
 }
