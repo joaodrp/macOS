@@ -111,6 +111,12 @@ docker-completions:
 		ln -sf /Applications/Docker.app/Contents/Resources/etc/docker-compose.fish-completion ~/.config/fish/completions/docker-compose.fish && \
 		echo "Docker completions installed" || echo "Docker.app not found, skipping completions"
 
+npm-global:
+	@echo "Installing global npm packages..."
+	@grep -v '^#' $(PWD)/npm-global-packages.txt 2>/dev/null | grep -v '^$$' | while read -r pkg; do \
+		npm list -g "$$pkg" >/dev/null 2>&1 || npm install -g "$$pkg"; \
+	done
+
 claude-npx:
 	@grep -v '^#' ~/.claude/npx-packages.txt 2>/dev/null | grep -v '^$$' | while read -r cmd; do \
 		eval npx $$cmd; \
@@ -157,7 +163,7 @@ claude-plugins-prune: claude-plugins
 		fi; \
 	done
 
-post-install: tmux-plugins vim-plugins docker-completions claude-npx claude-plugins
+post-install: tmux-plugins vim-plugins docker-completions npm-global claude-npx claude-plugins
 
 config:
 	./macos
@@ -213,4 +219,4 @@ clean:
 	rm -f ~/.claude/marketplaces.txt
 	rm -f ~/.claude/plugins.txt
 
-.PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions claude-npx claude-plugins claude-plugins-prune post-install config clean
+.PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions npm-global claude-npx claude-plugins claude-plugins-prune post-install config clean
