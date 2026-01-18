@@ -1,4 +1,4 @@
-function showhidden -d "Hides/reveals system files and folders in Finder"
+function hidden -d "Hides/reveals system files and folders in Finder"
   switch "$argv"
   case Yes YES yes
     defaults write com.apple.finder AppleShowAllFiles YES

@@ -27,7 +27,7 @@ sync:
 	ln -sf $(PWD)/fish/fish_plugins ~/.config/fish/fish_plugins
 	ln -sf $(PWD)/fish/functions/fish_user_key_bindings.fish ~/.config/fish/functions/fish_user_key_bindings.fish
 	ln -sf $(PWD)/fish/functions/fzf_key_bindings.fish ~/.config/fish/functions/fzf_key_bindings.fish
-	ln -sf $(PWD)/fish/functions/showhidden.fish ~/.config/fish/functions/showhidden.fish
+	ln -sf $(PWD)/fish/functions/hidden.fish ~/.config/fish/functions/hidden.fish
 	ln -sf $(PWD)/fish/functions/sync_theme.fish ~/.config/fish/functions/sync_theme.fish
 	ln -sf $(PWD)/fish/functions/upgrade.fish ~/.config/fish/functions/upgrade.fish
 	ln -sf $(PWD)/fish/functions/cdr.fish ~/.config/fish/functions/cdr.fish
@@ -167,7 +167,7 @@ clean:
 	rm -f ~/.config/fish/fish_plugins
 	rm -f ~/.config/fish/functions/fish_user_key_bindings.fish
 	rm -f ~/.config/fish/functions/fzf_key_bindings.fish
-	rm -f ~/.config/fish/functions/showhidden.fish
+	rm -f ~/.config/fish/functions/hidden.fish
 	rm -f ~/.config/fish/functions/sync_theme.fish
 	rm -f ~/.config/fish/functions/upgrade.fish
 	rm -f ~/.config/fish/functions/cdr.fish
