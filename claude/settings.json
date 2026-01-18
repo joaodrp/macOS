@@ -31,6 +31,8 @@
       "Bash(bd:*)",
       "Bash(du:*)",
       "Bash(tig:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh pr list:*)",
       "Bash(defaults read:*)",
       "Skill(superpowers:*)",
       "Skill(bd:*)",
@@ -90,6 +92,18 @@
           {
             "type": "command",
             "command": "bd prime"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "_todo": "Remove once https://github.com/obra/superpowers/issues/237 is fixed",
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$HOME/.claude/hooks/subagent-start.sh\""
           }
         ]
       }

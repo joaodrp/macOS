@@ -47,6 +47,7 @@ sync:
 	ln -sf $(PWD)/claude/CLAUDE.md ~/.claude/CLAUDE.md
 	[ -f ~/.claude/settings.json ] || ln -s $(PWD)/claude/settings.json ~/.claude/settings.json
 	ln -sf $(PWD)/claude/statusline.sh ~/.claude/hooks/statusline.sh
+	ln -sf $(PWD)/claude/subagent-start.sh ~/.claude/hooks/subagent-start.sh
 	ln -sf $(PWD)/claude/commands/bd/log.md ~/.claude/commands/bd/log.md
 	ln -sf $(PWD)/claude/commands/bd/checkpoint.md ~/.claude/commands/bd/checkpoint.md
 	ln -sf $(PWD)/claude/npx-packages.txt ~/.claude/npx-packages.txt
@@ -206,6 +207,7 @@ clean:
 	rm -f ~/.claude/CLAUDE.md
 	rm -f ~/.claude/settings.json
 	rm -f ~/.claude/hooks/statusline.sh
+	rm -f ~/.claude/hooks/subagent-start.sh
 	rm -rf ~/.claude/commands/bd
 	rm -f ~/.claude/npx-packages.txt
 	rm -f ~/.claude/marketplaces.txt
