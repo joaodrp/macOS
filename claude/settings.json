@@ -44,9 +44,9 @@
       "Read(./config/credentials.json)",
       "Read(./build)",
       "Bash(git push*--force*)",
-      "Bash(git push*-f *)",
+      "Bash(git push*-f*)",
       "Bash(git push*--delete*)",
-      "Bash(git push*-d *)",
+      "Bash(git push*-d*)",
       "Bash(git push* :*)"
     ]
   },
