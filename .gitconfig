@@ -102,7 +102,7 @@
 	# Enable n/N navigation between diff sections
 	navigate = true
 	line-numbers = true
-	syntax-theme = gruvbox-dark
+	syntax-theme = gruvbox-light
 [color]
 	ui = true
 [color "diff"]
