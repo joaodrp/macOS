@@ -8,7 +8,7 @@
 
 # Auto-switches with macOS dark/light mode
 # List available themes with: ghostty +list-themes
-theme = light:Gruvbox Light Hard,dark:Gruvbox Dark Hard
+theme = light:Gruvbox Light,dark:Gruvbox Dark
 
 # ------------------------------------------------------------------------------
 # Font
@@ -28,6 +28,9 @@ font-thicken-strength = 128
 # Window
 # ------------------------------------------------------------------------------
 
+# Window chrome follows system appearance (dark/light mode)
+window-theme = system
+
 # Padding between terminal cells and window borders (in points)
 window-padding-x = 10
 window-padding-y = 10
@@ -35,6 +38,9 @@ window-padding-y = 10
 # Save/restore window state across launches (macOS only)
 # Values: default, never, always
 window-save-state = always
+
+# New tabs/splits inherit working directory from focused terminal
+window-inherit-working-directory = true
 
 # Hide resize overlay (default: after-first)
 resize-overlay = never
@@ -45,6 +51,9 @@ resize-overlay = never
 
 # Less fading on unfocused splits (default: 0.7)
 unfocused-split-opacity = 0.90
+
+# Gruvbox tones for split visuals
+unfocused-split-fill = #928374
 
 # ------------------------------------------------------------------------------
 # Behavior
@@ -57,11 +66,16 @@ mouse-hide-while-typing = true
 # Middle-click paste always uses selection clipboard
 copy-on-select = clipboard
 
-# Disable cursor blinking. If unset, respects DEC Mode 12
+# Block cursor, no blinking, thicker for visibility
+cursor-style = block
 cursor-style-blink = false
+adjust-cursor-thickness = 300%
 
 # Skip confirmation when closing a surface (tab/split/window)
 confirm-close-surface = false
+
+# Fish shell integration (prompt marks, cwd tracking, etc.)
+shell-integration = fish
 
 # ------------------------------------------------------------------------------
 # macOS
