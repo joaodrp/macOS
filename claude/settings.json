@@ -36,7 +36,10 @@
       "Bash(defaults read:*)",
       "Skill(superpowers:*)",
       "Skill(bd:*)",
-      "mcp__firecrawl__firecrawl_scrape"
+      "mcp__firecrawl__firecrawl_scrape",
+      "mcp__firecrawl__firecrawl_search",
+      "Bash(codex:*)",
+      "Bash(gemini:*)"
     ],
     "deny": [
       "Read(./.env)",
@@ -98,7 +101,6 @@
     ],
     "SubagentStart": [
       {
-        "_todo": "Remove once https://github.com/obra/superpowers/issues/237 is fixed",
         "matcher": "",
         "hooks": [
           {

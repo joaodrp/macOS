@@ -52,6 +52,8 @@ brew "findutils"
 brew "fish"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# AI agent from Google in the terminal
+brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -212,6 +214,8 @@ cask "claude"
 cask "cleanshot"
 # AI coding assistant CLI
 cask "claude-code"
+# AI coding agent from OpenAI
+cask "codex"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # Web browser
