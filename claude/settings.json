@@ -28,6 +28,7 @@
       "Bash(curl:*)",
       "Bash(open:*)",
       "Bash(git:*)",
+      "Bash(git rev-parse:*)",
       "Bash(bd:*)",
       "Bash(du:*)",
       "Bash(tig:*)",
@@ -39,7 +40,9 @@
       "mcp__firecrawl__firecrawl_scrape",
       "mcp__firecrawl__firecrawl_search",
       "Bash(codex:*)",
-      "Bash(gemini:*)"
+      "Bash(gemini:*)",
+      "Bash(go doc:*)"
+
     ],
     "deny": [
       "Read(./.env)",
