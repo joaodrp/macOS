@@ -20,6 +20,8 @@ sync:
 	mkdir -p ~/.claude
 	mkdir -p ~/.claude/commands/bd
 	mkdir -p ~/.claude/hooks
+	mkdir -p ~/.gemini
+	mkdir -p ~/.codex
 	mkdir -p ~/Library/LaunchAgents
 
 	[ -f ~/.config/ghostty/config ] || ln -s $(PWD)/ghostty/config ~/.config/ghostty/config
@@ -53,6 +55,10 @@ sync:
 	ln -sf $(PWD)/claude/npx-packages.txt ~/.claude/npx-packages.txt
 	ln -sf $(PWD)/claude/marketplaces.txt ~/.claude/marketplaces.txt
 	ln -sf $(PWD)/claude/plugins.txt ~/.claude/plugins.txt
+	[ -f ~/.gemini/settings.json ] || ln -s $(PWD)/gemini/settings.json ~/.gemini/settings.json
+	ln -sf $(PWD)/gemini/gruvbox-dark.json ~/.gemini/gruvbox-dark.json
+	ln -sf $(PWD)/gemini/gruvbox-light.json ~/.gemini/gruvbox-light.json
+	[ -f ~/.codex/config.toml ] || ln -s $(PWD)/codex/config.toml ~/.codex/config.toml
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	[ -f ~/.tmux/tmuxline-dark.conf ] || ln -s $(PWD)/tmux/tmuxline-dark.conf ~/.tmux/tmuxline-dark.conf
@@ -218,5 +224,9 @@ clean:
 	rm -f ~/.claude/npx-packages.txt
 	rm -f ~/.claude/marketplaces.txt
 	rm -f ~/.claude/plugins.txt
+	rm -f ~/.gemini/settings.json
+	rm -f ~/.gemini/gruvbox-dark.json
+	rm -f ~/.gemini/gruvbox-light.json
+	rm -f ~/.codex/config.toml
 
 .PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions npm-global claude-npx claude-plugins claude-plugins-prune post-install config clean

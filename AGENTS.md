@@ -24,7 +24,9 @@ This is a macOS dotfiles repository for setting up development machines.
 │   ├── marketplaces.txt # Plugin marketplaces (GitHub repos)
 │   └── plugins.txt      # Plugins to install
 ├── bat/              # bat (cat replacement) config
-└── mitmproxy/        # HTTP proxy config
+├── mitmproxy/        # HTTP proxy config
+├── gemini/           # Gemini CLI config and themes
+└── codex/            # Codex CLI config
 ```
 
 ## Key Commands
@@ -83,6 +85,7 @@ These files auto-switch based on macOS appearance mode via `sync_theme`. Only co
 - `.gitconfig` - do not commit `delta.syntax-theme` changes
 - `bat/config` - do not commit `--theme` changes
 - `mitmproxy/config.yaml` - do not commit `console_palette` changes
+- `gemini/settings.json` - do not commit `ui.theme` changes
 - `~/.claude.json` - `theme` field auto-managed (not tracked)
 
 These files will often show as modified in git due to automatic theme switching. Only commit non-theme changes to these files.

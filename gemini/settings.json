@@ -1,0 +1,33 @@
+{
+  "ui": {
+    "theme": "$HOME/.gemini/gruvbox-light.json"
+  },
+  "security": {
+    "auth": {
+      "selectedType": "gemini-api-key"
+    }
+  },
+  "general": {
+    "previewFeatures": true,
+    "vimMode": true,
+    "enablePromptCompletion": true
+  },
+  "output": {
+    "format": "text"
+  },
+  "tools": {
+    "shell": {
+      "showColor": true
+    }
+  },
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    }
+  }
+}
