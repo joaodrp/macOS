@@ -50,6 +50,8 @@ brew "ffmpeg"
 brew "findutils"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
+# Cross-shell prompt
+brew "starship"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # AI agent from Google in the terminal
@@ -224,6 +226,7 @@ cask "firefox"
 cask "font-iosevka"
 # Typeface made for developers
 cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
 # Monospaced font family from GitHub
 cask "font-monaspace"
 # Programming font with rounded corners

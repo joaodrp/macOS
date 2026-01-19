@@ -26,7 +26,8 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── bat/              # bat (cat replacement) config
 ├── mitmproxy/        # HTTP proxy config
 ├── gemini/           # Gemini CLI config and themes
-└── codex/            # Codex CLI config
+├── codex/            # Codex CLI config
+└── starship/         # Starship prompt config
 ```
 
 ## Key Commands
@@ -92,7 +93,7 @@ These files will often show as modified in git due to automatic theme switching.
 
 ## Terminal Stack
 
-- **Shell**: Fish with custom prompt and FZF integration
+- **Shell**: Fish with Starship prompt and FZF integration
 - **Multiplexer**: tmux with Ctrl+A prefix, vim-style navigation
 - **Terminal**: Ghostty with Gruvbox theme (auto dark/light mode)
 

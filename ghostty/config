@@ -15,7 +15,7 @@ theme = light:Gruvbox Light,dark:Gruvbox Dark
 # ------------------------------------------------------------------------------
 
 # Font family. List available fonts with: ghostty +list-fonts
-font-family = JetBrains Mono
+font-family = JetBrainsMono Nerd Font
 
 # Font size in points. Scaled appropriately for screen DPI
 font-size = 12

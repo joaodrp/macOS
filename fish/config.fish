@@ -52,6 +52,9 @@ set -x GIT_COMPLETION_CHECKOUT_NO_GUESS 1
 # Integrations
 # =============================================================================
 
+# Starship prompt
+starship init fish | source
+
 # Theme sync for bat, fzf, mitmproxy
 sync_theme
 
