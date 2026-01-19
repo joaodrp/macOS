@@ -206,3 +206,12 @@ symbol = " "
 
 [zig]
 symbol = " "
+
+[time]
+disabled = false
+format = "[󰧞](blue) at [$time]($style) "
+time_format = "%H:%M:%S"
+
+[character]
+success_symbol = "[→](green)"
+error_symbol = "[→](red)"
