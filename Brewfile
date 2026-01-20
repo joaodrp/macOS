@@ -32,6 +32,8 @@ brew "cormacrelf/tap/dark-notify"
 brew "git-delta"
 # Load/unload environment variables based on $PWD
 brew "direnv"
+# Visually compare two PDF files
+brew "diff-pdf"
 # Tool for exploring each layer in a docker image
 brew "dive"
 # Isolated development environments using Docker

@@ -42,7 +42,6 @@
       "Bash(codex:*)",
       "Bash(gemini:*)",
       "Bash(go doc:*)"
-
     ],
     "deny": [
       "Read(./.env)",
