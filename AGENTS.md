@@ -81,12 +81,16 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ## Theme-Synced Configs
 
+All apps use the official [Gruvbox](https://github.com/morhetz/gruvbox) palette with the terminal convention:
+- **Neutral** variants for normal UI elements
+- **Bright** (dark mode) / **Faded** (light mode) variants for emphasis
+
 These auto-switch based on macOS appearance mode via `sync_theme`:
-- **Pure prompt** - colors via `_pure_set_gruvbox` function (universal variables, not files)
+- **Pure prompt** - colors via `_pure_set_gruvbox` function (universal variables)
 - **bat** - `--theme` in `bat/config`
 - **delta** - `syntax-theme` in `.gitconfig`
-- **fzf** - Gruvbox theme sourced from `fish/fzf/`
-- **mitmproxy** - `console_palette` in `mitmproxy/config.yaml`
+- **fzf** - theme sourced from `fish/fzf/gruvbox-{dark,light}.fish`
+- **mitmproxy** - `console_palette` in `mitmproxy/config.yaml` (Solarized, no Gruvbox)
 - **Claude Code** - `theme` in `~/.claude.json` (not tracked)
 - **Gemini CLI** - `ui.theme` in `gemini/settings.json`
 

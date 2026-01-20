@@ -39,8 +39,8 @@ sync:
 	ln -sf $(PWD)/fish/functions/hc.fish ~/.config/fish/functions/hc.fish
 	ln -sf $(PWD)/fish/functions/ghpr.fish ~/.config/fish/functions/ghpr.fish
 	ln -sf $(PWD)/fish/functions/claude_sync.fish ~/.config/fish/functions/claude_sync.fish
-	ln -sf $(PWD)/fish/fzf/gruvbox-dark-hard.fish ~/.config/fish/fzf/gruvbox-dark-hard.fish
-	ln -sf $(PWD)/fish/fzf/gruvbox-light-hard.fish ~/.config/fish/fzf/gruvbox-light-hard.fish
+	ln -sf $(PWD)/fish/fzf/gruvbox-dark.fish ~/.config/fish/fzf/gruvbox-dark.fish
+	ln -sf $(PWD)/fish/fzf/gruvbox-light.fish ~/.config/fish/fzf/gruvbox-light.fish
 	ln -sf $(PWD)/fish/conf.d/_done.fish ~/.config/fish/conf.d/_done.fish
 	ln -sf $(PWD)/fish/conf.d/pure_theme.fish ~/.config/fish/conf.d/pure_theme.fish
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
@@ -194,8 +194,8 @@ clean:
 	rm -f ~/.config/fish/functions/hc.fish
 	rm -f ~/.config/fish/functions/ghpr.fish
 	rm -f ~/.config/fish/functions/claude_sync.fish
-	rm -f ~/.config/fish/fzf/gruvbox-dark-hard.fish
-	rm -f ~/.config/fish/fzf/gruvbox-light-hard.fish
+	rm -f ~/.config/fish/fzf/gruvbox-dark.fish
+	rm -f ~/.config/fish/fzf/gruvbox-light.fish
 	rm -f ~/.config/fish/conf.d/_done.fish
 	rm -f ~/.config/fish/conf.d/pure_theme.fish
 	rm -f ~/.tmux.conf

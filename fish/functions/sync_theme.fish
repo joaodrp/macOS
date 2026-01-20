@@ -44,9 +44,9 @@ function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy,
 
     # --- fzf (Gruvbox theme from tinted-fzf) ---
     if test $mode = dark
-        source ~/.config/fish/fzf/gruvbox-dark-hard.fish
+        source ~/.config/fish/fzf/gruvbox-dark.fish
     else
-        source ~/.config/fish/fzf/gruvbox-light-hard.fish
+        source ~/.config/fish/fzf/gruvbox-light.fish
     end
 
     # --- Claude Code ---
