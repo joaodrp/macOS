@@ -1,2 +1,3 @@
 # Global npm packages (one per line)
 happy-coder
+@openchamber/web
