@@ -52,8 +52,6 @@ brew "ffmpeg"
 brew "findutils"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
-# Cross-shell prompt
-brew "starship"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # AI agent from Google in the terminal
@@ -251,6 +249,8 @@ cask "mitmproxy"
 cask "ngrok"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Internet radio player
+cask "radiola"
 # GUI for Redis databases
 cask "redis-insight"
 # Store SSH keys in the Secure Enclave

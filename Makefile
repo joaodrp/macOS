@@ -31,6 +31,7 @@ sync:
 	ln -sf $(PWD)/fish/functions/fzf_key_bindings.fish ~/.config/fish/functions/fzf_key_bindings.fish
 	ln -sf $(PWD)/fish/functions/hidden.fish ~/.config/fish/functions/hidden.fish
 	ln -sf $(PWD)/fish/functions/sync_theme.fish ~/.config/fish/functions/sync_theme.fish
+	ln -sf $(PWD)/fish/functions/_pure_set_gruvbox.fish ~/.config/fish/functions/_pure_set_gruvbox.fish
 	ln -sf $(PWD)/fish/functions/upgrade.fish ~/.config/fish/functions/upgrade.fish
 	ln -sf $(PWD)/fish/functions/cdr.fish ~/.config/fish/functions/cdr.fish
 	ln -sf $(PWD)/fish/functions/co.fish ~/.config/fish/functions/co.fish
@@ -41,7 +42,7 @@ sync:
 	ln -sf $(PWD)/fish/fzf/gruvbox-dark-hard.fish ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-light-hard.fish ~/.config/fish/fzf/gruvbox-light-hard.fish
 	ln -sf $(PWD)/fish/conf.d/_done.fish ~/.config/fish/conf.d/_done.fish
-	[ -f ~/.config/starship.toml ] || ln -s $(PWD)/starship/starship.toml ~/.config/starship.toml
+	ln -sf $(PWD)/fish/conf.d/pure_theme.fish ~/.config/fish/conf.d/pure_theme.fish
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
 	[ -f ~/.mitmproxy/config.yaml ] || ln -s $(PWD)/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
 	[ -f ~/.config/opencode/opencode.json ] || ln -s $(PWD)/opencode/opencode.json ~/.config/opencode/opencode.json
@@ -185,6 +186,7 @@ clean:
 	rm -f ~/.config/fish/functions/fzf_key_bindings.fish
 	rm -f ~/.config/fish/functions/hidden.fish
 	rm -f ~/.config/fish/functions/sync_theme.fish
+	rm -f ~/.config/fish/functions/_pure_set_gruvbox.fish
 	rm -f ~/.config/fish/functions/upgrade.fish
 	rm -f ~/.config/fish/functions/cdr.fish
 	rm -f ~/.config/fish/functions/co.fish
@@ -195,7 +197,7 @@ clean:
 	rm -f ~/.config/fish/fzf/gruvbox-dark-hard.fish
 	rm -f ~/.config/fish/fzf/gruvbox-light-hard.fish
 	rm -f ~/.config/fish/conf.d/_done.fish
-	rm -f ~/.config/starship.toml
+	rm -f ~/.config/fish/conf.d/pure_theme.fish
 	rm -f ~/.tmux.conf
 	rm -f ~/.tmux/tmuxline-dark.conf
 	rm -f ~/.tmux/tmuxline-light.conf

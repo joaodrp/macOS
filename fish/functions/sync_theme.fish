@@ -1,10 +1,16 @@
-function sync_theme --description 'Sync bat, delta, fzf, mitmproxy, Claude Code, and Gemini CLI themes with macOS appearance'
+function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy, Claude Code, and Gemini CLI themes with macOS appearance'
     # Detect current macOS appearance (dark mode returns 0, light mode returns error)
     if defaults read -g AppleInterfaceStyle &>/dev/null
         set mode dark
     else
         set mode light
     end
+
+    # Export for conf.d scripts
+    set -gx MACOS_APPEARANCE $mode
+
+    # --- Pure prompt (Gruvbox) ---
+    _pure_set_gruvbox $mode
 
     # --- bat ---
     set -l bat_config (realpath ~/.config/bat/config 2>/dev/null)

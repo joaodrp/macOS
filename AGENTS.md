@@ -26,8 +26,7 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── bat/              # bat (cat replacement) config
 ├── mitmproxy/        # HTTP proxy config
 ├── gemini/           # Gemini CLI config and themes
-├── codex/            # Codex CLI config
-└── starship/         # Starship prompt config
+└── codex/            # Codex CLI config
 ```
 
 ## Key Commands
@@ -66,7 +65,7 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 - `refactor` - Code restructuring without behavior change
 
 **Examples:**
-- `feat: add starship prompt configuration`
+- `feat: add fzf key bindings`
 - `fix: correct fish PATH ordering`
 - `chore: add comments to Brewfile`
 - `docs: add installation instructions to README`
@@ -82,18 +81,20 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ## Theme-Synced Configs
 
-These files auto-switch based on macOS appearance mode via `sync_theme`. Only commit non-theme changes:
-- `.gitconfig` - do not commit `delta.syntax-theme` changes
-- `bat/config` - do not commit `--theme` changes
-- `mitmproxy/config.yaml` - do not commit `console_palette` changes
-- `gemini/settings.json` - do not commit `ui.theme` changes
-- `~/.claude.json` - `theme` field auto-managed (not tracked)
+These auto-switch based on macOS appearance mode via `sync_theme`:
+- **Pure prompt** - colors via `_pure_set_gruvbox` function (universal variables, not files)
+- **bat** - `--theme` in `bat/config`
+- **delta** - `syntax-theme` in `.gitconfig`
+- **fzf** - Gruvbox theme sourced from `fish/fzf/`
+- **mitmproxy** - `console_palette` in `mitmproxy/config.yaml`
+- **Claude Code** - `theme` in `~/.claude.json` (not tracked)
+- **Gemini CLI** - `ui.theme` in `gemini/settings.json`
 
-These files will often show as modified in git due to automatic theme switching. Only commit non-theme changes to these files.
+Files with theme settings will show as modified in git due to automatic switching. Only commit non-theme changes.
 
 ## Terminal Stack
 
-- **Shell**: Fish with Starship prompt and FZF integration
+- **Shell**: Fish with Pure prompt and FZF integration
 - **Multiplexer**: tmux with Ctrl+A prefix, vim-style navigation
 - **Terminal**: Ghostty with Gruvbox theme (auto dark/light mode)
 
