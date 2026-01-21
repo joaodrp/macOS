@@ -17,6 +17,7 @@ sync:
 	mkdir -p ~/.mitmproxy/
 	mkdir -p ~/.config/bat/
 	mkdir -p ~/.config/opencode/
+	mkdir -p ~/.config/opencode/themes
 	mkdir -p ~/.claude
 	mkdir -p ~/.claude/commands/bd
 	mkdir -p ~/.claude/hooks
@@ -44,14 +45,16 @@ sync:
 	ln -sf $(PWD)/fish/functions/mc.fish ~/.config/fish/functions/mc.fish
 	ln -sf $(PWD)/fish/functions/pubkey.fish ~/.config/fish/functions/pubkey.fish
 	ln -sf $(PWD)/fish/functions/wifi_pass.fish ~/.config/fish/functions/wifi_pass.fish
-	ln -sf $(PWD)/fish/fzf/gruvbox-dark.fish ~/.config/fish/fzf/gruvbox-dark.fish
-	ln -sf $(PWD)/fish/fzf/gruvbox-light.fish ~/.config/fish/fzf/gruvbox-light.fish
+	ln -sf $(PWD)/fish/fzf/gruvbox-dark-hard.fish ~/.config/fish/fzf/gruvbox-dark-hard.fish
+	ln -sf $(PWD)/fish/fzf/gruvbox-light-hard.fish ~/.config/fish/fzf/gruvbox-light-hard.fish
 	ln -sf $(PWD)/fish/conf.d/_done.fish ~/.config/fish/conf.d/_done.fish
 	ln -sf $(PWD)/fish/conf.d/pure_theme.fish ~/.config/fish/conf.d/pure_theme.fish
 	[ -f ~/.config/bat/config ] || ln -s $(PWD)/bat/config ~/.config/bat/config
 	[ -f ~/.mitmproxy/config.yaml ] || ln -s $(PWD)/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
 	[ -f ~/.config/opencode/opencode.json ] || ln -s $(PWD)/opencode/opencode.json ~/.config/opencode/opencode.json
 	ln -sf $(PWD)/opencode/AGENTS.md ~/.config/opencode/AGENTS.md
+	ln -sf $(PWD)/opencode/themes/gruvbox-dark-hard.json ~/.config/opencode/themes/gruvbox-dark-hard.json
+	ln -sf $(PWD)/opencode/themes/gruvbox-light-hard.json ~/.config/opencode/themes/gruvbox-light-hard.json
 	ln -sf $(PWD)/claude/CLAUDE.md ~/.claude/CLAUDE.md
 	[ -f ~/.claude/settings.json ] || ln -s $(PWD)/claude/settings.json ~/.claude/settings.json
 	ln -sf $(PWD)/claude/statusline.sh ~/.claude/hooks/statusline.sh
@@ -62,8 +65,8 @@ sync:
 	ln -sf $(PWD)/claude/marketplaces.txt ~/.claude/marketplaces.txt
 	ln -sf $(PWD)/claude/plugins.txt ~/.claude/plugins.txt
 	[ -f ~/.gemini/settings.json ] || ln -s $(PWD)/gemini/settings.json ~/.gemini/settings.json
-	ln -sf $(PWD)/gemini/gruvbox-dark.json ~/.gemini/gruvbox-dark.json
-	ln -sf $(PWD)/gemini/gruvbox-light.json ~/.gemini/gruvbox-light.json
+	ln -sf $(PWD)/gemini/gruvbox-dark-hard.json ~/.gemini/gruvbox-dark-hard.json
+	ln -sf $(PWD)/gemini/gruvbox-light-hard.json ~/.gemini/gruvbox-light-hard.json
 	[ -f ~/.codex/config.toml ] || ln -s $(PWD)/codex/config.toml ~/.codex/config.toml
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 	[ -f ~/Library/Application\ Support/Code/User/keybindings.json ] || ln -s $(PWD)/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
@@ -205,8 +208,8 @@ clean:
 	rm -f ~/.config/fish/functions/mc.fish
 	rm -f ~/.config/fish/functions/pubkey.fish
 	rm -f ~/.config/fish/functions/wifi_pass.fish
-	rm -f ~/.config/fish/fzf/gruvbox-dark.fish
-	rm -f ~/.config/fish/fzf/gruvbox-light.fish
+	rm -f ~/.config/fish/fzf/gruvbox-dark-hard.fish
+	rm -f ~/.config/fish/fzf/gruvbox-light-hard.fish
 	rm -f ~/.config/fish/conf.d/_done.fish
 	rm -f ~/.config/fish/conf.d/pure_theme.fish
 	rm -f ~/.tmux.conf
@@ -229,6 +232,8 @@ clean:
 	rm -f ~/.mitmproxy/config.yaml
 	rm -f ~/.config/opencode/opencode.json
 	rm -f ~/.config/opencode/AGENTS.md
+	rm -f ~/.config/opencode/themes/gruvbox-dark-hard.json
+	rm -f ~/.config/opencode/themes/gruvbox-light-hard.json
 	rm -f ~/.claude/CLAUDE.md
 	rm -f ~/.claude/settings.json
 	rm -f ~/.claude/hooks/statusline.sh
@@ -238,8 +243,8 @@ clean:
 	rm -f ~/.claude/marketplaces.txt
 	rm -f ~/.claude/plugins.txt
 	rm -f ~/.gemini/settings.json
-	rm -f ~/.gemini/gruvbox-dark.json
-	rm -f ~/.gemini/gruvbox-light.json
+	rm -f ~/.gemini/gruvbox-dark-hard.json
+	rm -f ~/.gemini/gruvbox-light-hard.json
 	rm -f ~/.codex/config.toml
 	rm -f ~/Library/Application\ Support/Code/User/settings.json
 	rm -f ~/Library/Application\ Support/Code/User/keybindings.json

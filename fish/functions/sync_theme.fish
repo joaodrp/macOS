@@ -1,4 +1,4 @@
-function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy, Claude Code, and Gemini CLI themes with macOS appearance'
+function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy, Claude Code, OpenCode, and Gemini CLI themes with macOS appearance'
     # Detect current macOS appearance (dark mode returns 0, light mode returns error)
     if defaults read -g AppleInterfaceStyle &>/dev/null
         set mode dark
@@ -42,11 +42,11 @@ function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy,
         end
     end
 
-    # --- fzf (Gruvbox theme from tinted-fzf) ---
+    # --- fzf (Gruvbox Hard) ---
     if test $mode = dark
-        source ~/.config/fish/fzf/gruvbox-dark.fish
+        source ~/.config/fish/fzf/gruvbox-dark-hard.fish
     else
-        source ~/.config/fish/fzf/gruvbox-light.fish
+        source ~/.config/fish/fzf/gruvbox-light-hard.fish
     end
 
     # --- Claude Code ---
@@ -59,10 +59,21 @@ function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy,
         end
     end
 
+    # --- OpenCode ---
+    set -l opencode_config (realpath ~/.config/opencode/opencode.json 2>/dev/null)
+    if test -n "$opencode_config" -a -f "$opencode_config"; and command -q jq
+        set -l opencode_theme (test $mode = dark; and echo "gruvbox-dark-hard"; or echo "gruvbox-light-hard")
+        set -l current_theme (jq -r '.theme // empty' "$opencode_config" 2>/dev/null)
+        if test "$current_theme" != "$opencode_theme"
+            set -l tmp (mktemp)
+            jq --arg theme "$opencode_theme" '.theme = $theme' "$opencode_config" > $tmp && mv $tmp "$opencode_config"
+        end
+    end
+
     # --- Gemini CLI ---
     set -l gemini_config (realpath ~/.gemini/settings.json 2>/dev/null)
     if test -n "$gemini_config" -a -f "$gemini_config"; and command -q jq
-        set -l gemini_theme (test $mode = dark; and echo '$HOME/.gemini/gruvbox-dark.json'; or echo '$HOME/.gemini/gruvbox-light.json')
+        set -l gemini_theme (test $mode = dark; and echo '$HOME/.gemini/gruvbox-dark-hard.json'; or echo '$HOME/.gemini/gruvbox-light-hard.json')
         set -l current_theme (jq -r '.ui.theme // empty' "$gemini_config" 2>/dev/null)
         if test "$current_theme" != "$gemini_theme"
             set -l tmp (mktemp)
