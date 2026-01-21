@@ -247,6 +247,8 @@ cask "meetingbar"
 cask "mitmproxy"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# AI-powered coding assistant desktop app
+cask "opencode-desktop"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Internet radio player
