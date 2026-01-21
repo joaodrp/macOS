@@ -85,8 +85,14 @@
 	# Better conflict markers showing base, ours, and theirs
 	conflictStyle = zdiff3
 [fetch]
-	# Auto-prune deleted remote branches
+	# Auto-prune deleted remote branches and tags
 	prune = true
+	pruneTags = true
+[submodule]
+	# Auto-recurse into submodules
+	recurse = true
+	# Parallel submodule fetches
+	fetchJobs = 0
 [rebase]
 	# Auto-squash fixup/squash commits
 	autoSquash = true
