@@ -23,6 +23,7 @@ sync:
 	mkdir -p ~/.gemini
 	mkdir -p ~/.codex
 	mkdir -p ~/Library/LaunchAgents
+	mkdir -p ~/Library/Application\ Support/Code/User
 
 	[ -f ~/.config/ghostty/config ] || ln -s $(PWD)/ghostty/config ~/.config/ghostty/config
 	[ -f ~/.config/fish/config.fish ] || ln -s $(PWD)/fish/config.fish ~/.config/fish/config.fish
@@ -39,6 +40,10 @@ sync:
 	ln -sf $(PWD)/fish/functions/hc.fish ~/.config/fish/functions/hc.fish
 	ln -sf $(PWD)/fish/functions/ghpr.fish ~/.config/fish/functions/ghpr.fish
 	ln -sf $(PWD)/fish/functions/claude_sync.fish ~/.config/fish/functions/claude_sync.fish
+	ln -sf $(PWD)/fish/functions/afk.fish ~/.config/fish/functions/afk.fish
+	ln -sf $(PWD)/fish/functions/mc.fish ~/.config/fish/functions/mc.fish
+	ln -sf $(PWD)/fish/functions/pubkey.fish ~/.config/fish/functions/pubkey.fish
+	ln -sf $(PWD)/fish/functions/wifi_pass.fish ~/.config/fish/functions/wifi_pass.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-dark.fish ~/.config/fish/fzf/gruvbox-dark.fish
 	ln -sf $(PWD)/fish/fzf/gruvbox-light.fish ~/.config/fish/fzf/gruvbox-light.fish
 	ln -sf $(PWD)/fish/conf.d/_done.fish ~/.config/fish/conf.d/_done.fish
@@ -60,6 +65,8 @@ sync:
 	ln -sf $(PWD)/gemini/gruvbox-dark.json ~/.gemini/gruvbox-dark.json
 	ln -sf $(PWD)/gemini/gruvbox-light.json ~/.gemini/gruvbox-light.json
 	[ -f ~/.codex/config.toml ] || ln -s $(PWD)/codex/config.toml ~/.codex/config.toml
+	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+	[ -f ~/Library/Application\ Support/Code/User/keybindings.json ] || ln -s $(PWD)/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	[ -f ~/.tmux/tmuxline-dark.conf ] || ln -s $(PWD)/tmux/tmuxline-dark.conf ~/.tmux/tmuxline-dark.conf
@@ -194,6 +201,10 @@ clean:
 	rm -f ~/.config/fish/functions/hc.fish
 	rm -f ~/.config/fish/functions/ghpr.fish
 	rm -f ~/.config/fish/functions/claude_sync.fish
+	rm -f ~/.config/fish/functions/afk.fish
+	rm -f ~/.config/fish/functions/mc.fish
+	rm -f ~/.config/fish/functions/pubkey.fish
+	rm -f ~/.config/fish/functions/wifi_pass.fish
 	rm -f ~/.config/fish/fzf/gruvbox-dark.fish
 	rm -f ~/.config/fish/fzf/gruvbox-light.fish
 	rm -f ~/.config/fish/conf.d/_done.fish
@@ -230,5 +241,7 @@ clean:
 	rm -f ~/.gemini/gruvbox-dark.json
 	rm -f ~/.gemini/gruvbox-light.json
 	rm -f ~/.codex/config.toml
+	rm -f ~/Library/Application\ Support/Code/User/settings.json
+	rm -f ~/Library/Application\ Support/Code/User/keybindings.json
 
 .PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions npm-global claude-npx claude-plugins claude-plugins-prune post-install config clean

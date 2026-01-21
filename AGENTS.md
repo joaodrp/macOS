@@ -26,7 +26,8 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── bat/              # bat (cat replacement) config
 ├── mitmproxy/        # HTTP proxy config
 ├── gemini/           # Gemini CLI config and themes
-└── codex/            # Codex CLI config
+├── codex/            # Codex CLI config
+└── vscode/           # VS Code settings and keybindings
 ```
 
 ## Key Commands
@@ -93,6 +94,7 @@ These auto-switch based on macOS appearance mode via `sync_theme`:
 - **mitmproxy** - `console_palette` in `mitmproxy/config.yaml` (Solarized, no Gruvbox)
 - **Claude Code** - `theme` in `~/.claude.json` (not tracked)
 - **Gemini CLI** - `ui.theme` in `gemini/settings.json`
+- **VS Code** - `workbench.colorTheme` in `vscode/settings.json`
 
 Files with theme settings will show as modified in git due to automatic switching. Only commit non-theme changes.
 

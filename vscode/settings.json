@@ -1,0 +1,18 @@
+{
+    "git.autofetch": false,
+    "security.promptForLocalFileProtocolHandling": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "claudeCode.preferredLocation": "panel",
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+    "claudeCode.selectedModel": "default",
+    "claudeCode.initialPermissionMode": "plan",
+    "claudeCode.useTerminal": true,
+    "editor.fontFamily": "JetBrainsMono Nerd Font,Mononoki,Iosevka",
+    "editor.fontSize": 12.5,
+    "makefile.configureOnOpen": false,
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
+    "workbench.preferredLightColorTheme": "Gruvbox Light Hard"
+}
