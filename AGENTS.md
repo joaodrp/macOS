@@ -82,7 +82,8 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ## Theme-Synced Configs
 
-All apps use the official [Gruvbox](https://github.com/morhetz/gruvbox) palette with the terminal convention:
+All apps use the official [Gruvbox](https://github.com/morhetz/gruvbox) **hard** contrast palette:
+- **Hard** background (#1d2021 dark, #f9f5d7 light) for maximum contrast
 - **Neutral** variants for normal UI elements
 - **Bright** (dark mode) / **Faded** (light mode) variants for emphasis
 

@@ -9,7 +9,7 @@ function _pure_set_gruvbox --argument-names mode --description 'Set Pure prompt 
         set --universal pure_color_success 98971a      # green neutral
         set --universal pure_color_danger fb4934       # red bright (emphasis)
         set --universal pure_color_warning d79921      # yellow neutral
-        set --universal pure_color_dark 282828         # bg
+        set --universal pure_color_dark 1d2021         # bg (hard)
         set --universal pure_color_light ebdbb2        # fg
         set --universal pure_color_normal normal
         # Git colors (neutral)
@@ -38,7 +38,7 @@ function _pure_set_gruvbox --argument-names mode --description 'Set Pure prompt 
         set --universal pure_color_danger 9d0006       # red faded (emphasis)
         set --universal pure_color_warning d79921      # yellow neutral
         set --universal pure_color_dark 3c3836         # fg
-        set --universal pure_color_light fbf1c7        # bg
+        set --universal pure_color_light f9f5d7        # bg (hard)
         set --universal pure_color_normal normal
         # Git colors (neutral)
         set --universal pure_color_git_branch 458588   # blue neutral
