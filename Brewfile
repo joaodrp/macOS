@@ -2,6 +2,7 @@ tap "anomalyco/tap"
 tap "cormacrelf/tap"
 tap "joaodrp/tap"
 tap "mike-engel/jwt-cli"
+tap "oven-sh/bun"
 tap "shopify/shopify"
 tap "steveyegge/beads"
 # Automate deployment, configuration, and upgrading
@@ -16,6 +17,8 @@ brew "awscli"
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Incredibly fast JavaScript runtime, bundler, transpiler, and package manager
+brew "oven-sh/bun/bun"
 # Statistics utility to count lines of code
 brew "cloc"
 # Cross-platform make
