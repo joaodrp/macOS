@@ -22,9 +22,11 @@
 
 - Be direct and concise
 - Ask when there are genuine trade-offs or ambiguity
+- Never post comments on issues or PRs/MRs without explicit consent
 
 ## Commits
 
 - Follow [Conventional Commits](https://www.conventionalcommits.org/)
 - Keep descriptions concise and direct. Use markdown formatting for code or identifiers
 - No Co-Authored-By footers
+- Never mention your plugins or skills
