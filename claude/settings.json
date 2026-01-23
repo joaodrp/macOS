@@ -115,7 +115,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "\"$HOME/.claude/hooks/statusline.sh\""
+    "command": "\"$HOME/.claude/hooks/statusline.sh\" | bunx cc-safety-net --statusline"
   },
   "enabledPlugins": {
     "supabase@claude-plugins-official": true,
@@ -142,7 +142,8 @@
     "security-guidance@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
     "elements-of-style@superpowers-marketplace": true,
-    "codex-peer-review@agent-peer-review-marketplace": true
+    "codex-peer-review@agent-peer-review-marketplace": true,
+    "safety-net@cc-marketplace": true
   },
   "forceLoginMethod": "claudeai"
 }

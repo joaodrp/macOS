@@ -27,6 +27,7 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── mitmproxy/        # HTTP proxy config
 ├── gemini/           # Gemini CLI config and themes
 ├── codex/            # Codex CLI config
+├── cc-safety-net/    # cc-safety-net custom rules
 └── vscode/           # VS Code settings and keybindings
 ```
 

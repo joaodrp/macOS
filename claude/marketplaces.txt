@@ -3,3 +3,4 @@ anthropics/claude-plugins-official
 jcputney/agent-peer-review
 obra/superpowers-marketplace
 steveyegge/beads
+kenryu42/cc-marketplace

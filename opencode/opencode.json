@@ -1,11 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "gruvbox-light-hard",
+  "theme": "gruvbox-dark-hard",
   "autoupdate": true,
   "plugin": [
     "@mohak34/opencode-notifier@latest",
     "@gitlab/opencode-gitlab-plugin@latest",
-    "@franlol/opencode-md-table-formatter"
+    "@franlol/opencode-md-table-formatter",
+    "opencode-beads",
+    "cc-safety-net"
   ],
   "share": "manual",
   "tui": {

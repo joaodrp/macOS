@@ -23,6 +23,7 @@ sync:
 	mkdir -p ~/.claude/hooks
 	mkdir -p ~/.gemini
 	mkdir -p ~/.codex
+	mkdir -p ~/.cc-safety-net
 	mkdir -p ~/Library/LaunchAgents
 	mkdir -p ~/Library/Application\ Support/Code/User
 
@@ -68,6 +69,7 @@ sync:
 	ln -sf $(PWD)/gemini/gruvbox-dark-hard.json ~/.gemini/gruvbox-dark-hard.json
 	ln -sf $(PWD)/gemini/gruvbox-light-hard.json ~/.gemini/gruvbox-light-hard.json
 	[ -f ~/.codex/config.toml ] || ln -s $(PWD)/codex/config.toml ~/.codex/config.toml
+	[ -f ~/.cc-safety-net/config.json ] || ln -s $(PWD)/cc-safety-net/config.json ~/.cc-safety-net/config.json
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 	[ -f ~/Library/Application\ Support/Code/User/keybindings.json ] || ln -s $(PWD)/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
@@ -246,6 +248,7 @@ clean:
 	rm -f ~/.gemini/gruvbox-dark-hard.json
 	rm -f ~/.gemini/gruvbox-light-hard.json
 	rm -f ~/.codex/config.toml
+	rm -f ~/.cc-safety-net/config.json
 	rm -f ~/Library/Application\ Support/Code/User/settings.json
 	rm -f ~/Library/Application\ Support/Code/User/keybindings.json
 
