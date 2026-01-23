@@ -18,7 +18,8 @@
   "tools": {
     "shell": {
       "showColor": true
-    }
+    },
+    "enableHooks": true
   },
   "mcpServers": {
     "context7": {
