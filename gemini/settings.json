@@ -1,6 +1,6 @@
 {
   "ui": {
-    "theme": "$HOME/.gemini/gruvbox-light-hard.json"
+    "theme": "$HOME/.gemini/gruvbox-dark-hard.json"
   },
   "security": {
     "auth": {

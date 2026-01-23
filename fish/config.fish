@@ -29,7 +29,7 @@ set -gx OPENCODE_CONFIG $HOME/.config/opencode/opencode.local.json
 set -gx OPENCODE_EXPERIMENTAL_LSP_TOOL true
 set -gx HAPPY_SERVER_URL https://happy.home.joaodrp.com
 
-fish_add_path $HOME/.local/bin $HOME/go/bin
+fish_add_path --append $HOME/.local/bin $HOME/go/bin
 
 # =============================================================================
 # Aliases
