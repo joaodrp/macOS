@@ -59,7 +59,6 @@ sync:
 	[ -f ~/.claude/settings.json ] || ln -s $(PWD)/claude/settings.json ~/.claude/settings.json
 	ln -sf $(PWD)/claude/statusline.sh ~/.claude/hooks/statusline.sh
 	ln -sf $(PWD)/claude/subagent-start.sh ~/.claude/hooks/subagent-start.sh
-	ln -sf $(PWD)/claude/npx-packages.txt ~/.claude/npx-packages.txt
 	ln -sf $(PWD)/claude/marketplaces.txt ~/.claude/marketplaces.txt
 	ln -sf $(PWD)/claude/plugins.txt ~/.claude/plugins.txt
 	[ -f ~/.gemini/settings.json ] || ln -s $(PWD)/gemini/settings.json ~/.gemini/settings.json
@@ -133,11 +132,6 @@ npm-global:
 		npm list -g "$$pkg" >/dev/null 2>&1 || npm install -g "$$pkg"; \
 	done
 
-claude-npx:
-	@grep -v '^#' ~/.claude/npx-packages.txt 2>/dev/null | grep -v '^$$' | while read -r cmd; do \
-		eval npx $$cmd; \
-	done
-
 claude-plugins:
 	@echo "Adding marketplaces..."
 	@installed=$$(claude plugin marketplace list --json 2>/dev/null | jq -r '.[].repo'); \
@@ -166,20 +160,15 @@ claude-plugins-prune: claude-plugins
 	done
 	@echo "Pruning unlisted plugins (user scope)..."
 	@desired=$$(grep -v '^#' ~/.claude/plugins.txt 2>/dev/null | grep -v '^$$' | sed 's/@.*//'); \
-	npx_pkgs=$$(grep -v '^#' ~/.claude/npx-packages.txt 2>/dev/null | grep -v '^$$' | sed 's/@.*//' | sed 's/-cc$$//'); \
 	claude plugin list --json 2>/dev/null | jq -r '.[] | select(.scope == "user") | .id' | sort -u | while read -r id; do \
 		name=$$(echo "$$id" | sed 's/@.*//'); \
 		if ! echo "$$desired" | grep -qx "$$name"; then \
-			if echo "$$npx_pkgs" | grep -qx "$$name"; then \
-				echo "Skipping npx plugin: $$name"; \
-			else \
-				echo "Removing plugin: $$name"; \
-				claude plugin uninstall "$$name" --scope user 2>&1 || true; \
-			fi; \
+			echo "Removing plugin: $$name"; \
+			claude plugin uninstall "$$name" --scope user 2>&1 || true; \
 		fi; \
 	done
 
-post-install: tmux-plugins vim-plugins docker-completions npm-global claude-npx claude-plugins
+post-install: tmux-plugins vim-plugins docker-completions npm-global claude-plugins
 
 config:
 	./macos
@@ -237,7 +226,6 @@ clean:
 	rm -f ~/.claude/settings.json
 	rm -f ~/.claude/hooks/statusline.sh
 	rm -f ~/.claude/hooks/subagent-start.sh
-	rm -f ~/.claude/npx-packages.txt
 	rm -f ~/.claude/marketplaces.txt
 	rm -f ~/.claude/plugins.txt
 	rm -f ~/.gemini/settings.json
@@ -248,4 +236,4 @@ clean:
 	rm -f ~/Library/Application\ Support/Code/User/settings.json
 	rm -f ~/Library/Application\ Support/Code/User/keybindings.json
 
-.PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions npm-global claude-npx claude-plugins claude-plugins-prune post-install config clean
+.PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions npm-global claude-plugins claude-plugins-prune post-install config clean
