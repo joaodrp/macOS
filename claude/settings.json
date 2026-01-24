@@ -29,14 +29,12 @@
       "Bash(open:*)",
       "Bash(git:*)",
       "Bash(git rev-parse:*)",
-      "Bash(bd:*)",
       "Bash(du:*)",
       "Bash(tig:*)",
       "Bash(gh issue view:*)",
       "Bash(gh pr list:*)",
       "Bash(defaults read:*)",
       "Skill(superpowers:*)",
-      "Skill(bd:*)",
       "mcp__firecrawl__firecrawl_scrape",
       "mcp__firecrawl__firecrawl_search",
       "Bash(codex:*)",
@@ -79,28 +77,6 @@
         ]
       }
     ],
-    "PreCompact": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bd prime"
-          }
-        ]
-      }
-    ],
-    "SessionStart": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bd prime"
-          }
-        ]
-      }
-    ],
     "SubagentStart": [
       {
         "matcher": "",
@@ -119,7 +95,6 @@
   },
   "enabledPlugins": {
     "supabase@claude-plugins-official": true,
-    "beads@beads-marketplace": true,
     "typescript-lsp@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
     "ralph-loop@claude-plugins-official": true,

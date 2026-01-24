@@ -19,7 +19,6 @@ sync:
 	mkdir -p ~/.config/opencode/
 	mkdir -p ~/.config/opencode/themes
 	mkdir -p ~/.claude
-	mkdir -p ~/.claude/commands/bd
 	mkdir -p ~/.claude/hooks
 	mkdir -p ~/.gemini
 	mkdir -p ~/.codex
@@ -60,8 +59,6 @@ sync:
 	[ -f ~/.claude/settings.json ] || ln -s $(PWD)/claude/settings.json ~/.claude/settings.json
 	ln -sf $(PWD)/claude/statusline.sh ~/.claude/hooks/statusline.sh
 	ln -sf $(PWD)/claude/subagent-start.sh ~/.claude/hooks/subagent-start.sh
-	ln -sf $(PWD)/claude/commands/bd/log.md ~/.claude/commands/bd/log.md
-	ln -sf $(PWD)/claude/commands/bd/checkpoint.md ~/.claude/commands/bd/checkpoint.md
 	ln -sf $(PWD)/claude/npx-packages.txt ~/.claude/npx-packages.txt
 	ln -sf $(PWD)/claude/marketplaces.txt ~/.claude/marketplaces.txt
 	ln -sf $(PWD)/claude/plugins.txt ~/.claude/plugins.txt
@@ -240,7 +237,6 @@ clean:
 	rm -f ~/.claude/settings.json
 	rm -f ~/.claude/hooks/statusline.sh
 	rm -f ~/.claude/hooks/subagent-start.sh
-	rm -rf ~/.claude/commands/bd
 	rm -f ~/.claude/npx-packages.txt
 	rm -f ~/.claude/marketplaces.txt
 	rm -f ~/.claude/plugins.txt

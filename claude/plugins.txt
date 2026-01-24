@@ -26,8 +26,5 @@ typescript-lsp@claude-plugins-official
 # Superpowers
 elements-of-style@superpowers-marketplace
 
-# Beads
-beads@beads-marketplace
-
 # Peer Review
 codex-peer-review@agent-peer-review-marketplace
