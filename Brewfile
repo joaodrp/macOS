@@ -4,7 +4,6 @@ tap "joaodrp/tap"
 tap "mike-engel/jwt-cli"
 tap "oven-sh/bun"
 tap "shopify/shopify"
-tap "steveyegge/beads"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # Record and share terminal sessions
@@ -203,8 +202,6 @@ brew "anomalyco/tap/opencode"
 brew "mike-engel/jwt-cli/jwt-cli"
 # Proxy for simulating network conditions
 brew "shopify/shopify/toxiproxy"
-# Beads issue tracker CLI
-brew "steveyegge/beads/bd"
 # Password manager
 cask "1password"
 # Command-line helper for the 1Password password manager
@@ -266,6 +263,8 @@ cask "slack"
 cask "tsh"
 # Open-source code editor
 cask "visual-studio-code"
+# Multiplayer code editor
+cask "zed"
 # Multimedia player
 cask "vlc"
 # Messaging app
