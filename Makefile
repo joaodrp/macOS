@@ -25,6 +25,7 @@ sync:
 	mkdir -p ~/.cc-safety-net
 	mkdir -p ~/Library/LaunchAgents
 	mkdir -p ~/Library/Application\ Support/Code/User
+	mkdir -p ~/.config/zed
 
 	[ -f ~/.config/ghostty/config ] || ln -s $(PWD)/ghostty/config ~/.config/ghostty/config
 	[ -f ~/.config/fish/config.fish ] || ln -s $(PWD)/fish/config.fish ~/.config/fish/config.fish
@@ -68,6 +69,7 @@ sync:
 	[ -f ~/.cc-safety-net/config.json ] || ln -s $(PWD)/cc-safety-net/config.json ~/.cc-safety-net/config.json
 	[ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s $(PWD)/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 	[ -f ~/Library/Application\ Support/Code/User/keybindings.json ] || ln -s $(PWD)/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+	[ -f ~/.config/zed/settings.json ] || ln -s $(PWD)/zed/settings.json ~/.config/zed/settings.json
 	[ -f ~/.vimrc ] || ln -s $(PWD)/.vimrc ~/.vimrc
 	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux/.tmux.conf ~/.tmux.conf
 	[ -f ~/.tmux/tmuxline-dark.conf ] || ln -s $(PWD)/tmux/tmuxline-dark.conf ~/.tmux/tmuxline-dark.conf
@@ -235,5 +237,6 @@ clean:
 	rm -f ~/.cc-safety-net/config.json
 	rm -f ~/Library/Application\ Support/Code/User/settings.json
 	rm -f ~/Library/Application\ Support/Code/User/keybindings.json
+	rm -f ~/.config/zed/settings.json
 
 .PHONY: all sync brew brew-personal brew-all fish vim-plugins tmux-plugins docker-completions npm-global claude-plugins claude-plugins-prune post-install config clean

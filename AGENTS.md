@@ -28,7 +28,8 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── gemini/           # Gemini CLI config and themes
 ├── codex/            # Codex CLI config
 ├── cc-safety-net/    # cc-safety-net custom rules
-└── vscode/           # VS Code settings and keybindings
+├── vscode/           # VS Code settings and keybindings
+└── zed/              # Zed editor settings
 ```
 
 ## Key Commands
@@ -97,6 +98,7 @@ These auto-switch based on macOS appearance mode via `sync_theme`:
 - **Claude Code** - `theme` in `~/.claude.json` (not tracked)
 - **Gemini CLI** - `ui.theme` in `gemini/settings.json`
 - **VS Code** - `workbench.colorTheme` in `vscode/settings.json`
+- **Zed** - `theme` in `zed/settings.json` (uses system mode, auto-switches)
 
 Files with theme settings will show as modified in git due to automatic switching. Only commit non-theme changes.
 
