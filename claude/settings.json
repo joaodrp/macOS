@@ -117,7 +117,12 @@
     "codex-peer-review@agent-peer-review-marketplace": true,
     "safety-net@cc-marketplace": true,
     "modern-python@trailofbits": true,
-    "coderabbit@coderabbit": true
+    "coderabbit@coderabbit": true,
+    "learning-output-style@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": true,
+    "superpowers-developing-for-claude-code@superpowers-marketplace": true,
+    "static-analysis@trailofbits": true,
+    "claude-md-management@claude-plugins-official": true
   },
   "forceLoginMethod": "claudeai"
 }
