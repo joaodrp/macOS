@@ -28,12 +28,13 @@
 
 - Be direct and concise
 - Ask when there are genuine trade-offs or ambiguity
-- Never post comments on issues or PRs/MRs without explicit consent
+- Never post comments on issues or PRs without explicit consent
 - Never use em-dashes (—, ---, or --)
 
-## Commits
+## Commits & PRs
 
-- Follow [Conventional Commits](https://www.conventionalcommits.org/)
-- Keep descriptions concise and direct. Use markdown formatting for code or identifiers
+- Follow [Conventional Commits](https://www.conventionalcommits.org/) for commit messages and PR titles
+- Keep descriptions concise and direct
+- Use markdown in commit bodies and PR descriptions; use backticks for inline code and identifiers
 - No Co-Authored-By footers
 - Never mention your plugins or skills
