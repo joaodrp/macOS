@@ -7,7 +7,7 @@ This is a macOS dotfiles repository for setting up development machines.
 ```
 .
 ├── Brewfile          # Homebrew packages (formulas, casks, taps)
-├── Makefile          # Installation automation
+├── justfile          # Installation automation (just command runner)
 ├── macos             # macOS system preferences script
 ├── fish/             # Fish shell configuration
 │   ├── config.fish   # Main shell config
@@ -34,13 +34,17 @@ This is a macOS dotfiles repository for setting up development machines.
 
 ## Key Commands
 
-- `make sync` - Symlink all configs to their standard locations
-- `make claude-npx` - Install/update Claude npx packages
-- `make claude-plugins` - Install/update Claude marketplaces and plugins
-- `make claude-plugins-prune` - Same as above, plus remove unlisted marketplaces/plugins
+- `just` - Show available commands (grouped by category)
+- `just all` - Full setup: brew, sync, fish, plugins, config
+- `just sync` - Symlink all configs to their standard locations
+- `just brew` / `just brew-all` - Install Brewfile packages
+- `just fish` - Setup Fish shell as default
+- `just plugins` - Install all plugins (vim, tmux, docker, npm, claude)
+- `just claude-plugins` - Install Claude marketplaces and plugins
+- `just claude-plugins-prune` - Same as above, plus remove unlisted
+- `just config` - Run macOS system preferences script
+- `just clean` - Remove all symlinked configs (requires confirmation)
 - `claude_sync` - Fish function for plugin sync (`claude_sync --prune` to remove unlisted)
-- `make config` - Run macOS system preferences script
-- `make clean` - Remove all symlinked configs
 - `upgrade` - Fish function to update Homebrew, Fisher, App Store, Claude npx packages, and Claude plugins
 
 ## Conventions
@@ -78,8 +82,8 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 1. **Adding a new tool**: Add to `Brewfile`, then add any config files to appropriate directory
 2. **Fish aliases/functions**: Add to `fish/functions/` as separate `.fish` files
 3. **System preferences**: Modify the `macos` script
-4. **New config directory**: Add symlink target to `Makefile`'s sync target
-5. **Renaming/moving/deleting files**: Update `Makefile` sync and clean targets accordingly
+4. **New config directory**: Add symlink target to `justfile`'s sync recipes
+5. **Renaming/moving/deleting files**: Update `justfile` sync and clean recipes accordingly
 6. **Claude plugins**: Add marketplace to `claude/marketplaces.txt`, plugin to `claude/plugins.txt`
 
 ## Theme-Synced Configs
