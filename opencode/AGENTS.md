@@ -7,10 +7,11 @@
 
 ### Web & Documentation
 
-- **Context7** - Library/framework docs, API specs, usage samples, setup instructions
+- **Context7 MCP** - Library/framework docs, API specs, usage samples, setup instructions
 - **WebSearch** - Find things on the web, current events, quick facts
 - **WebFetch** - Read a specific URL (simple pages)
-- **Firecrawl** - Scrape JS-heavy pages, crawl sites, extract structured data
+- **Firecrawl MCP** - Scrape JS-heavy pages, crawl sites, extract structured data
+- **Perplexity MCP** - Deep research on complex topics requiring synthesis from multiple sources
 
 ## GitLab
 
