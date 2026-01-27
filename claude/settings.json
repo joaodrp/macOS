@@ -122,7 +122,8 @@
     "claude-code-setup@claude-plugins-official": true,
     "superpowers-developing-for-claude-code@superpowers-marketplace": true,
     "static-analysis@trailofbits": true,
-    "claude-md-management@claude-plugins-official": true
+    "claude-md-management@claude-plugins-official": true,
+    "skill-permissions@guo-yu-skills": true
   },
   "forceLoginMethod": "claudeai"
 }

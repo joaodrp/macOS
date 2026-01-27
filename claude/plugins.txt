@@ -39,3 +39,6 @@ static-analysis@trailofbits
 
 # CodeRabbit
 coderabbit@coderabbit
+
+# guo-yu
+skill-permissions@guo-yu-skills
