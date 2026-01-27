@@ -28,3 +28,6 @@ elements-of-style@superpowers-marketplace
 
 # Peer Review
 codex-peer-review@agent-peer-review-marketplace
+
+# Trail of Bits
+modern-python@trailofbits

@@ -3,3 +3,4 @@ anthropics/claude-plugins-official
 jcputney/agent-peer-review
 obra/superpowers-marketplace
 kenryu42/cc-marketplace
+trailofbits/skills
