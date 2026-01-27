@@ -84,7 +84,10 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 3. **System preferences**: Modify the `macos` script
 4. **New config directory**: Add symlink target to `justfile`'s sync recipes
 5. **Renaming/moving/deleting files**: Update `justfile` sync and clean recipes accordingly
-6. **Claude plugins**: Add marketplace to `claude/marketplaces.txt`, plugin to `claude/plugins.txt`
+6. **Claude plugins**:
+   - Add marketplace to `claude/marketplaces.txt` (format: `owner/repo`)
+   - Add plugin to `claude/plugins.txt` (format: `plugin@marketplace-suffix`, where suffix is the last segment of the repo name)
+   - Run `just claude-plugins` to install, or `just claude-plugins-prune` to also remove unlisted
 
 ## Theme-Synced Configs
 
