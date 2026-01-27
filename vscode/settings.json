@@ -14,5 +14,16 @@
     "workbench.colorTheme": "Gruvbox Dark Hard",
     "window.autoDetectColorScheme": true,
     "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
-    "workbench.preferredLightColorTheme": "Gruvbox Light Hard"
+    "workbench.preferredLightColorTheme": "Gruvbox Light Hard",
+    "terminal.integrated.defaultProfile.osx": "fish",
+    "workbench.settings.showAISearchToggle": false,
+    "chat.disableAIFeatures": true,
+    "editor.inlineSuggest.enabled": false,
+    "github.copilot.enable": {
+        "*": false
+    },
+    "github.copilot.inlineSuggest.enable": false,
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "git.generateCommitMessageWorkingChangesOnly": false,
+    "scm.showCommitMessageAIPrompts": false
 }
