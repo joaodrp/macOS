@@ -29,6 +29,7 @@
 - Be direct and concise
 - Ask when there are genuine trade-offs or ambiguity
 - Never post comments on issues or PRs/MRs without explicit consent
+- Never use em-dashes (—, ---, or --)
 
 ## Commits
 
