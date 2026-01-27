@@ -1,5 +1,6 @@
 # Claude Code plugin marketplaces (GitHub repos)
 anthropics/claude-plugins-official
+coderabbitai/claude-plugin
 jcputney/agent-peer-review
 obra/superpowers-marketplace
 kenryu42/cc-marketplace

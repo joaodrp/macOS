@@ -222,6 +222,8 @@ cask "cleanshot"
 cask "claude-code"
 # AI coding agent from OpenAI
 cask "codex"
+# AI code review CLI
+cask "coderabbit"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # Web browser
