@@ -108,6 +108,8 @@ brew "httpstat"
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Handy way to save and run project-specific commands
+brew "just"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
 # Conversion library
