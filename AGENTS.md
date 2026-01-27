@@ -4,7 +4,7 @@ This is a macOS dotfiles repository for setting up development machines.
 
 ## Structure
 
-```
+```text
 .
 ├── Brewfile          # Homebrew packages (formulas, casks, taps)
 ├── justfile          # Installation automation (just command runner)
@@ -58,13 +58,14 @@ This is a macOS dotfiles repository for setting up development machines.
 
 Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
-```
+```text
 <type>: <description>
 
 [optional body]
 ```
 
 **Types:**
+
 - `feat` - New feature or tool
 - `fix` - Bug fix
 - `docs` - Documentation changes
@@ -72,6 +73,7 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 - `refactor` - Code restructuring without behavior change
 
 **Examples:**
+
 - `feat: add fzf key bindings`
 - `fix: correct fish PATH ordering`
 - `chore: add comments to Brewfile`
@@ -92,11 +94,13 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 ## Theme-Synced Configs
 
 All apps use the official [Gruvbox](https://github.com/morhetz/gruvbox) **hard** contrast palette:
+
 - **Hard** background (#1d2021 dark, #f9f5d7 light) for maximum contrast
 - **Neutral** variants for normal UI elements
 - **Bright** (dark mode) / **Faded** (light mode) variants for emphasis
 
 These auto-switch based on macOS appearance mode via `sync_theme`:
+
 - **Pure prompt** - colors via `_pure_set_gruvbox` function (universal variables)
 - **bat** - `--theme` in `bat/config`
 - **delta** - `syntax-theme` in `.gitconfig`
@@ -114,4 +118,3 @@ Files with theme settings will show as modified in git due to automatic switchin
 - **Shell**: Fish with Pure prompt and FZF integration
 - **Multiplexer**: tmux with Ctrl+A prefix, vim-style navigation
 - **Terminal**: Ghostty with Gruvbox theme (auto dark/light mode)
-

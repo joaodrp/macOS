@@ -142,6 +142,7 @@ clean:
     rm -f ~/.psqlrc
     rm -f ~/.config/bat/config
     rm -f ~/.mitmproxy/config.yaml
+    rm -f ~/AGENTS.md
     rm -f ~/.config/opencode/opencode.json
     rm -f ~/.config/opencode/AGENTS.md
     rm -f ~/.config/opencode/themes/gruvbox-dark-hard.json
@@ -243,6 +244,7 @@ _sync-security:
 
 _sync-ai:
     [ -f ~/.config/bat/config ] || ln -s {{ root }}/bat/config ~/.config/bat/config
+    ln -sf {{ root }}/shared/AGENTS.md ~/AGENTS.md
     [ -f ~/.config/opencode/opencode.json ] || ln -s {{ root }}/opencode/opencode.json ~/.config/opencode/opencode.json
     ln -sf {{ root }}/opencode/AGENTS.md ~/.config/opencode/AGENTS.md
     ln -sf {{ root }}/opencode/themes/gruvbox-dark-hard.json ~/.config/opencode/themes/gruvbox-dark-hard.json
