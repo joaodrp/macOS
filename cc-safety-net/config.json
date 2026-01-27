@@ -7,6 +7,13 @@
       "subcommand": "add",
       "block_args": ["-A", "--all", "."],
       "reason": "Use 'git add <specific-files>' instead of blanket add."
+    },
+    {
+      "name": "block-git-push-delete",
+      "command": "git",
+      "subcommand": "push",
+      "block_args": ["--delete", "-d"],
+      "reason": "Use 'git branch -d' locally instead of deleting remote branches via push."
     }
   ]
 }

@@ -28,7 +28,6 @@
       "Bash(curl:*)",
       "Bash(open:*)",
       "Bash(git:*)",
-      "Bash(git rev-parse:*)",
       "Bash(du:*)",
       "Bash(tig:*)",
       "Bash(gh issue view:*)",
@@ -37,8 +36,10 @@
       "Skill(superpowers:*)",
       "mcp__firecrawl__firecrawl_scrape",
       "mcp__firecrawl__firecrawl_search",
-      "Bash(codex:*)",
-      "Bash(gemini:*)",
+      "Bash(codex exec:*)",
+      "Bash(codex review:*)",
+      "Bash(command -v codex:*)",
+      "Bash(command -v jq:*)",
       "Bash(go doc:*)"
     ],
     "deny": [
@@ -48,10 +49,6 @@
       "Read(./secrets/**)",
       "Read(./config/credentials.json)",
       "Read(./build)",
-      "Bash(git push*--force*)",
-      "Bash(git push*-f*)",
-      "Bash(git push*--delete*)",
-      "Bash(git push*-d*)",
       "Bash(git push* :*)"
     ]
   },
@@ -119,7 +116,8 @@
     "elements-of-style@superpowers-marketplace": true,
     "codex-peer-review@agent-peer-review-marketplace": true,
     "safety-net@cc-marketplace": true,
-    "modern-python@trailofbits": true
+    "modern-python@trailofbits": true,
+    "coderabbit@coderabbit": true
   },
   "forceLoginMethod": "claudeai"
 }
