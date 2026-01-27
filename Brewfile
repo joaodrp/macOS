@@ -144,6 +144,8 @@ brew "pinentry-mac"
 brew "pstree"
 # Draw UML diagrams from text descriptions
 brew "plantuml"
+# Pre-commit re-implemented in Rust
+brew "prek"
 # Tools for and transforming and inspecting PDF files
 brew "qpdf"
 # Rsync for cloud storage
