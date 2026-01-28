@@ -239,6 +239,8 @@ cask "font-monaspace"
 cask "font-mononoki"
 # Terminal emulator with native dark mode support
 cask "ghostty"
+# GitHub Desktop client
+cask "github"
 # Web browser
 cask "google-chrome"
 # Set of tools to manage resources and applications hosted on Google Cloud
