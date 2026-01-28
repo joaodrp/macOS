@@ -7,13 +7,17 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "ui_font_weight": 400.0,
-  "agent_buffer_font_size": 12.5,
-  "agent_ui_font_size": 15.0,
+  // "ui_font_weight": 400.0,
+  "edit_predictions": {
+    "codestral": {
+      "model": "codestral-latest",
+    },
+  },
+  "agent_buffer_font_size": 13,
   "git_panel": {
     "tree_view": false,
   },
-  "buffer_font_size": 12.5,
+  "buffer_font_size": 13,
   "agent": {
     "default_model": {
       "provider": "mistral",
@@ -29,7 +33,7 @@
     "experimental.rodio_audio": true,
   },
   "terminal": {
-    "font_size": 12.5,
+    "font_size": 13,
     "copy_on_select": true,
   },
   "prettier": {
@@ -48,10 +52,36 @@
   "session": {
     "trust_all_worktrees": true,
   },
-  "ui_font_size": 15.0,
   "theme": {
     "mode": "system",
-    "light": "Gruvbox Light Hard",
+    "light": "Gruvbox Light",
     "dark": "Gruvbox Dark Hard",
+  },
+  "auto_install_extensions": {
+    "helm": true,
+    "fish": true,
+    "ansible": true,
+    "just": true,
+    "env": true,
+    "basher": true,
+    "ini": true,
+    "elixir": true,
+    "latex": true,
+    "terraform": true,
+    "lua": true,
+    "xml": true,
+    "scss": true,
+    "make": true,
+    "vue": true,
+    "ruby": true,
+    "sql": true,
+    "dockerfile": true,
+    "git-firefly": true,
+    "toml": true,
+    "html": true,
+    "proto": true,
+    "github-actions": true,
+    "golangci-lint": true,
+    "ghostty": true,
   },
 }
