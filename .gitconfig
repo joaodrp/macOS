@@ -108,7 +108,7 @@
 	# Enable n/N navigation between diff sections
 	navigate = true
 	line-numbers = true
-	syntax-theme = gruvbox-dark
+	syntax-theme = gruvbox-light
 [color]
 	ui = true
 [color "diff"]
@@ -122,3 +122,8 @@
 [init]
 	# Default branch name for new repositories
 	defaultBranch = main
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
