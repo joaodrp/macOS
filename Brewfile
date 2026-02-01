@@ -1,5 +1,6 @@
 tap "anomalyco/tap"
 tap "cormacrelf/tap"
+tap "hamed-elfayome/claude-usage"
 tap "joaodrp/tap"
 tap "mike-engel/jwt-cli"
 tap "oven-sh/bun"
@@ -220,6 +221,8 @@ cask "claude"
 cask "cleanshot"
 # AI coding assistant CLI
 cask "claude-code"
+# Claude Code API usage tracker
+cask "claude-usage-tracker"
 # AI coding agent from OpenAI
 cask "codex"
 # AI code review CLI
