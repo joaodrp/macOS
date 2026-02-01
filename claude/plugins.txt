@@ -38,7 +38,7 @@ modern-python@trailofbits
 static-analysis@trailofbits
 
 # CodeRabbit
-coderabbit@coderabbit
+coderabbit@claude-plugins-official
 
 # guo-yu
 skill-permissions@guo-yu-skills
