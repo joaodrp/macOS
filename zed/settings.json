@@ -13,11 +13,11 @@
       "model": "codestral-latest",
     },
   },
-  "agent_buffer_font_size": 13,
+  "agent_buffer_font_size": 12.5,
   "git_panel": {
     "tree_view": false,
   },
-  "buffer_font_size": 13,
+  "buffer_font_size": 12.5,
   "agent": {
     "default_model": {
       "provider": "mistral",
@@ -33,7 +33,7 @@
     "experimental.rodio_audio": true,
   },
   "terminal": {
-    "font_size": 13,
+    "font_size": 12.5,
     "copy_on_select": true,
   },
   "prettier": {
@@ -41,7 +41,7 @@
   },
   "soft_wrap": "preferred_line_length",
   "minimap": {
-    "show": "never",
+    "show": "always",
   },
   "which_key": {
     "enabled": true,
