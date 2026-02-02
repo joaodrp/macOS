@@ -1,4 +1,4 @@
-# Agent Instructions
+# AGENTS.md
 
 ## Tools
 
@@ -10,7 +10,7 @@
 - **Context7 MCP** - Library/framework docs, API specs, usage samples, setup instructions
 - **WebSearch** - Find things on the web, current events, quick facts
 - **WebFetch** - Read a specific URL (simple pages)
-- **Firecrawl MCP** - Scrape JS-heavy pages, crawl sites, extract structured data
+- **Firecrawl CLI** - Scrape JS-heavy pages, crawl sites, extract structured data
 - **Perplexity MCP** - Deep research on complex topics requiring synthesis from multiple sources
 
 ## GitLab

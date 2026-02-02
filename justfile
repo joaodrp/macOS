@@ -157,6 +157,7 @@ clean:
     rm -f ~/.gemini/gruvbox-dark-hard.json
     rm -f ~/.gemini/gruvbox-light-hard.json
     rm -f ~/.codex/config.toml
+    rm -f ~/.codex/AGENTS.md
     rm -f ~/.cc-safety-net/config.json
     rm -f ~/Library/Application\ Support/Code/User/settings.json
     rm -f ~/Library/Application\ Support/Code/User/keybindings.json
@@ -246,7 +247,7 @@ _sync-ai:
     [ -f ~/.config/bat/config ] || ln -s {{ root }}/bat/config ~/.config/bat/config
     ln -sf {{ root }}/shared/AGENTS.md ~/AGENTS.md
     [ -f ~/.config/opencode/opencode.json ] || ln -s {{ root }}/opencode/opencode.json ~/.config/opencode/opencode.json
-    ln -sf {{ root }}/opencode/AGENTS.md ~/.config/opencode/AGENTS.md
+    ln -sf {{ root }}/shared/AGENTS.md ~/.config/opencode/AGENTS.md
     ln -sf {{ root }}/opencode/themes/gruvbox-dark-hard.json ~/.config/opencode/themes/gruvbox-dark-hard.json
     ln -sf {{ root }}/opencode/themes/gruvbox-light-hard.json ~/.config/opencode/themes/gruvbox-light-hard.json
     ln -sf {{ root }}/claude/CLAUDE.md ~/.claude/CLAUDE.md
@@ -259,6 +260,7 @@ _sync-ai:
     ln -sf {{ root }}/gemini/gruvbox-dark-hard.json ~/.gemini/gruvbox-dark-hard.json
     ln -sf {{ root }}/gemini/gruvbox-light-hard.json ~/.gemini/gruvbox-light-hard.json
     [ -f ~/.codex/config.toml ] || ln -s {{ root }}/codex/config.toml ~/.codex/config.toml
+    ln -sf {{ root }}/shared/AGENTS.md ~/.codex/AGENTS.md
     [ -f ~/.cc-safety-net/config.json ] || ln -s {{ root }}/cc-safety-net/config.json ~/.cc-safety-net/config.json
 
 _sync-misc:
