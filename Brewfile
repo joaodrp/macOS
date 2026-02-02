@@ -155,6 +155,8 @@ brew "rclone"
 brew "re2"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Markdown linter and formatter written in Rust
+brew "rumdl"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Work with remote images registries

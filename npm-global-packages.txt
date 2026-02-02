@@ -1,4 +1,5 @@
 # Global npm packages (one per line)
-happy-coder
-@openchamber/web
 @anthropic-ai/mcpb
+@mendable/firecrawl-cli
+@openchamber/web
+happy-coder
