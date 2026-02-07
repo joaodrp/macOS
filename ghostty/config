@@ -32,8 +32,8 @@ font-thicken-strength = 128
 window-theme = system
 
 # Padding between terminal cells and window borders (in points)
-window-padding-x = 10
-window-padding-y = 10
+window-padding-y = 5,10
+window-padding-x = 10,10
 
 # Save/restore window state across launches (macOS only)
 # Values: default, never, always
@@ -44,6 +44,11 @@ window-inherit-working-directory = true
 
 # Hide resize overlay (default: after-first)
 resize-overlay = never
+
+# Minimal macOS titlebar for cleaner appearance
+macos-titlebar-style = "transparent"
+macos-titlebar-proxy-icon = "hidden"
+title = " "
 
 # ------------------------------------------------------------------------------
 # Splits
@@ -92,28 +97,3 @@ macos-option-as-alt = left
 # Shift+enter sends literal newline (useful for multi-line input)
 keybind = shift+enter=text:\n
 
-# Tmux-style split navigation with vim keys (direct, no prefix)
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:bottom
-keybind = ctrl+k=goto_split:top
-keybind = ctrl+l=goto_split:right
-
-# Tmux-style split creation with ctrl+a prefix
-# Press ctrl+a, release, then press direction key
-keybind = ctrl+a>h=new_split:left
-keybind = ctrl+a>j=new_split:down
-keybind = ctrl+a>k=new_split:up
-keybind = ctrl+a>l=new_split:right
-
-# Tmux-style split zoom toggle (ctrl+a then f, like tmux prefix+z)
-keybind = ctrl+a>f=toggle_split_zoom
-
-# Tmux-style tab navigation
-keybind = ctrl+a>n=next_tab
-keybind = ctrl+a>p=previous_tab
-
-# Tmux-style split resizing (ctrl+a then shift+direction)
-keybind = ctrl+a>shift+h=resize_split:left,50
-keybind = ctrl+a>shift+j=resize_split:down,50
-keybind = ctrl+a>shift+k=resize_split:up,50
-keybind = ctrl+a>shift+l=resize_split:right,50
