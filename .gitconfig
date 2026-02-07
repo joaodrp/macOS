@@ -38,7 +38,6 @@
 	# Don't escape non-ASCII characters in paths
 	quotepath = false
 	excludesfile = ~/.gitignore
-	hooksPath = ~/.config/git/hooks
 [include]
 	# Local config (personal email, machine-specific settings)
     path = .gitconfig.local

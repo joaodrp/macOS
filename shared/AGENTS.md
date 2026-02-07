@@ -5,13 +5,16 @@
 - Use `gh` CLI for GitHub interactions and `glab` CLI for GitLab interactions
 - GNU versions of sed, grep, tar, find, etc. are prioritized over BSD versions. Use GNU syntax in scripts (e.g., `sed -i 'pattern'` not `sed -i '' 'pattern'`)
 
-### Web & Documentation
+### Search & Documentation
 
 - **Context7 MCP** - Library/framework docs, API specs, usage samples, setup instructions
-- **WebSearch** - Find things on the web, current events, quick facts
-- **WebFetch** - Read a specific URL (simple pages)
+- **Your own web search tools** - Find things on the web, current events, quick facts
 - **Firecrawl CLI** - Scrape JS-heavy pages, crawl sites, extract structured data
 - **Perplexity MCP** - Deep research on complex topics requiring synthesis from multiple sources
+
+### Web Testing
+
+Prefer `agent-browser` CLI (and the corresponding Skill) to interacting direclty with Playwright.
 
 ## GitLab
 

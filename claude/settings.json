@@ -88,24 +88,22 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "\"$HOME/.claude/hooks/statusline.sh\" | bunx cc-safety-net --statusline"
+    "command": "$HOME/.claude/statusline.sh"
   },
   "enabledPlugins": {
-    "supabase@claude-plugins-official": true,
+    "supabase@claude-plugins-official": false,
     "typescript-lsp@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
     "ralph-loop@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
     "plugin-dev@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
-    "gitlab@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "lua-lsp@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
     "agent-sdk-dev@claude-plugins-official": true,
     "code-review@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
-    "context7@claude-plugins-official": true,
     "feature-dev@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
     "hookify@claude-plugins-official": true,
@@ -114,16 +112,15 @@
     "security-guidance@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
     "elements-of-style@superpowers-marketplace": true,
-    "codex-peer-review@agent-peer-review-marketplace": true,
     "safety-net@cc-marketplace": true,
-    "modern-python@trailofbits": true,
-    "coderabbit@coderabbit": true,
     "learning-output-style@claude-plugins-official": true,
     "claude-code-setup@claude-plugins-official": true,
     "superpowers-developing-for-claude-code@superpowers-marketplace": true,
-    "static-analysis@trailofbits": true,
     "claude-md-management@claude-plugins-official": true,
-    "skill-permissions@guo-yu-skills": true
+    "refine-permissions@skills": true,
+    "coderabbit@claude-plugins-official": true,
+    "codex-peer-review@agent-peer-review-marketplace": true,
+    "context7@claude-plugins-official": true
   },
   "forceLoginMethod": "claudeai"
 }

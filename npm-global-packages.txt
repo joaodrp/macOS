@@ -4,3 +4,4 @@
 agent-browser
 @openchamber/web
 happy-coder
+eas-cli

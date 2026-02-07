@@ -3,18 +3,17 @@
 # Shows: model | current task | directory | context usage
 
 input=$(cat)
-model=$(echo "$input" | jq -r '.model.display_name')
-dir=$(echo "$input" | jq -r '.workspace.current_dir')
-session=$(echo "$input" | jq -r '.session_id')
-remaining=$(echo "$input" | jq -r '.context_window.remaining_percentage // empty')
+IFS=$'\t' read -r model dir session used <<< "$(echo "$input" | jq -r '[
+  .model.display_name,
+  .workspace.current_dir,
+  .session_id,
+  (.context_window.used_percentage // 0 | floor | tostring)
+] | join("\t")')"
 
-# Context window display (shows USED percentage)
+# Context window display
 ctx=""
-if [ -n "$remaining" ]; then
-    rem=$(printf "%.0f" "$remaining")
-    used=$((100 - rem))
+if [ "$used" -gt 0 ]; then
 
-    # Build progress bar (10 segments) - fills as context is consumed
     filled=$((used / 10))
     bar=""
     for ((i=0; i<filled; i++)); do bar+="█"; done

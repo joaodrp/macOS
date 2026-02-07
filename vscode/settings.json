@@ -25,5 +25,9 @@
     "github.copilot.inlineSuggest.enable": false,
     "github.copilot.nextEditSuggestions.enabled": false,
     "git.generateCommitMessageWorkingChangesOnly": false,
-    "scm.showCommitMessageAIPrompts": false
+    "scm.showCommitMessageAIPrompts": false,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "workbench.startupEditor": "none"
 }
