@@ -1,5 +1,6 @@
 tap "anomalyco/tap"
 tap "cormacrelf/tap"
+tap "facebook/fb"
 tap "hamed-elfayome/claude-usage"
 tap "joaodrp/tap"
 tap "mike-engel/jwt-cli"
@@ -51,6 +52,8 @@ brew "eza"
 brew "fd"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Easiest way to build and release mobile apps
+brew "fastlane"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # User-friendly command-line shell for UNIX-like operating systems
@@ -105,6 +108,8 @@ brew "htop"
 brew "httpie"
 # Curl statistics made simple
 brew "httpstat"
+# Companion for iOS simulator and device management
+brew "facebook/fb/idb-companion"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
