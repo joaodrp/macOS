@@ -128,6 +128,8 @@ brew "mas"
 brew "minikube"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
+# Safe, concurrent, practical language
+brew "rust"
 # Remote terminal application
 brew "mosh"
 # NCurses Disk Usage
@@ -172,6 +174,8 @@ brew "slides"
 brew "ssh-copy-id"
 # Tail multiple Kubernetes pods & their containers
 brew "stern"
+# Tool to enforce Swift style and conventions
+brew "swiftlint"
 # Modern SSH server for teams managing distributed infrastructure
 brew "teleport"
 # User interface to the TELNET protocol
