@@ -38,7 +38,12 @@ Prefer `agent-browser` CLI (and the corresponding Skill) to interacting direclty
 ## Commits & PRs
 
 - Follow [Conventional Commits](https://www.conventionalcommits.org/) for commit messages and PR titles
+- One logical change per commit. Never batch unrelated fixes into a single
+  commit.
+- Never amend pushed commits. Verify push status before amending.
 - Keep descriptions concise and direct
 - Use markdown in commit bodies and PR descriptions; use backticks for inline code and identifiers
 - No Co-Authored-By footers
 - Never mention your plugins or skills
+- After merging a PR, switch to the default branch and pull
+- Before making changes on the default branch, create a new feature branch
