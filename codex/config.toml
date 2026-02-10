@@ -5,6 +5,7 @@ personality = "pragmatic"
 
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp"
+env_http_headers = { CONTEXT7_API_KEY = "CONTEXT7_API_KEY" }
 
 [mcp_servers.playwright]
 command = "bunx"
@@ -16,10 +17,19 @@ url = "https://developers.openai.com/mcp"
 [mcp_servers.perplexity]
 command = "bunx"
 args = ["-y", "@perplexity-ai/mcp-server"]
+env_vars = ["PERPLEXITY_API_KEY"]
 
 [mcp_servers.domainstack]
 url = "https://domainstack.io/api/transport/mcp"
 
+[mcp_servers.firecrawl]
+command = "bunx"
+args = ["-y", "firecrawl-mcp"]
+env_vars = ["FIRECRAWL_API_KEY"]
+
 [features]
 shell_snapshot = true
 rmcp_client = true
+
+[projects."/Users/joaodrp/Developer/github.com/joaodrp/macos"]
+trust_level = "trusted"
