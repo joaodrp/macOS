@@ -4,6 +4,9 @@
 
 - Use `gh` CLI for GitHub interactions and `glab` CLI for GitLab interactions
 - GNU versions of sed, grep, tar, find, etc. are prioritized over BSD versions. Use GNU syntax in scripts (e.g., `sed -i 'pattern'` not `sed -i '' 'pattern'`)
+- Prefer individual or bulk operations through CLIs, MCP servers, or
+  built-in tools over writing Bash/Python/AppleScript scripts. Scripts
+  require explicit approval on each run and are harder to review.
 
 ### Search & Documentation
 
