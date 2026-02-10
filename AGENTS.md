@@ -20,9 +20,9 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── opencode/         # Opencode AI assistant config
 ├── claude/              # Claude Code config
 │   ├── commands/        # Custom slash commands
-│   ├── npx-packages.txt # Third-party npx installers
-│   ├── marketplaces.txt # Plugin marketplaces (GitHub repos)
-│   └── plugins.txt      # Plugins to install
+│   ├── settings.json    # Claude settings
+│   ├── statusline.sh    # Claude statusline hook
+│   └── subagent-start.sh # Claude subagent hook
 ├── bat/              # bat (cat replacement) config
 ├── mitmproxy/        # HTTP proxy config
 ├── gemini/           # Gemini CLI config and themes
@@ -39,13 +39,10 @@ This is a macOS dotfiles repository for setting up development machines.
 - `just sync` - Symlink all configs to their standard locations
 - `just brew` / `just brew-all` - Install Brewfile packages
 - `just fish` - Setup Fish shell as default
-- `just plugins` - Install all plugins (vim, tmux, docker, npm, claude)
-- `just claude-plugins` - Install Claude marketplaces and plugins
-- `just claude-plugins-prune` - Same as above, plus remove unlisted
+- `just plugins` - Install all plugins (vim, tmux, docker, npm)
 - `just config` - Run macOS system preferences script
 - `just clean` - Remove all symlinked configs (requires confirmation)
-- `claude_sync` - Fish function for plugin sync (`claude_sync --prune` to remove unlisted)
-- `upgrade` - Fish function to update Homebrew, Fisher, App Store, Claude npx packages, and Claude plugins
+- `upgrade` - Fish function to update Homebrew, Fisher, App Store, and global npm packages
 
 ## Conventions
 
@@ -86,10 +83,6 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 3. **System preferences**: Modify the `macos` script
 4. **New config directory**: Add symlink target to `justfile`'s sync recipes
 5. **Renaming/moving/deleting files**: Update `justfile` sync and clean recipes accordingly
-6. **Claude plugins**:
-   - Add marketplace to `claude/marketplaces.txt` (format: `owner/repo`)
-   - Add plugin to `claude/plugins.txt` (format: `plugin@marketplace-suffix`, where suffix is the last segment of the repo name)
-   - Run `just claude-plugins` to install, or `just claude-plugins-prune` to also remove unlisted
 
 ## Theme-Synced Configs
 

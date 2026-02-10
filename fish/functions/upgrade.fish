@@ -17,14 +17,4 @@ function upgrade -d "update and upgrade brew, fish, fisher and mac app store"
     echo ''
     echo (set_color --bold blue)':: Updating global npm packages'(set_color normal)
     npm update -g
-
-    echo ''
-    echo (set_color --bold blue)':: Updating Claude marketplaces'(set_color normal)
-    claude plugin marketplace update
-
-    echo ''
-    echo (set_color --bold blue)':: Updating Claude plugins'(set_color normal)
-    for plugin in (grep -v '^#' ~/.claude/plugins.txt 2>/dev/null | grep -v '^$')
-        claude plugin install $plugin 2>&1; or true
-    end
 end

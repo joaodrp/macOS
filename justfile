@@ -41,53 +41,9 @@ fish:
     @grep -q /opt/homebrew/bin/fish /etc/shells || (echo "Adding fish to /etc/shells (requires sudo)..." && echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells)
     @[ "$SHELL" = "/opt/homebrew/bin/fish" ] && echo "Fish is already the default shell" || chsh -s /opt/homebrew/bin/fish
 
-# Install all plugins (vim, tmux, docker, npm, claude)
+# Install all plugins (vim, tmux, docker, npm)
 [group('plugins')]
-plugins: _vim-plugins _tmux-plugins _docker-completions _npm-global claude-plugins
-
-# Install Claude marketplaces and plugins
-[group('plugins')]
-claude-plugins:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    echo "Adding marketplaces..."
-    installed=$(claude plugin marketplace list --json 2>/dev/null | jq -r '.[].repo')
-    grep -v '^#' ~/.claude/marketplaces.txt 2>/dev/null | grep -v '^$' | while read -r repo; do
-        if ! echo "$installed" | grep -qx "$repo"; then
-            claude plugin marketplace add "$repo" 2>&1 || true
-        fi
-    done
-    echo "Updating marketplaces..."
-    claude plugin marketplace update
-    echo "Installing plugins..."
-    grep -v '^#' ~/.claude/plugins.txt 2>/dev/null | grep -v '^$' | while read -r plugin; do
-        claude plugin install "$plugin" 2>&1 || true
-    done
-
-# Install Claude plugins and prune unlisted ones
-[group('plugins')]
-claude-plugins-prune: claude-plugins
-    #!/usr/bin/env bash
-    set -euo pipefail
-    echo "Pruning unlisted marketplaces..."
-    desired=$(grep -v '^#' ~/.claude/marketplaces.txt 2>/dev/null | grep -v '^$')
-    claude plugin marketplace list --json 2>/dev/null | jq -r '.[] | "\(.name)|\(.repo)"' | while read -r entry; do
-        mp_name=$(echo "$entry" | cut -d'|' -f1)
-        mp_repo=$(echo "$entry" | cut -d'|' -f2)
-        if ! echo "$desired" | grep -qx "$mp_repo"; then
-            echo "Removing marketplace: $mp_name"
-            claude plugin marketplace remove "$mp_name" 2>&1 || true
-        fi
-    done
-    echo "Pruning unlisted plugins (user scope)..."
-    desired=$(grep -v '^#' ~/.claude/plugins.txt 2>/dev/null | grep -v '^$' | sed 's/@.*//')
-    claude plugin list --json 2>/dev/null | jq -r '.[] | select(.scope == "user") | .id' | sort -u | while read -r id; do
-        name=$(echo "$id" | sed 's/@.*//')
-        if ! echo "$desired" | grep -qx "$name"; then
-            echo "Removing plugin: $name"
-            claude plugin uninstall "$name" --scope user 2>&1 || true
-        fi
-    done
+plugins: _vim-plugins _tmux-plugins _docker-completions _npm-global
 
 # Apply macOS system preferences
 [group('system')]
@@ -115,7 +71,6 @@ clean:
     rm -f ~/.config/fish/functions/hb.fish
     rm -f ~/.config/fish/functions/hc.fish
     rm -f ~/.config/fish/functions/ghpr.fish
-    rm -f ~/.config/fish/functions/claude_sync.fish
     rm -f ~/.config/fish/functions/afk.fish
     rm -f ~/.config/fish/functions/mc.fish
     rm -f ~/.config/fish/functions/pubkey.fish
@@ -152,8 +107,6 @@ clean:
     rm -f ~/.claude/settings.json
     rm -f ~/.claude/hooks/statusline.sh
     rm -f ~/.claude/hooks/subagent-start.sh
-    rm -f ~/.claude/marketplaces.txt
-    rm -f ~/.claude/plugins.txt
     rm -f ~/.gemini/settings.json
     rm -f ~/.gemini/gruvbox-dark-hard.json
     rm -f ~/.gemini/gruvbox-light-hard.json
@@ -207,7 +160,6 @@ _sync-fish:
     ln -sf {{ root }}/fish/functions/hb.fish ~/.config/fish/functions/hb.fish
     ln -sf {{ root }}/fish/functions/hc.fish ~/.config/fish/functions/hc.fish
     ln -sf {{ root }}/fish/functions/ghpr.fish ~/.config/fish/functions/ghpr.fish
-    ln -sf {{ root }}/fish/functions/claude_sync.fish ~/.config/fish/functions/claude_sync.fish
     ln -sf {{ root }}/fish/functions/afk.fish ~/.config/fish/functions/afk.fish
     ln -sf {{ root }}/fish/functions/mc.fish ~/.config/fish/functions/mc.fish
     ln -sf {{ root }}/fish/functions/pubkey.fish ~/.config/fish/functions/pubkey.fish
@@ -256,8 +208,6 @@ _sync-ai:
     [ -f ~/.claude/settings.json ] || ln -s {{ root }}/claude/settings.json ~/.claude/settings.json
     ln -sf {{ root }}/claude/statusline.sh ~/.claude/hooks/statusline.sh
     ln -sf {{ root }}/claude/subagent-start.sh ~/.claude/hooks/subagent-start.sh
-    ln -sf {{ root }}/claude/marketplaces.txt ~/.claude/marketplaces.txt
-    ln -sf {{ root }}/claude/plugins.txt ~/.claude/plugins.txt
     [ -f ~/.gemini/settings.json ] || ln -s {{ root }}/gemini/settings.json ~/.gemini/settings.json
     ln -sf {{ root }}/gemini/gruvbox-dark-hard.json ~/.gemini/gruvbox-dark-hard.json
     ln -sf {{ root }}/gemini/gruvbox-light-hard.json ~/.gemini/gruvbox-light-hard.json
