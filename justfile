@@ -106,7 +106,6 @@ clean:
     rm -f ~/.claude/CLAUDE.md
     rm -f ~/.claude/settings.json
     rm -f ~/.claude/hooks/statusline.sh
-    rm -f ~/.claude/hooks/subagent-start.sh
     rm -f ~/.gemini/settings.json
     rm -f ~/.gemini/gruvbox-dark-hard.json
     rm -f ~/.gemini/gruvbox-light-hard.json
@@ -207,7 +206,6 @@ _sync-ai:
     ln -sf {{ root }}/claude/CLAUDE.md ~/.claude/CLAUDE.md
     [ -f ~/.claude/settings.json ] || ln -s {{ root }}/claude/settings.json ~/.claude/settings.json
     ln -sf {{ root }}/claude/statusline.sh ~/.claude/hooks/statusline.sh
-    ln -sf {{ root }}/claude/subagent-start.sh ~/.claude/hooks/subagent-start.sh
     [ -f ~/.gemini/settings.json ] || ln -s {{ root }}/gemini/settings.json ~/.gemini/settings.json
     ln -sf {{ root }}/gemini/gruvbox-dark-hard.json ~/.gemini/gruvbox-dark-hard.json
     ln -sf {{ root }}/gemini/gruvbox-light-hard.json ~/.gemini/gruvbox-light-hard.json

@@ -21,8 +21,7 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── claude/              # Claude Code config
 │   ├── commands/        # Custom slash commands
 │   ├── settings.json    # Claude settings
-│   ├── statusline.sh    # Claude statusline hook
-│   └── subagent-start.sh # Claude subagent hook
+│   └── statusline.sh    # Claude statusline hook
 ├── bat/              # bat (cat replacement) config
 ├── mitmproxy/        # HTTP proxy config
 ├── gemini/           # Gemini CLI config and themes

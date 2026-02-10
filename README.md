@@ -6,39 +6,36 @@ Personal dotfiles and setup automation for macOS development machines.
 
 ```bash
 # 1. Install Homebrew packages
-make brew            # work machine
-make brew-all        # personal machine (includes extra apps)
+just brew            # work machine
+just brew-all        # personal machine (includes extra apps)
 
 # 2. Symlink dotfiles
-make sync
+just sync
 
 # 3. Setup fish (plugins + set as default shell)
-make fish
+just fish
 
 # 4. Optional extras (vim-plug, tmux plugins, docker completions)
-make post-install
+just plugins
 
 # 5. Apply macOS preferences
-make config
+just config
 ```
 
-## Make Targets
+## Just Recipes
 
 | Target                    | Description                                                |
 |---------------------------|------------------------------------------------------------|
-| `make`                    | Full setup: brew-all + sync + fish + post-install + config |
-| `make brew`               | Install Homebrew packages from Brewfile                    |
-| `make brew-personal`      | Install personal packages from Brewfile.personal           |
-| `make brew-all`           | Install both Brewfile and Brewfile.personal                |
-| `make sync`               | Symlink all dotfiles to their locations                    |
-| `make fish`               | Install fisher plugins and set fish as default shell       |
-| `make vim-plugins`        | Install vim-plug and plugins                               |
-| `make tmux-plugins`       | Install tmux plugin manager                                |
-| `make docker-completions` | Install Docker fish completions                            |
-| `make claude-npx`         | Install Claude Code npx packages                           |
-| `make post-install`       | Run all optional installs (tmux, vim, docker)              |
-| `make config`             | Run macOS system preferences script                        |
-| `make clean`              | Remove all symlinked dotfiles                              |
+| `just`                    | Show available recipes                                     |
+| `just all`                | Full setup: brew-all + sync + fish + plugins + config     |
+| `just brew`               | Install Homebrew packages from Brewfile                    |
+| `just brew-personal`      | Install personal packages from Brewfile.personal           |
+| `just brew-all`           | Install both Brewfile and Brewfile.personal                |
+| `just sync`               | Symlink all dotfiles to their locations                    |
+| `just fish`               | Install fisher plugins and set fish as default shell       |
+| `just plugins`            | Install optional plugins (vim, tmux, docker, npm)          |
+| `just config`             | Run macOS system preferences script                        |
+| `just clean`              | Remove all symlinked dotfiles                              |
 
 ## What's Included
 

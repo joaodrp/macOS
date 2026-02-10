@@ -73,17 +73,6 @@
           }
         ]
       }
-    ],
-    "SubagentStart": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$HOME/.claude/hooks/subagent-start.sh\""
-          }
-        ]
-      }
     ]
   },
   "statusLine": {
