@@ -293,8 +293,6 @@ cask "vlc"
 cask "whatsapp"
 # Hardware security key authenticator
 cask "yubico-authenticator"
-# Video communication and virtual meeting platform
-cask "zoom"
 # 1Password Safari extension
 mas "1Password for Safari", id: 1569813296
 # Kagi search Safari extension
