@@ -6,6 +6,7 @@ tap "joaodrp/tap"
 tap "mike-engel/jwt-cli"
 tap "oven-sh/bun"
 tap "shopify/shopify"
+tap "steipete/tap"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # Record and share terminal sessions
@@ -218,6 +219,8 @@ brew "anomalyco/tap/opencode"
 brew "mike-engel/jwt-cli/jwt-cli"
 # Proxy for simulating network conditions
 brew "shopify/shopify/toxiproxy"
+# Summarize text from stdin and files
+brew "steipete/tap/summarize"
 # Password manager
 cask "1password"
 # Command-line helper for the 1Password password manager
