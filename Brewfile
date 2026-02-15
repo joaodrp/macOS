@@ -1,6 +1,7 @@
 tap "anomalyco/tap"
 tap "cormacrelf/tap"
 tap "facebook/fb"
+tap "getsentry/xcodebuildmcp"
 tap "hamed-elfayome/claude-usage"
 tap "joaodrp/tap"
 tap "mike-engel/jwt-cli"
@@ -221,6 +222,8 @@ brew "anomalyco/tap/opencode"
 brew "mike-engel/jwt-cli/jwt-cli"
 # Proxy for simulating network conditions
 brew "shopify/shopify/toxiproxy"
+# Xcode MCP server for AI-assisted iOS development
+brew "getsentry/xcodebuildmcp/xcodebuildmcp"
 # Summarize text from stdin and files
 brew "steipete/tap/summarize"
 # Password manager
