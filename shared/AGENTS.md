@@ -7,6 +7,9 @@
 - Prefer individual or bulk operations through CLIs, MCP servers, or
   built-in tools over writing Bash/Python/AppleScript scripts. Scripts
   require explicit approval on each run and are harder to review.
+- Never wrap CLI calls in for loops or scripted iterations. Use individual
+  parallel tool calls instead (e.g., multiple `gh api` Bash calls, not a
+  for loop over repos).
 
 ### Search & Documentation
 
