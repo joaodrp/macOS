@@ -129,6 +129,8 @@ brew "mas"
 brew "minikube"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
+# Deep clean and optimize macOS
+brew "mole"
 # Safe, concurrent, practical language
 brew "rust"
 # Remote terminal application
