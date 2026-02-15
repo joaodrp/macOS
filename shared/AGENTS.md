@@ -34,6 +34,10 @@ Prefer `agent-browser` CLI (and the corresponding Skill) to interacting direclty
 - No emojis unless requested
 - Follow existing patterns in the codebase
 
+### Bug Fixes
+
+Write a failing test *before* fixing the bug. Use the lowest test level that captures it (unit > integration > e2e). After the fix, the test must pass. If a test is not feasible (environment-specific, transient), document why.
+
 ## Communication
 
 - Be direct and concise
