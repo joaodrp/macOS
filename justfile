@@ -76,6 +76,9 @@ clean:
     rm -f ~/.config/fish/functions/pubkey.fish
     rm -f ~/.config/fish/functions/wifi_pass.fish
     rm -f ~/.config/fish/functions/ta.fish
+    rm -f ~/.config/fish/functions/tdl.fish
+    rm -f ~/.config/fish/functions/tdlm.fish
+    rm -f ~/.config/fish/functions/tsl.fish
     rm -f ~/.config/fish/fzf/gruvbox-dark-hard.fish
     rm -f ~/.config/fish/fzf/gruvbox-light-hard.fish
     rm -f ~/.config/fish/conf.d/_done.fish
@@ -164,6 +167,9 @@ _sync-fish:
     ln -sf {{ root }}/fish/functions/pubkey.fish ~/.config/fish/functions/pubkey.fish
     ln -sf {{ root }}/fish/functions/wifi_pass.fish ~/.config/fish/functions/wifi_pass.fish
     ln -sf {{ root }}/fish/functions/ta.fish ~/.config/fish/functions/ta.fish
+    ln -sf {{ root }}/fish/functions/tdl.fish ~/.config/fish/functions/tdl.fish
+    ln -sf {{ root }}/fish/functions/tdlm.fish ~/.config/fish/functions/tdlm.fish
+    ln -sf {{ root }}/fish/functions/tsl.fish ~/.config/fish/functions/tsl.fish
     ln -sf {{ root }}/fish/fzf/gruvbox-dark-hard.fish ~/.config/fish/fzf/gruvbox-dark-hard.fish
     ln -sf {{ root }}/fish/fzf/gruvbox-light-hard.fish ~/.config/fish/fzf/gruvbox-light-hard.fish
     ln -sf {{ root }}/fish/conf.d/_done.fish ~/.config/fish/conf.d/_done.fish
