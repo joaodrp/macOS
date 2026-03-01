@@ -7,6 +7,7 @@ tap "joaodrp/tap"
 tap "mike-engel/jwt-cli"
 tap "oven-sh/bun"
 tap "shopify/shopify"
+tap "productdevbook/tap"
 tap "steipete/tap"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
@@ -279,6 +280,8 @@ cask "mitmproxy"
 cask "ngrok"
 # AI-powered coding assistant desktop app
 cask "opencode-desktop"
+# Kill processes running on specified ports
+cask "portkiller"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Internet radio player
