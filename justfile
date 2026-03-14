@@ -117,6 +117,8 @@ clean:
     rm -f ~/.cc-safety-net/config.json
     rm -f ~/Library/Application\ Support/Code/User/settings.json
     rm -f ~/Library/Application\ Support/Code/User/keybindings.json
+    rm -f ~/.local/bin/cmux
+    rm -f ~/.local/bin/ccc
     rm -f ~/.config/zed/settings.json
 
 # --- Private recipes (underscore prefix hides from --list) ---
@@ -134,6 +136,7 @@ _sync-dirs:
     mkdir -p ~/.ssh/sockets
     mkdir -p ~/.1password
     mkdir -p ~/.config/git
+    mkdir -p ~/.local/bin
     mkdir -p ~/Developer
     mkdir -p ~/.mitmproxy/
     mkdir -p ~/.config/bat/
@@ -221,6 +224,8 @@ _sync-ai:
 
 _sync-misc:
     [ -f ~/.mitmproxy/config.yaml ] || ln -s {{ root }}/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
+    ln -sf /Applications/cmux.app/Contents/Resources/bin/cmux ~/.local/bin/cmux
+    ln -sf /Applications/cmux.app/Contents/Resources/bin/claude ~/.local/bin/ccc
     [ -f ~/.hushlogin ] || ln -s {{ root }}/.hushlogin ~/.hushlogin
     [ -f ~/.psqlrc ] || ln -s {{ root }}/.psqlrc ~/.psqlrc
 

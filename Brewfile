@@ -4,6 +4,7 @@ tap "facebook/fb"
 tap "getsentry/xcodebuildmcp"
 tap "hamed-elfayome/claude-usage"
 tap "joaodrp/tap"
+tap "manaflow-ai/cmux"
 tap "mike-engel/jwt-cli"
 tap "oven-sh/bun"
 tap "shopify/shopify"
@@ -243,6 +244,8 @@ cask "cleanshot"
 cask "claude-code"
 # Claude Code API usage tracker
 cask "claude-usage-tracker"
+# Terminal multiplexer manager
+cask "manaflow-ai/cmux/cmux"
 # AI coding agent from OpenAI
 cask "codex"
 # AI code review CLI

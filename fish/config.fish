@@ -71,3 +71,4 @@ zoxide init fish | source
 # =============================================================================
 
 test -f ~/.config/fish/local.fish && source ~/.config/fish/local.fish
+
