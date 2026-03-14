@@ -90,8 +90,6 @@ clean:
     rm -f ~/.gnupg/gpg-agent.conf
     rm -f ~/.tigrc
     rm -f ~/.config/lazygit/config.yml
-    rm -f ~/.config/lazygit/theme-dark.yml
-    rm -f ~/.config/lazygit/theme-light.yml
     rm -f ~/.gitconfig
     rm -f ~/.gitconfig-github
     rm -f ~/.gitignore
@@ -123,6 +121,10 @@ clean:
     rm -f ~/.local/bin/cmux
     rm -f ~/.local/bin/ccc
     rm -f ~/.config/zed/settings.json
+    rm -f ~/.config/zellij/config.kdl
+    rm -f ~/.config/zellij/themes/gruvbox-dark-hard.kdl
+    rm -f ~/.config/zellij/themes/gruvbox-light-hard.kdl
+    rm -f ~/.config/zellij/layouts/default.kdl
 
 # --- Private recipes (underscore prefix hides from --list) ---
 
@@ -154,6 +156,9 @@ _sync-dirs:
     mkdir -p ~/Library/LaunchAgents
     mkdir -p ~/Library/Application\ Support/Code/User
     mkdir -p ~/.config/zed
+    mkdir -p ~/.config/zellij
+    mkdir -p ~/.config/zellij/themes
+    mkdir -p ~/.config/zellij/layouts
 
 _sync-fish:
     [ -f ~/.config/fish/config.fish ] || ln -s {{ root }}/fish/config.fish ~/.config/fish/config.fish
@@ -193,6 +198,10 @@ _sync-terminal:
     [ -f ~/.tmux.conf ] || ln -s {{ root }}/tmux/.tmux.conf ~/.tmux.conf
     [ -f ~/.tmux/tmuxline-dark.conf ] || ln -s {{ root }}/tmux/tmuxline-dark.conf ~/.tmux/tmuxline-dark.conf
     [ -f ~/.tmux/tmuxline-light.conf ] || ln -s {{ root }}/tmux/tmuxline-light.conf ~/.tmux/tmuxline-light.conf
+    [ -f ~/.config/zellij/config.kdl ] || ln -s {{ root }}/zellij/config.kdl ~/.config/zellij/config.kdl
+    ln -sf {{ root }}/zellij/themes/gruvbox-dark-hard.kdl ~/.config/zellij/themes/gruvbox-dark-hard.kdl
+    ln -sf {{ root }}/zellij/themes/gruvbox-light-hard.kdl ~/.config/zellij/themes/gruvbox-light-hard.kdl
+    ln -sf {{ root }}/zellij/layouts/default.kdl ~/.config/zellij/layouts/default.kdl
 
 _sync-git:
     [ -f ~/.gitconfig ] || ln -s {{ root }}/.gitconfig ~/.gitconfig
@@ -203,8 +212,6 @@ _sync-git:
     [ -f ~/.ignore ] || ln -s {{ root }}/.ignore ~/.ignore
     ln -sfn {{ root }}/git/hooks ~/.config/git/hooks
     [ -f ~/.config/lazygit/config.yml ] || ln -s {{ root }}/lazygit/config.yml ~/.config/lazygit/config.yml
-    ln -sf {{ root }}/lazygit/theme-dark.yml ~/.config/lazygit/theme-dark.yml
-    ln -sf {{ root }}/lazygit/theme-light.yml ~/.config/lazygit/theme-light.yml
 
 _sync-security:
     [ -f ~/.gnupg/gpg.conf ] || ln -s {{ root }}/gnupg/gpg.conf ~/.gnupg/gpg.conf

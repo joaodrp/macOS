@@ -1,4 +1,4 @@
-function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy, lazygit, Claude Code, OpenCode, and Gemini CLI themes with macOS appearance'
+function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy, Claude Code, OpenCode, Gemini CLI, and Zellij themes with macOS appearance'
     # Detect current macOS appearance (dark mode returns 0, light mode returns error)
     if defaults read -g AppleInterfaceStyle &>/dev/null
         set mode dark
@@ -42,16 +42,6 @@ function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy,
         end
     end
 
-    # --- lazygit (Gruvbox Hard) ---
-    set -l lg_config "$HOME/.config/lazygit"
-    if test -d "$lg_config"
-        if test $mode = dark
-            set -gx LG_CONFIG_FILE "$lg_config/config.yml,$lg_config/theme-dark.yml"
-        else
-            set -gx LG_CONFIG_FILE "$lg_config/config.yml,$lg_config/theme-light.yml"
-        end
-    end
-
     # --- fzf (Gruvbox Hard) ---
     if test $mode = dark
         source ~/.config/fish/fzf/gruvbox-dark-hard.fish
@@ -77,6 +67,16 @@ function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy,
         if test "$current_theme" != "$opencode_theme"
             set -l tmp (mktemp)
             jq --arg theme "$opencode_theme" '.theme = $theme' "$opencode_config" > $tmp && mv $tmp "$opencode_config"
+        end
+    end
+
+    # --- Zellij ---
+    set -l zellij_config (realpath ~/.config/zellij/config.kdl 2>/dev/null)
+    if test -n "$zellij_config" -a -f "$zellij_config"
+        if test $mode = dark
+            sed -i 's/^theme "gruvbox-light-hard"/theme "gruvbox-dark-hard"/' "$zellij_config"
+        else
+            sed -i 's/^theme "gruvbox-dark-hard"/theme "gruvbox-light-hard"/' "$zellij_config"
         end
     end
 

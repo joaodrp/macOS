@@ -1,0 +1,18 @@
+// Zellij configuration
+// Full reference: zellij setup --dump-config
+
+// Fish shell
+default_shell "fish"
+
+// Gruvbox Hard theme (auto-switched by sync_theme)
+theme "gruvbox-dark-hard"
+
+// Copy selection to clipboard automatically (like Ghostty copy-on-select)
+copy_on_select true
+
+// Use pbcopy as fallback for terminals without OSC 52
+copy_command "pbcopy"
+
+// Persist sessions across restarts (like tmux-resurrect)
+session_serialization true
+serialize_pane_viewport true
