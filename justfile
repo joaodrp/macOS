@@ -57,6 +57,7 @@ clean:
     -launchctl unload ~/Library/LaunchAgents/com.joaodrp.dark-notify.plist 2>/dev/null
     rm -f ~/Library/LaunchAgents/com.joaodrp.dark-notify.plist
     rm -f ~/.vimrc
+    rm -f ~/.config/nvim/init.lua
     rm -f ~/.config/ghostty/config
     rm -f ~/.config/fish/config.fish
     rm -f ~/.config/fish/fish_plugins
@@ -79,6 +80,7 @@ clean:
     rm -f ~/.config/fish/functions/tdl.fish
     rm -f ~/.config/fish/functions/tdlm.fish
     rm -f ~/.config/fish/functions/tsl.fish
+    rm -f ~/.config/fish/functions/vim.fish
     rm -f ~/.config/fish/fzf/gruvbox-dark-hard.fish
     rm -f ~/.config/fish/fzf/gruvbox-light-hard.fish
     rm -f ~/.config/fish/conf.d/_done.fish
@@ -155,6 +157,7 @@ _sync-dirs:
     mkdir -p ~/.cc-safety-net
     mkdir -p ~/Library/LaunchAgents
     mkdir -p ~/Library/Application\ Support/Code/User
+    mkdir -p ~/.config/nvim
     mkdir -p ~/.config/zed
     mkdir -p ~/.config/zellij
     mkdir -p ~/.config/zellij/themes
@@ -182,6 +185,7 @@ _sync-fish:
     ln -sf {{ root }}/fish/functions/tdl.fish ~/.config/fish/functions/tdl.fish
     ln -sf {{ root }}/fish/functions/tdlm.fish ~/.config/fish/functions/tdlm.fish
     ln -sf {{ root }}/fish/functions/tsl.fish ~/.config/fish/functions/tsl.fish
+    ln -sf {{ root }}/fish/functions/vim.fish ~/.config/fish/functions/vim.fish
     ln -sf {{ root }}/fish/fzf/gruvbox-dark-hard.fish ~/.config/fish/fzf/gruvbox-dark-hard.fish
     ln -sf {{ root }}/fish/fzf/gruvbox-light-hard.fish ~/.config/fish/fzf/gruvbox-light-hard.fish
     ln -sf {{ root }}/fish/conf.d/_done.fish ~/.config/fish/conf.d/_done.fish
@@ -189,6 +193,7 @@ _sync-fish:
 
 _sync-editors:
     [ -f ~/.vimrc ] || ln -s {{ root }}/.vimrc ~/.vimrc
+    [ -f ~/.config/nvim/init.lua ] || ln -s {{ root }}/nvim/init.lua ~/.config/nvim/init.lua
     [ -f ~/Library/Application\ Support/Code/User/settings.json ] || ln -s {{ root }}/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
     [ -f ~/Library/Application\ Support/Code/User/keybindings.json ] || ln -s {{ root }}/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
     [ -f ~/.config/zed/settings.json ] || ln -s {{ root }}/zed/settings.json ~/.config/zed/settings.json

@@ -17,6 +17,7 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── gnupg/            # GPG agent configuration
 ├── ssh/              # SSH config with Include for local overrides
 ├── git/              # Git hooks (gitleaks)
+├── nvim/             # Neovim configuration (init.lua with lazy.nvim)
 ├── opencode/         # Opencode AI assistant config
 ├── claude/              # Claude Code config
 │   ├── commands/        # Custom slash commands

@@ -92,6 +92,8 @@ brew "pinentry"
 brew "gnupg"
 # Command-driven, interactive function plotting
 brew "gnuplot"
+# Go language server
+brew "gopls"
 # Fast linters runner for Go
 brew "golangci-lint"
 # Release automation tool for Go projects
@@ -128,6 +130,8 @@ brew "lazygit"
 brew "libiconv"
 # Postgres C API library
 brew "libpq"
+# Language Server for Lua
+brew "lua-language-server"
 # Mac App Store command-line interface
 brew "mas"
 # Run a Kubernetes cluster locally
@@ -170,6 +174,8 @@ brew "rclone"
 brew "re2"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Rust language server
+brew "rust-analyzer"
 # Markdown linter and formatter written in Rust
 brew "rumdl"
 # Static analysis and lint tool, for (ba)sh scripts
