@@ -41,6 +41,8 @@ alias ls eza
 alias tree 'eza -T'
 alias watch 'watch -d'
 alias vim nvim
+alias ccd 'claude --dangerously-skip-permissions'
+alias cccd 'ccc --dangerously-skip-permissions'
 
 # =============================================================================
 # Shell settings
