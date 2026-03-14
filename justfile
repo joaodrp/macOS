@@ -89,6 +89,9 @@ clean:
     rm -f ~/.gnupg/gpg.conf
     rm -f ~/.gnupg/gpg-agent.conf
     rm -f ~/.tigrc
+    rm -f ~/.config/lazygit/config.yml
+    rm -f ~/.config/lazygit/theme-dark.yml
+    rm -f ~/.config/lazygit/theme-light.yml
     rm -f ~/.gitconfig
     rm -f ~/.gitconfig-github
     rm -f ~/.gitignore
@@ -136,6 +139,7 @@ _sync-dirs:
     mkdir -p ~/.ssh/sockets
     mkdir -p ~/.1password
     mkdir -p ~/.config/git
+    mkdir -p ~/.config/lazygit
     mkdir -p ~/.local/bin
     mkdir -p ~/Developer
     mkdir -p ~/.mitmproxy/
@@ -198,6 +202,9 @@ _sync-git:
     [ -f ~/.dockerignore ] || ln -s {{ root }}/.dockerignore ~/.dockerignore
     [ -f ~/.ignore ] || ln -s {{ root }}/.ignore ~/.ignore
     ln -sfn {{ root }}/git/hooks ~/.config/git/hooks
+    [ -f ~/.config/lazygit/config.yml ] || ln -s {{ root }}/lazygit/config.yml ~/.config/lazygit/config.yml
+    ln -sf {{ root }}/lazygit/theme-dark.yml ~/.config/lazygit/theme-dark.yml
+    ln -sf {{ root }}/lazygit/theme-light.yml ~/.config/lazygit/theme-light.yml
 
 _sync-security:
     [ -f ~/.gnupg/gpg.conf ] || ln -s {{ root }}/gnupg/gpg.conf ~/.gnupg/gpg.conf

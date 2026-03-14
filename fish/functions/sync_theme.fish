@@ -1,4 +1,4 @@
-function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy, Claude Code, OpenCode, and Gemini CLI themes with macOS appearance'
+function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy, lazygit, Claude Code, OpenCode, and Gemini CLI themes with macOS appearance'
     # Detect current macOS appearance (dark mode returns 0, light mode returns error)
     if defaults read -g AppleInterfaceStyle &>/dev/null
         set mode dark
@@ -39,6 +39,16 @@ function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy,
             sed -i 's/^console_palette:.*/console_palette: solarized_dark/' "$mitm_config"
         else
             sed -i 's/^console_palette:.*/console_palette: solarized_light/' "$mitm_config"
+        end
+    end
+
+    # --- lazygit (Gruvbox Hard) ---
+    set -l lg_config "$HOME/.config/lazygit"
+    if test -d "$lg_config"
+        if test $mode = dark
+            set -gx LG_CONFIG_FILE "$lg_config/config.yml,$lg_config/theme-dark.yml"
+        else
+            set -gx LG_CONFIG_FILE "$lg_config/config.yml,$lg_config/theme-light.yml"
         end
     end
 

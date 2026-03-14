@@ -122,6 +122,8 @@ brew "jq"
 brew "just"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
+# Simple terminal UI for git commands
+brew "lazygit"
 # Conversion library
 brew "libiconv"
 # Postgres C API library
