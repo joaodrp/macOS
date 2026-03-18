@@ -1,6 +1,6 @@
 # Global npm packages (one per line)
 @anthropic-ai/mcpb
 firecrawl-cli
-agent-browser
+playwright
 eas-cli
 ctx7
