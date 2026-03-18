@@ -111,5 +111,8 @@
     "codex-peer-review@agent-peer-review-marketplace": true,
     "context7@claude-plugins-official": true
   },
-  "forceLoginMethod": "claudeai"
+  "forceLoginMethod": "claudeai",
+  "effortLevel": "high",
+  "voiceEnabled": true,
+  "skipDangerousModePermissionPrompt": true
 }
