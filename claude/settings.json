@@ -33,9 +33,6 @@
       "Bash(gh issue view:*)",
       "Bash(gh pr list:*)",
       "Bash(defaults read:*)",
-      "Skill(superpowers:*)",
-      "mcp__firecrawl__firecrawl_scrape",
-      "mcp__firecrawl__firecrawl_search",
       "Bash(codex exec:*)",
       "Bash(codex review:*)",
       "Bash(command -v codex:*)",
@@ -53,34 +50,11 @@
     ]
   },
   "enableAllProjectMcpServers": true,
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "permission_prompt",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/opt/homebrew/bin/terminal-notifier -title 'Claude Code' -message 'Permission needed' -sender com.anthropic.claudefordesktop"
-          }
-        ]
-      },
-      {
-        "matcher": "idle_prompt",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/opt/homebrew/bin/terminal-notifier -title 'Claude Code' -message 'Awaiting your input' -sender com.anthropic.claudefordesktop"
-          }
-        ]
-      }
-    ]
-  },
   "statusLine": {
     "type": "command",
     "command": "$HOME/.claude/statusline.sh"
   },
   "enabledPlugins": {
-    "supabase@claude-plugins-official": false,
     "typescript-lsp@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
     "ralph-loop@claude-plugins-official": true,
@@ -96,7 +70,6 @@
     "feature-dev@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
     "hookify@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true,
     "pr-review-toolkit@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
@@ -104,12 +77,9 @@
     "safety-net@cc-marketplace": true,
     "learning-output-style@claude-plugins-official": true,
     "claude-code-setup@claude-plugins-official": true,
-    "superpowers-developing-for-claude-code@superpowers-marketplace": true,
     "claude-md-management@claude-plugins-official": true,
     "refine-permissions@skills": true,
-    "coderabbit@claude-plugins-official": true,
-    "codex-peer-review@agent-peer-review-marketplace": true,
-    "context7@claude-plugins-official": true
+    "codex-peer-review@agent-peer-review-marketplace": true
   },
   "forceLoginMethod": "claudeai",
   "effortLevel": "high",
