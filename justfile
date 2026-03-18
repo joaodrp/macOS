@@ -112,9 +112,6 @@ clean:
     rm -f ~/.claude/CLAUDE.md
     rm -f ~/.claude/settings.json
     rm -f ~/.claude/hooks/statusline.sh
-    rm -f ~/.gemini/settings.json
-    rm -f ~/.gemini/gruvbox-dark-hard.json
-    rm -f ~/.gemini/gruvbox-light-hard.json
     rm -f ~/.codex/config.toml
     rm -f ~/.codex/AGENTS.md
     rm -f ~/.cc-safety-net/config.json
@@ -152,7 +149,6 @@ _sync-dirs:
     mkdir -p ~/.config/opencode/themes
     mkdir -p ~/.claude
     mkdir -p ~/.claude/hooks
-    mkdir -p ~/.gemini
     mkdir -p ~/.codex
     mkdir -p ~/.cc-safety-net
     mkdir -p ~/Library/LaunchAgents
@@ -234,9 +230,6 @@ _sync-ai:
     ln -sf {{ root }}/claude/CLAUDE.md ~/.claude/CLAUDE.md
     [ -f ~/.claude/settings.json ] || ln -s {{ root }}/claude/settings.json ~/.claude/settings.json
     ln -sf {{ root }}/claude/statusline.sh ~/.claude/hooks/statusline.sh
-    [ -f ~/.gemini/settings.json ] || ln -s {{ root }}/gemini/settings.json ~/.gemini/settings.json
-    ln -sf {{ root }}/gemini/gruvbox-dark-hard.json ~/.gemini/gruvbox-dark-hard.json
-    ln -sf {{ root }}/gemini/gruvbox-light-hard.json ~/.gemini/gruvbox-light-hard.json
     [ -f ~/.codex/config.toml ] || ln -s {{ root }}/codex/config.toml ~/.codex/config.toml
     ln -sf {{ root }}/shared/AGENTS.md ~/.codex/AGENTS.md
     [ -f ~/.cc-safety-net/config.json ] || ln -s {{ root }}/cc-safety-net/config.json ~/.cc-safety-net/config.json

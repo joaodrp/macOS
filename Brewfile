@@ -64,8 +64,6 @@ brew "findutils"
 brew "fish"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# AI agent from Google in the terminal
-brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system

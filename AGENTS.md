@@ -27,7 +27,6 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── lazygit/          # lazygit config
 ├── bat/              # bat (cat replacement) config
 ├── mitmproxy/        # HTTP proxy config
-├── gemini/           # Gemini CLI config and themes
 ├── codex/            # Codex CLI config
 ├── cc-safety-net/    # cc-safety-net custom rules
 ├── vscode/           # VS Code settings and keybindings
@@ -102,7 +101,6 @@ These auto-switch based on macOS appearance mode via `sync_theme`:
 - **fzf** - theme sourced from `fish/fzf/gruvbox-{dark,light}.fish`
 - **mitmproxy** - `console_palette` in `mitmproxy/config.yaml` (Solarized, no Gruvbox)
 - **Claude Code** - `theme` in `~/.claude.json` (not tracked)
-- **Gemini CLI** - `ui.theme` in `gemini/settings.json`
 - **Zellij** - `theme` in `zellij/config.kdl` (applies to new sessions)
 - **VS Code** - `workbench.colorTheme` in `vscode/settings.json`
 - **Zed** - `theme` in `zed/settings.json` (uses system mode, auto-switches)

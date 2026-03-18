@@ -80,14 +80,4 @@ function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy,
         end
     end
 
-    # --- Gemini CLI ---
-    set -l gemini_config (realpath ~/.gemini/settings.json 2>/dev/null)
-    if test -n "$gemini_config" -a -f "$gemini_config"; and command -q jq
-        set -l gemini_theme (test $mode = dark; and echo '$HOME/.gemini/gruvbox-dark-hard.json'; or echo '$HOME/.gemini/gruvbox-light-hard.json')
-        set -l current_theme (jq -r '.ui.theme // empty' "$gemini_config" 2>/dev/null)
-        if test "$current_theme" != "$gemini_theme"
-            set -l tmp (mktemp)
-            jq --arg theme "$gemini_theme" '.ui.theme = $theme' "$gemini_config" > $tmp && mv $tmp "$gemini_config"
-        end
-    end
 end
