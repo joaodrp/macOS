@@ -13,7 +13,7 @@
 
 ### Search & Documentation
 
-- **Context7 MCP** - Library/framework docs, API specs, usage samples, setup instructions
+- **`ctx7` CLI** - Library/framework docs, API specs, usage samples, setup instructions
 - **Your own web search tools** - Find things on the web, current events, quick facts
 - **Firecrawl CLI** (and the corresponding Skill) - Scrape JS-heavy pages, crawl sites, extract structured data. Prefer the CLI over the Firecrawl MCP server when available
 - **Perplexity MCP** - Deep research on complex topics requiring synthesis from multiple sources
@@ -31,7 +31,6 @@ Prefer `agent-browser` CLI (and the corresponding Skill) to interacting direclty
 
 ## Code
 
-- No emojis unless requested
 - Follow existing patterns in the codebase
 
 ### Bug Fixes
