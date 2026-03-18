@@ -202,6 +202,10 @@ brew "tldr"
 brew "tmux"
 # Manage complex tmux sessions easily
 brew "tmuxinator"
+# Incremental parsing system for programming tools
+brew "tree-sitter"
+# CLI for tree-sitter (required by nvim-treesitter)
+brew "tree-sitter-cli"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Extremely fast Python package installer and resolver

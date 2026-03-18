@@ -86,103 +86,99 @@ require("lazy").setup({
   -- Highlight, edit, and navigate code
   {
     'nvim-treesitter/nvim-treesitter',
+    lazy = false,
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ":TSUpdate",
     config = function()
-      require('nvim-treesitter.configs').setup({
-        ensure_installed = {
-          'go',
-          'gomod',
-          'proto',
-          'lua',
-          'vimdoc',
-          'vim',
-          'bash',
-          'fish',
-          'json',
-          'yaml',
-          'toml',
-          'ruby',
-          'rust',
-          'python',
-          'swift',
-          'markdown',
-          'markdown_inline',
-          'mermaid',
-          'dockerfile',
-          'hcl',
-        },
-        indent = { enable = true },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = "<space>",
-            node_incremental = "<space>",
-            node_decremental = "<bs>",
-            scope_incremental = "<tab>",
-          },
-        },
-        autopairs = {
-          enable = true,
-        },
-        highlight = {
-          enable = true,
-
-          -- Disable slow treesitter highlight for large files
-          disable = function(lang, buf)
-            local max_filesize = 100 * 1024 -- 100 KB
-            local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(buf))
-            if ok and stats and stats.size > max_filesize then
-              return true
-            end
-          end,
-
-          additional_vim_regex_highlighting = false,
-        },
-        textobjects = {
-          select = {
-            enable = true,
-            lookahead = true,
-            keymaps = {
-              ['aa'] = '@parameter.outer',
-              ['ia'] = '@parameter.inner',
-              ['af'] = '@function.outer',
-              ['if'] = '@function.inner',
-              ['ac'] = '@class.outer',
-              ['ic'] = '@class.inner',
-              ["iB"] = "@block.inner",
-              ["aB"] = "@block.outer",
-            },
-          },
-          move = {
-            enable = true,
-            set_jumps = true,
-            goto_next_start = {
-              [']]'] = '@function.outer',
-            },
-            goto_next_end = {
-              [']['] = '@function.outer',
-            },
-            goto_previous_start = {
-              ['[['] = '@function.outer',
-            },
-            goto_previous_end = {
-              ['[]'] = '@function.outer',
-            },
-          },
-          swap = {
-            enable = true,
-            swap_next = {
-              ['<leader>sn'] = '@parameter.inner',
-            },
-            swap_previous = {
-              ['<leader>sp'] = '@parameter.inner',
-            },
-          },
-        },
+      -- Install parsers
+      require('nvim-treesitter').install({
+        'go', 'gomod', 'proto', 'lua', 'vimdoc', 'vim', 'bash', 'fish',
+        'json', 'yaml', 'toml', 'ruby', 'rust', 'python', 'swift',
+        'markdown', 'markdown_inline', 'mermaid', 'dockerfile', 'hcl',
       })
+
+      -- Enable highlight and indent via FileType autocmd
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function(args)
+          local lang = vim.treesitter.language.get_lang(args.match) or args.match
+          local ok = pcall(vim.treesitter.language.inspect, lang)
+          if not ok then return end
+          -- Skip highlight for large files
+          local max_filesize = 100 * 1024 -- 100 KB
+          local stat_ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(args.buf))
+          if not (stat_ok and stats and stats.size > max_filesize) then
+            vim.treesitter.start(args.buf, lang)
+          end
+          vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
+
+      -- Incremental selection
+      local sel_stack = {}
+
+      local function select_node(node)
+        local sr, sc, er, ec = node:range()
+        vim.fn.setpos("'<", { 0, sr + 1, sc + 1, 0 })
+        vim.fn.setpos("'>", { 0, er + 1, ec, 0 })
+        vim.cmd('normal! gv')
+      end
+
+      vim.keymap.set('n', '<space>', function()
+        sel_stack = {}
+        local node = vim.treesitter.get_node()
+        if not node then return end
+        table.insert(sel_stack, node)
+        select_node(node)
+      end, { desc = 'Start treesitter selection' })
+
+      vim.keymap.set('x', '<space>', function()
+        local current = sel_stack[#sel_stack]
+        if not current then return end
+        local parent = current:parent()
+        if not parent then return end
+        table.insert(sel_stack, parent)
+        select_node(parent)
+      end, { desc = 'Expand to parent node' })
+
+      vim.keymap.set('x', '<bs>', function()
+        if #sel_stack <= 1 then return end
+        table.remove(sel_stack)
+        select_node(sel_stack[#sel_stack])
+      end, { desc = 'Shrink to previous node' })
+
+      vim.api.nvim_create_autocmd('ModeChanged', {
+        pattern = '[vV\x16]*:*',
+        callback = function() sel_stack = {} end,
+      })
+
+      -- Textobjects
+      require('nvim-treesitter-textobjects').setup({
+        select = { lookahead = true },
+        move = { set_jumps = true },
+      })
+
+      local ts_select = require('nvim-treesitter-textobjects.select')
+      local ts_move = require('nvim-treesitter-textobjects.move')
+      local ts_swap = require('nvim-treesitter-textobjects.swap')
+
+      for lhs, query in pairs({
+        ['aa'] = '@parameter.outer', ['ia'] = '@parameter.inner',
+        ['af'] = '@function.outer',  ['if'] = '@function.inner',
+        ['ac'] = '@class.outer',     ['ic'] = '@class.inner',
+        ['aB'] = '@block.outer',     ['iB'] = '@block.inner',
+      }) do
+        vim.keymap.set({ 'x', 'o' }, lhs, function() ts_select.select_textobject(query) end)
+      end
+
+      vim.keymap.set({ 'n', 'x', 'o' }, ']]', function() ts_move.goto_next_start('@function.outer') end)
+      vim.keymap.set({ 'n', 'x', 'o' }, '][', function() ts_move.goto_next_end('@function.outer') end)
+      vim.keymap.set({ 'n', 'x', 'o' }, '[[', function() ts_move.goto_previous_start('@function.outer') end)
+      vim.keymap.set({ 'n', 'x', 'o' }, '[]', function() ts_move.goto_previous_end('@function.outer') end)
+
+      vim.keymap.set('n', '<leader>sn', function() ts_swap.swap_next('@parameter.inner') end)
+      vim.keymap.set('n', '<leader>sp', function() ts_swap.swap_previous('@parameter.inner') end)
     end,
   },
 
