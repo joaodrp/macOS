@@ -128,6 +128,8 @@ brew "lazygit"
 brew "libiconv"
 # Postgres C API library
 brew "libpq"
+# Match LLM models to your local hardware
+brew "llmfit"
 # Language Server for Lua
 brew "lua-language-server"
 # Mac App Store command-line interface
