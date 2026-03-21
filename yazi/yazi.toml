@@ -1,0 +1,26 @@
+[mgr]
+show_hidden = true
+
+[[plugin.prepend_fetchers]]
+id  = "git"
+url = "*"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id  = "git"
+url = "*/"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id  = "mactag"
+url = "*"
+run = "mactag"
+
+[[plugin.prepend_fetchers]]
+id  = "mactag"
+url = "*/"
+run = "mactag"
+
+[preview]
+max_width  = 1000
+max_height = 1000

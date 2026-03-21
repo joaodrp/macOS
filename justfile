@@ -41,9 +41,9 @@ fish:
     @grep -q /opt/homebrew/bin/fish /etc/shells || (echo "Adding fish to /etc/shells (requires sudo)..." && echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells)
     @[ "$SHELL" = "/opt/homebrew/bin/fish" ] && echo "Fish is already the default shell" || chsh -s /opt/homebrew/bin/fish
 
-# Install all plugins (vim, tmux, docker, npm)
+# Install all plugins (vim, tmux, docker, npm, yazi)
 [group('plugins')]
-plugins: _vim-plugins _tmux-plugins _docker-completions _npm-global
+plugins: _vim-plugins _tmux-plugins _docker-completions _npm-global _yazi-flavors
 
 # Apply macOS system preferences
 [group('system')]
@@ -124,6 +124,12 @@ clean:
     rm -f ~/.config/zellij/themes/gruvbox-dark-hard.kdl
     rm -f ~/.config/zellij/themes/gruvbox-light-hard.kdl
     rm -f ~/.config/zellij/layouts/default.kdl
+    rm -f ~/.config/yazi/yazi.toml
+    rm -f ~/.config/yazi/theme.toml
+    rm -f ~/.config/yazi/keymap.toml
+    rm -f ~/.config/yazi/init.lua
+    rm -f ~/.config/yazi/flavors/gruvbox-dark-hard.yazi
+    rm -f ~/.config/yazi/flavors/gruvbox-light-hard.yazi
 
 # --- Private recipes (underscore prefix hides from --list) ---
 
@@ -158,6 +164,8 @@ _sync-dirs:
     mkdir -p ~/.config/zellij
     mkdir -p ~/.config/zellij/themes
     mkdir -p ~/.config/zellij/layouts
+    mkdir -p ~/.config/yazi
+    mkdir -p ~/.config/yazi/flavors
 
 _sync-fish:
     [ -f ~/.config/fish/config.fish ] || ln -s {{ root }}/fish/config.fish ~/.config/fish/config.fish
@@ -203,6 +211,10 @@ _sync-terminal:
     ln -sf {{ root }}/zellij/themes/gruvbox-dark-hard.kdl ~/.config/zellij/themes/gruvbox-dark-hard.kdl
     ln -sf {{ root }}/zellij/themes/gruvbox-light-hard.kdl ~/.config/zellij/themes/gruvbox-light-hard.kdl
     ln -sf {{ root }}/zellij/layouts/default.kdl ~/.config/zellij/layouts/default.kdl
+    ln -sf {{ root }}/yazi/yazi.toml ~/.config/yazi/yazi.toml
+    ln -sf {{ root }}/yazi/theme.toml ~/.config/yazi/theme.toml
+    ln -sf {{ root }}/yazi/keymap.toml ~/.config/yazi/keymap.toml
+    ln -sf {{ root }}/yazi/init.lua ~/.config/yazi/init.lua
 
 _sync-git:
     [ -f ~/.gitconfig ] || ln -s {{ root }}/.gitconfig ~/.gitconfig
@@ -272,6 +284,11 @@ _docker-completions:
         ln -sf /Applications/Docker.app/Contents/Resources/etc/docker.fish-completion ~/.config/fish/completions/docker.fish && \
         ln -sf /Applications/Docker.app/Contents/Resources/etc/docker-compose.fish-completion ~/.config/fish/completions/docker-compose.fish && \
         echo "Docker completions installed" || echo "Docker.app not found, skipping completions"
+
+_yazi-flavors:
+    ln -sfn {{ root }}/yazi/flavors/gruvbox-dark-hard.yazi ~/.config/yazi/flavors/gruvbox-dark-hard.yazi
+    ln -sfn {{ root }}/yazi/flavors/gruvbox-light-hard.yazi ~/.config/yazi/flavors/gruvbox-light-hard.yazi
+    ya pkg install
 
 _npm-global:
     #!/usr/bin/env bash

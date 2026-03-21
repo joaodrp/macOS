@@ -166,6 +166,8 @@ brew "pstree"
 brew "plantuml"
 # Pre-commit re-implemented in Rust
 brew "prek"
+# PDF rendering library (yazi PDF preview)
+brew "poppler"
 # Tools for and transforming and inspecting PDF files
 brew "qpdf"
 # Rsync for cloud storage
@@ -196,6 +198,8 @@ brew "teleport"
 brew "telnet"
 # Send macOS User Notifications from the command-line
 brew "terminal-notifier"
+# macOS file tagging (mactag yazi plugin dependency)
+brew "tag"
 # Text interface for Git repositories
 brew "tig"
 # Simplified and community-driven man pages
@@ -226,6 +230,12 @@ brew "yamllint"
 brew "ykman"
 # YubiKey personalization library and tool
 brew "ykpers"
+# Archive extraction and preview (yazi dependency)
+brew "sevenzip"
+# SVG rendering library (yazi dependency)
+brew "resvg"
+# Blazing fast terminal file manager written in Rust
+brew "yazi"
 # General-purpose lossless data-compression library
 brew "zlib"
 # Shell extension to navigate your filesystem faster

@@ -26,6 +26,7 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── zellij/           # Zellij multiplexer config and themes
 ├── lazygit/          # lazygit config
 ├── bat/              # bat (cat replacement) config
+├── yazi/             # yazi terminal file manager config (theme.toml)
 ├── mitmproxy/        # HTTP proxy config
 ├── codex/            # Codex CLI config
 ├── cc-safety-net/    # cc-safety-net custom rules
