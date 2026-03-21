@@ -1,28 +1,24 @@
-git:
-  pagers:
-    - pager: delta --paging=never
 gui:
-  nerdFontsVersion: "3"
   theme:
     activeBorderColor:
-      - '#a89984'
+      - '#7c6f64'
       - bold
     inactiveBorderColor:
-      - '#665c54'
+      - '#bdae93'
     searchingActiveBorderColor:
-      - '#fabd2f'
+      - '#b57614'
       - bold
     optionsTextColor:
-      - '#83a598'
+      - '#076678'
     selectedLineBgColor:
-      - '#504945'
+      - '#d5c4a1'
     inactiveViewSelectedLineBgColor:
-      - '#3c3836'
-    cherryPickedCommitBgColor:
-      - '#d3869b'
-    cherryPickedCommitFgColor:
-      - '#1d2021'
-    unstagedChangesColor:
-      - '#fb4934'
-    defaultFgColor:
       - '#ebdbb2'
+    cherryPickedCommitBgColor:
+      - '#8f3f71'
+    cherryPickedCommitFgColor:
+      - '#f9f5d7'
+    unstagedChangesColor:
+      - '#9d0006'
+    defaultFgColor:
+      - '#3c3836'

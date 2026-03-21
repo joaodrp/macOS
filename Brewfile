@@ -226,6 +226,8 @@ brew "watchman"
 brew "wget"
 # Linter for YAML files
 brew "yamllint"
+# YAML processor (used by sync_theme for lazygit theme merging)
+brew "yq"
 # Tool for managing your YubiKey configuration
 brew "ykman"
 # YubiKey personalization library and tool

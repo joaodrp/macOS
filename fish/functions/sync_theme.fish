@@ -1,4 +1,4 @@
-function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy, Claude Code, OpenCode, Gemini CLI, and Zellij themes with macOS appearance'
+function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy, Claude Code, OpenCode, Zellij, and lazygit themes with macOS appearance'
     # Detect current macOS appearance (dark mode returns 0, light mode returns error)
     if defaults read -g AppleInterfaceStyle &>/dev/null
         set mode dark
@@ -78,6 +78,13 @@ function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy,
         else
             sed -i 's/^theme "gruvbox-dark-hard"/theme "gruvbox-light-hard"/' "$zellij_config"
         end
+    end
+
+    # --- lazygit ---
+    if command -q yq
+        set -l base ~/Developer/github.com/joaodrp/macos/lazygit/config-base.yml
+        set -l lazygit_theme (test $mode = dark; and echo gruvbox-dark-hard; or echo gruvbox-light-hard)
+        yq eval-all '. as $item ireduce ({}; . * $item)' "$base" ~/Developer/github.com/joaodrp/macos/lazygit/themes/$lazygit_theme.yml > ~/.config/lazygit/config.yml
     end
 
 end

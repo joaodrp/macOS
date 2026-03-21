@@ -1,8 +1,4 @@
-git:
-  pagers:
-    - pager: delta --paging=never
 gui:
-  nerdFontsVersion: "3"
   theme:
     activeBorderColor:
       - '#a89984'

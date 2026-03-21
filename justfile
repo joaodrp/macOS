@@ -224,7 +224,11 @@ _sync-git:
     [ -f ~/.dockerignore ] || ln -s {{ root }}/.dockerignore ~/.dockerignore
     [ -f ~/.ignore ] || ln -s {{ root }}/.ignore ~/.ignore
     ln -sfn {{ root }}/git/hooks ~/.config/git/hooks
-    [ -f ~/.config/lazygit/config.yml ] || ln -s {{ root }}/lazygit/config.yml ~/.config/lazygit/config.yml
+    if defaults read -g AppleInterfaceStyle &>/dev/null; then \
+        yq eval-all '. as $item ireduce ({}; . * $item)' {{ root }}/lazygit/config-base.yml {{ root }}/lazygit/themes/gruvbox-dark-hard.yml > ~/.config/lazygit/config.yml; \
+    else \
+        yq eval-all '. as $item ireduce ({}; . * $item)' {{ root }}/lazygit/config-base.yml {{ root }}/lazygit/themes/gruvbox-light-hard.yml > ~/.config/lazygit/config.yml; \
+    fi
 
 _sync-security:
     [ -f ~/.gnupg/gpg.conf ] || ln -s {{ root }}/gnupg/gpg.conf ~/.gnupg/gpg.conf
