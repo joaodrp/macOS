@@ -36,6 +36,7 @@ require("lazy").setup({
       vim.cmd([[colorscheme gruvbox]])
     end,
   },
+  { 'kepano/flexoki-neovim', name = 'flexoki' },
 
   -- automatic dark mode
   -- requires: brew install cormacrelf/tap/dark-notify
@@ -60,7 +61,7 @@ require("lazy").setup({
               file_status = true,
               path = 2 -- absolute path
             }
-          }
+          },
         }
       })
     end,
