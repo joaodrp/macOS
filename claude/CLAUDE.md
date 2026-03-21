@@ -18,6 +18,12 @@
 
 Prefer `agent-browser` CLI (and the corresponding Skill) to interacting direclty with Playwright.
 
+## Repository Paths
+
+Always clone repos under `~/Developer/<host>/<owner>/<repo>`:
+- GitHub: `~/Developer/github.com/<owner>/<repo>`
+- GitLab: `~/Developer/gitlab.com/<owner>/<repo>`
+
 ## GitLab
 
 ### MR Reviews
