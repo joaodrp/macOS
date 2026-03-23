@@ -1,0 +1,9 @@
+default_session = "macos"
+
+[[search_dirs]]
+path = "~/Developer/github.com"
+depth = 10
+
+[[search_dirs]]
+path = "~/Developer/gitlab.com"
+depth = 10

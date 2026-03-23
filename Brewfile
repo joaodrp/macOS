@@ -200,6 +200,8 @@ brew "telnet"
 brew "terminal-notifier"
 # macOS file tagging (mactag yazi plugin dependency)
 brew "tag"
+# Tmux session manager
+brew "tmux-sessionizer"
 # Text interface for Git repositories
 brew "tig"
 # Simplified and community-driven man pages
