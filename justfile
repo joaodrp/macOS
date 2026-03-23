@@ -256,6 +256,7 @@ _sync-ai:
 
 _sync-sesh:
     ln -sf {{ root }}/sesh/sesh.toml ~/.config/sesh/sesh.toml
+    sesh completion fish > ~/.config/fish/completions/sesh.fish
 
 _sync-misc:
     [ -f ~/.mitmproxy/config.yaml ] || ln -s {{ root }}/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
