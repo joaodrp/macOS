@@ -27,7 +27,6 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── lazygit/          # lazygit config
 ├── bat/              # bat (cat replacement) config
 ├── yazi/             # yazi terminal file manager config (theme.toml)
-├── tms/              # tmux-sessionizer (tms) config
 ├── mitmproxy/        # HTTP proxy config
 ├── codex/            # Codex CLI config
 ├── cc-safety-net/    # cc-safety-net custom rules

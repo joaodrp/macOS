@@ -18,7 +18,7 @@ all: brew-all sync fish plugins config
 
 # Symlink all configs to standard locations
 [group('setup')]
-sync: _sync-dirs _sync-fish _sync-editors _sync-terminal _sync-git _sync-security _sync-ai _sync-tms _sync-misc _sync-local _sync-launchd _sync-permissions
+sync: _sync-dirs _sync-fish _sync-editors _sync-terminal _sync-git _sync-security _sync-ai _sync-misc _sync-local _sync-launchd _sync-permissions
 
 # Install main Brewfile packages
 [group('brew')]
@@ -130,14 +130,12 @@ clean:
     rm -f ~/.config/yazi/init.lua
     rm -f ~/.config/yazi/flavors/gruvbox-dark-hard.yazi
     rm -f ~/.config/yazi/flavors/gruvbox-light-hard.yazi
-    rm -f ~/Library/Application\ Support/tms/config.toml
 
 # --- Private recipes (underscore prefix hides from --list) ---
 
 _sync-dirs:
     mkdir -p ~/Developer/github.com
     mkdir -p ~/Developer/gitlab.com
-    mkdir -p ~/Library/Application\ Support/tms
     mkdir -p ~/.config/ghostty
     mkdir -p ~/.config/fish
     mkdir -p ~/.config/fish/functions.local
@@ -253,9 +251,6 @@ _sync-ai:
     [ -f ~/.codex/config.toml ] || ln -s {{ root }}/codex/config.toml ~/.codex/config.toml
     ln -sf {{ root }}/shared/AGENTS.md ~/.codex/AGENTS.md
     [ -f ~/.cc-safety-net/config.json ] || ln -s {{ root }}/cc-safety-net/config.json ~/.cc-safety-net/config.json
-
-_sync-tms:
-    ln -sf {{ root }}/tms/config.toml ~/Library/Application\ Support/tms/config.toml
 
 _sync-misc:
     [ -f ~/.mitmproxy/config.yaml ] || ln -s {{ root }}/mitmproxy/config.yaml ~/.mitmproxy/config.yaml
