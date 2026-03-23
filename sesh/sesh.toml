@@ -1,0 +1,26 @@
+#:schema https://github.com/joshmedeski/sesh/raw/main/sesh.schema.json
+
+cache = true
+
+sort_order = [
+    "tmux",
+    "config",
+    "zoxide",
+]
+
+blacklist = [
+    "vendor",
+    "tmp",
+    "Downloads",
+    "Desktop",
+    "Documents",
+    "Applications",
+    "tmux-thumbs",
+    "zed",
+    "bin",
+    "skills",
+]
+
+[default_session]
+startup_command = "nvim"
+preview_command = "eza --all --git --icons --color=always {}"
