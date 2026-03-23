@@ -4,8 +4,6 @@ cache = true
 
 sort_order = [
     "tmux",
-    "config",
-    "zoxide",
 ]
 
 blacklist = [
