@@ -1,4 +1,4 @@
-function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy, Claude Code, OpenCode, Zellij, and lazygit themes with macOS appearance'
+function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy, Claude Code, OpenCode, Zellij, lazygit, and lumen themes with macOS appearance'
     # Detect current macOS appearance (dark mode returns 0, light mode returns error)
     if defaults read -g AppleInterfaceStyle &>/dev/null
         set mode dark
@@ -78,6 +78,14 @@ function sync_theme --description 'Sync Pure prompt, bat, delta, fzf, mitmproxy,
         else
             sed -i 's/^theme "gruvbox-dark-hard"/theme "gruvbox-light-hard"/' "$zellij_config"
         end
+    end
+
+    # --- lumen ---
+    set -l lumen_config (realpath ~/.config/lumen/lumen.config.json 2>/dev/null)
+    if test -n "$lumen_config" -a -f "$lumen_config"; and command -q jq
+        set -l lumen_theme (test $mode = dark; and echo "gruvbox-dark"; or echo "gruvbox-light")
+        set -l tmp (mktemp)
+        jq --arg theme "$lumen_theme" '.theme = $theme' "$lumen_config" > $tmp && mv $tmp "$lumen_config"
     end
 
     # --- lazygit ---

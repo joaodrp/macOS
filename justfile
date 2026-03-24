@@ -18,7 +18,7 @@ all: brew-all sync fish plugins config
 
 # Symlink all configs to standard locations
 [group('setup')]
-sync: _sync-dirs _sync-fish _sync-editors _sync-terminal _sync-git _sync-security _sync-ai _sync-sesh _sync-misc _sync-local _sync-launchd _sync-permissions
+sync: _sync-dirs _sync-fish _sync-editors _sync-terminal _sync-git _sync-security _sync-ai _sync-sesh _sync-lumen _sync-misc _sync-local _sync-launchd _sync-permissions
 
 # Install main Brewfile packages
 [group('brew')]
@@ -125,6 +125,7 @@ clean:
     rm -f ~/.config/zellij/themes/gruvbox-light-hard.kdl
     rm -f ~/.config/zellij/layouts/default.kdl
     rm -f ~/.config/sesh/sesh.toml
+    rm -f ~/.config/lumen/lumen.config.json
     rm -f ~/.config/yazi/yazi.toml
     rm -f ~/.config/yazi/theme.toml
     rm -f ~/.config/yazi/keymap.toml
@@ -138,6 +139,7 @@ _sync-dirs:
     mkdir -p ~/Developer/github.com
     mkdir -p ~/Developer/gitlab.com
     mkdir -p ~/.config/sesh
+    mkdir -p ~/.config/lumen
     mkdir -p ~/.config/ghostty
     mkdir -p ~/.config/fish
     mkdir -p ~/.config/fish/functions.local
@@ -253,6 +255,9 @@ _sync-ai:
     [ -f ~/.codex/config.toml ] || ln -s {{ root }}/codex/config.toml ~/.codex/config.toml
     ln -sf {{ root }}/shared/AGENTS.md ~/.codex/AGENTS.md
     [ -f ~/.cc-safety-net/config.json ] || ln -s {{ root }}/cc-safety-net/config.json ~/.cc-safety-net/config.json
+
+_sync-lumen:
+    ln -sf {{ root }}/lumen/lumen.config.json ~/.config/lumen/lumen.config.json
 
 _sync-sesh:
     ln -sf {{ root }}/sesh/sesh.toml ~/.config/sesh/sesh.toml

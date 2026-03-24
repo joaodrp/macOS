@@ -27,6 +27,7 @@ This is a macOS dotfiles repository for setting up development machines.
 ├── lazygit/          # lazygit config
 ├── bat/              # bat (cat replacement) config
 ├── yazi/             # yazi terminal file manager config (theme.toml)
+├── lumen/            # lumen AI git diff viewer config
 ├── sesh/             # sesh smart session manager config
 ├── mitmproxy/        # HTTP proxy config
 ├── codex/            # Codex CLI config

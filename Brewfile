@@ -126,6 +126,8 @@ brew "just"
 brew "k9s"
 # Simple terminal UI for git commands
 brew "lazygit"
+# AI-powered git diff viewer and commit tools
+brew "jnsahaj/lumen/lumen"
 # Conversion library
 brew "libiconv"
 # Postgres C API library

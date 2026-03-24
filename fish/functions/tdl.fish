@@ -1,5 +1,5 @@
 # Adapted from https://github.com/basecamp/omarchy
-function tdl -d "Create a tmux dev layout with editor, AI, and terminal"
+function tdl -d "Create a tmux dev layout with lumen diff viewer, AI, and terminal"
     if test (count $argv) -lt 1
         echo "usage: tdl <command> [<second_command>]"
         return 1
@@ -20,8 +20,8 @@ function tdl -d "Create a tmux dev layout with editor, AI, and terminal"
     # Bottom terminal pane (15%)
     tmux split-window -v -p 15 -t $editor_pane -c $current_dir
 
-    # Right AI pane (30%)
-    set -l ai_pane (tmux split-window -h -p 30 -t $editor_pane -c $current_dir -P -F '#{pane_id}')
+    # Right AI pane (40% of window)
+    set -l ai_pane (tmux split-window -h -l 40% -t $editor_pane -c $current_dir -P -F '#{pane_id}')
 
     # Optional second AI pane below the first
     if test -n "$ai2"
@@ -30,6 +30,6 @@ function tdl -d "Create a tmux dev layout with editor, AI, and terminal"
     end
 
     tmux send-keys -t $ai_pane $ai C-m
-    tmux send-keys -t $editor_pane "$EDITOR ." C-m
+    tmux send-keys -t $editor_pane "lumen diff --watch" C-m
     tmux select-pane -t $editor_pane
 end
