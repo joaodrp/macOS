@@ -58,6 +58,8 @@ brew "fd"
 brew "ffmpeg"
 # Easiest way to build and release mobile apps
 brew "fastlane"
+# Interactive file path picker for terminal output (tmux-fpp dependency)
+brew "fpp"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # User-friendly command-line shell for UNIX-like operating systems
