@@ -48,6 +48,8 @@ brew "dive"
 brew "docker-compose"
 # Text processing system for reStructuredText
 brew "docutils"
+# Select default apps for document types
+brew "duti"
 # Utilities for the ext2, ext3, and ext4 file systems
 brew "e2fsprogs"
 # Modern replacement for 'ls'
