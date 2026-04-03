@@ -4,3 +4,4 @@ firecrawl-cli
 playwright
 eas-cli
 ctx7
+@readwise/cli
