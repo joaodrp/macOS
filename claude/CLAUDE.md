@@ -11,7 +11,7 @@
 
 - **`ctx7` CLI** - Library/framework docs, API specs, usage samples, setup instructions
 - **Your own web search tools** - Find things on the web, current events, quick facts
-- **Firecrawl CLI** (and the corresponding Skill) - Scrape JS-heavy pages, crawl sites, extract structured data. Prefer the CLI over the Firecrawl MCP server when available
+- **Firecrawl CLI** (and the corresponding Skill) - Read online pages, scrape JS-heavy pages, crawl sites, extract structured data. Use this whenever you need to fetch or read content from a URL
 - **Perplexity MCP** - Deep research on complex topics requiring synthesis from multiple sources
 
 ### Web Testing
