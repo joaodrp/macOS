@@ -29,3 +29,6 @@ rmcp_client = true
 
 [projects."/Users/joaodrp/Developer/github.com/joaodrp/macos"]
 trust_level = "trusted"
+
+[plugins."github@openai-curated"]
+enabled = true
