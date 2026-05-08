@@ -164,6 +164,8 @@ brew "oras"
 brew "pgformatter"
 # PGP packet visualizer
 brew "pgpdump"
+# AI agent toolkit
+brew "pi-coding-agent"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Show ps output as a tree
